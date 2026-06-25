@@ -3,12 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Craft MadeBy — Where Makers Leave Their Mark</title>
-    <meta name="description" content="Craft MadeBy is the home for handmade creators. Track projects, share with your community, earn honors, and leave a lasting legacy of your craft." />
-    <!-- Favicon -->
+
+    <!-- ===== PRIMARY SEO ===== -->
+    <title>Craft MadeBy — App for Handmade Creators & Artisans</title>
+    <meta name="description" content="Craft MadeBy is the app for handmade creators. Document your projects step-by-step, share with your maker community, host giveaways, earn artisan honors, and build your legacy room. Available on App Store & Google Play." />
+    <meta name="keywords" content="handmade app, craft app, maker community, artisan app, handcraft projects, DIY tracker, pottery app, knitting community, woodworking app, craft social network, handmade giveaway, maker portfolio" />
+    <meta name="author" content="Craft MadeBy" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://craftmadeby.com/" />
+
+    <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" type="image/png" href="/images/logo_app.png" />
     <link rel="apple-touch-icon" href="/images/logo_app.png" />
+
+    <!-- ===== OPEN GRAPH (Facebook, WhatsApp, LinkedIn previews) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://craftmadeby.com/" />
+    <meta property="og:site_name" content="Craft MadeBy" />
+    <meta property="og:title" content="Craft MadeBy — App for Handmade Creators & Artisans" />
+    <meta property="og:description" content="Document your handmade projects, share with your maker community, host giveaways, and build your artisan legacy. Join 10,000+ makers on Craft MadeBy." />
+    <meta property="og:image" content="https://craftmadeby.com/images/craft_pottery.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Craft MadeBy — Handmade creator community app" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@craftmadeby" />
+    <meta name="twitter:title" content="Craft MadeBy — App for Handmade Creators & Artisans" />
+    <meta name="twitter:description" content="Document your handmade projects, share with your maker community, host giveaways, and build your artisan legacy. Join 10,000+ makers." />
+    <meta name="twitter:image" content="https://craftmadeby.com/images/craft_pottery.png" />
+
+    <!-- ===== STRUCTURED DATA / JSON-LD (Google Rich Results) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://craftmadeby.com/#website",
+          "url": "https://craftmadeby.com/",
+          "name": "Craft MadeBy",
+          "description": "The app for handmade creators and artisans",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://craftmadeby.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://craftmadeby.com/#organization",
+          "name": "Craft MadeBy",
+          "url": "https://craftmadeby.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://craftmadeby.com/images/logo_app.png",
+            "width": 512,
+            "height": 512
+          },
+          "sameAs": [
+            "https://craftmadeby.app"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://craftmadeby.com/#app",
+          "name": "Craft MadeBy",
+          "operatingSystem": ["iOS", "Android"],
+          "applicationCategory": "LifestyleApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Craft MadeBy is the app for handmade creators. Document your projects step-by-step, share with your maker community, host giveaways, earn artisan honors, and build your legacy room.",
+          "screenshot": "https://craftmadeby.com/images/craft_pottery.png",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "120"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ===== FONTS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
