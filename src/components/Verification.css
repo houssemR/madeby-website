@@ -1,0 +1,149 @@
+.verif-section {
+  padding: var(--s10) 0;
+  background: var(--green-ghost);
+  position: relative;
+  overflow: hidden;
+}
+
+.verif-section::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.verif-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s8);
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-xl);
+  padding: var(--s8);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.verif-inner::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 300px; height: 4px;
+  background: linear-gradient(90deg, var(--green-mid), var(--gold));
+}
+
+.verif-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: var(--s2) 0 var(--s3);
+  color: var(--green-mid);
+  font-family: var(--font-serif);
+}
+
+.verif-body {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  margin-bottom: var(--s5);
+  max-width: 520px;
+}
+
+/* Badge items */
+.verif-badges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.verif-badge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s2);
+  padding: var(--s3);
+  background: var(--green-ghost);
+  border: 1px solid var(--green-pale);
+  border-radius: var(--r-md);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+
+.verif-badge-item:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--green-dim);
+}
+
+.verif-badge-item > span {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.verif-badge-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.verif-badge-item p {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Stamp column */
+.verif-stamp-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+  flex-shrink: 0;
+}
+
+.verif-stamp-glow {
+  width: 220px; height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verif-stamp-img {
+  width: 180px; height: auto;
+  filter: drop-shadow(0 6px 24px rgba(77, 82, 53, 0.25));
+  transition: transform 0.4s var(--ease-out), filter 0.4s ease;
+  animation: stampPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes stampPulse {
+  from { filter: drop-shadow(0 4px 16px rgba(77, 82, 53, 0.15)); }
+  to   { filter: drop-shadow(0 8px 32px rgba(77, 82, 53, 0.35)); }
+}
+
+.verif-stamp-col:hover .verif-stamp-img {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.verif-stamp-caption {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--green-soft);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 900px) {
+  .verif-inner {
+    grid-template-columns: 1fr;
+    padding: var(--s5);
+  }
+  .verif-stamp-col { flex-direction: row; justify-content: center; }
+  .verif-stamp-glow { width: 160px; height: 160px; }
+  .verif-stamp-img { width: 120px; }
+}

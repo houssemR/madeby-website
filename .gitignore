@@ -1,0 +1,25 @@
+# Deps
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Local env files
+*.local
+.env
+.env.*
+
+# Editor dirs
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local-only script (not needed on Netlify)
+copy-assets.cjs
+
+# NOTE: public/images/ is intentionally committed to git
+# so Netlify can serve the images without needing local paths
