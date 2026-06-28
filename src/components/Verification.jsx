@@ -1,7 +1,7 @@
 import { useReveal } from '../hooks';
 import './Verification.css';
 
-import stampImg from '../../../madeby/assets/images/completion_stamp.png';
+const stampImg = '/images/completion_stamp.png';
 
 export default function Verification() {
   useReveal();
