@@ -114,7 +114,7 @@ export default function Hero() {
               <div key={i} className="avatar-dot" style={{ background: c, zIndex: 5 - i }} />
             ))}
           </div>
-          <span>Joined by <strong>10,000+</strong> artisans worldwide</span>
+          <span>Joined by <strong>coming soon+</strong> artisans worldwide</span>
         </div>
       </div>
 
