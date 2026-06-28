@@ -47,6 +47,12 @@ export default function Hero() {
       </div>
 
       <div className="container hero-content">
+        {/* Launch Banner */}
+        <div className="hero-launch-banner hero-animate">
+          <span className="launch-icon">🚀</span>
+          <span>Coming Soon — Launching globally in <strong>July</strong></span>
+        </div>
+
         {/* App logo above badge */}
         <div className="hero-app-logo hero-animate">
           <div className="hero-logo-icon">

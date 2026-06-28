@@ -98,13 +98,14 @@
   line-height: 1.4;
 }
 
-/* Stamp column */
-.verif-stamp-col {
+/* Stamp column / Visuals */
+.verif-visuals {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--s2);
+  gap: var(--s4);
   flex-shrink: 0;
+  position: relative;
 }
 
 .verif-stamp-glow {
@@ -126,7 +127,7 @@
   to   { filter: drop-shadow(0 8px 32px rgba(77, 82, 53, 0.35)); }
 }
 
-.verif-stamp-col:hover .verif-stamp-img {
+.verif-visuals:hover .verif-stamp-img {
   transform: rotate(-8deg) scale(1.08);
 }
 
@@ -138,12 +139,86 @@
   letter-spacing: 1.5px;
 }
 
+/* Expert Panel Card (Floating hover UI) */
+.expert-panel-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  padding: var(--s4);
+  width: 320px;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  z-index: 2;
+  cursor: default;
+}
+
+.expert-panel-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(77, 82, 53, 0.15);
+  border-color: var(--green-soft);
+}
+
+.expert-panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s2);
+}
+
+.expert-icon {
+  font-size: 1.2rem;
+}
+
+.expert-panel-header h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--green-mid);
+  margin: 0;
+  flex: 1;
+}
+
+.expert-badge {
+  background: var(--gold);
+  color: var(--surface);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  letter-spacing: 0.5px;
+}
+
+.expert-desc {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-bottom: var(--s3);
+}
+
+.expert-desc strong {
+  color: var(--ink);
+}
+
+.expert-footer {
+  padding-top: var(--s2);
+  border-top: 1px dashed var(--border-soft);
+}
+
+.expert-footer small {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  line-height: 1.4;
+  display: block;
+}
+
 @media (max-width: 900px) {
   .verif-inner {
     grid-template-columns: 1fr;
     padding: var(--s5);
   }
-  .verif-stamp-col { flex-direction: row; justify-content: center; }
+  .verif-visuals { flex-direction: column; justify-content: center; }
   .verif-stamp-glow { width: 160px; height: 160px; }
   .verif-stamp-img { width: 120px; }
+  .expert-panel-card { width: 100%; max-width: 320px; }
 }

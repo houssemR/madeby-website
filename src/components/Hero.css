@@ -105,6 +105,33 @@
   transform: translateY(0);
 }
 
+/* Launch Banner */
+.hero-launch-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: 8px 16px;
+  background: rgba(201, 168, 106, 0.15);
+  border: 1px solid rgba(201, 168, 106, 0.3);
+  border-radius: 20px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: var(--s3);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-launch-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.launch-icon {
+  font-size: 1.1rem;
+}
+
 /* App logo above badge */
 .hero-app-logo {
   margin-bottom: var(--s2);

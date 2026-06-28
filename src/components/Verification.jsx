@@ -39,11 +39,25 @@ export default function Verification() {
               </div>
             </div>
           </div>
-          <div className="verif-stamp-col reveal reveal-delay-3">
+          <div className="verif-visuals reveal reveal-delay-3">
             <div className="verif-stamp-glow">
               <img src={stampImg} alt="Handmade Stamp" className="verif-stamp-img" />
             </div>
             <p className="verif-stamp-caption">Applied to verified projects</p>
+
+            <div className="expert-panel-card">
+              <div className="expert-panel-header">
+                <span className="expert-icon">⚖️</span>
+                <h4>Expert Panel</h4>
+                <span className="expert-badge">New</span>
+              </div>
+              <p className="expert-desc">
+                Become an <strong>Inspiring Leader</strong> and join the review board. Projects need at least <strong>2 out of 3</strong> approvals from leaders to earn the handmade certification.
+              </p>
+              <div className="expert-footer">
+                <small>Not approved? You can still appeal to the Craft MadeBy experts team.</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
