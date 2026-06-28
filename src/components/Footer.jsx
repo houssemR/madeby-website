@@ -49,9 +49,9 @@ export default function Footer() {
         <div className="footer-links-col">
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/community-guidelines.html">Community Guidelines</a></li>
           </ul>
         </div>
       </div>
