@@ -52,6 +52,7 @@ export default function Footer() {
             <li><a href="/terms.html">Terms of Service</a></li>
             <li><a href="/privacy.html">Privacy Policy</a></li>
             <li><a href="/community-guidelines.html">Community Guidelines</a></li>
+            <li><a href="/delete-account.html">Delete Account Policy</a></li>
           </ul>
         </div>
       </div>
