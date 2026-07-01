@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Launch Banner */}
         <div className="hero-launch-banner hero-animate">
           <span className="launch-icon">🚀</span>
-          <span>Coming Soon — Launching globally in <strong>July</strong></span>
+          <span>Coming Soon</span>
         </div>
 
         {/* App logo above badge */}

@@ -109,27 +109,29 @@
 .hero-launch-banner {
   display: inline-flex;
   align-items: center;
-  gap: var(--s2);
-  padding: 8px 16px;
-  background: rgba(201, 168, 106, 0.15);
-  border: 1px solid rgba(201, 168, 106, 0.3);
-  border-radius: 20px;
+  gap: 12px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(201, 168, 106, 0.25), rgba(201, 168, 106, 0.05));
+  border: 1px solid rgba(201, 168, 106, 0.4);
+  border-radius: 30px;
   color: var(--gold);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   margin-bottom: var(--s3);
-  backdrop-filter: blur(4px);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(201, 168, 106, 0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-launch-banner:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(201, 168, 106, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .launch-icon {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 /* App logo above badge */
