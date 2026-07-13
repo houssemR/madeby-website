@@ -288,3 +288,42 @@
   pointer-events: none;
   z-index: 5;
 }
+
+/* ---- Craft category marquee ---- */
+.hero-marquee {
+  margin-top: 3rem;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 26s linear infinite;
+}
+.hero-marquee:hover .hero-marquee-track { animation-play-state: paused; }
+.hero-marquee-group {
+  display: flex;
+  gap: 14px;
+  padding-right: 14px;
+}
+.marquee-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-soft);
+  padding: 9px 18px;
+  border-radius: var(--r-full);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-sm);
+}
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

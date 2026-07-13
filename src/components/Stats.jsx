@@ -17,7 +17,7 @@ export default function Stats() {
   return (
     <section className="stats-section">
       <div className="container stats-grid">
-        <StatItem label="Active Makers" delay={1} />
+        <StatItem label="Active Crafters" delay={1} />
         <StatItem label="Projects Shared" delay={2} />
         <StatItem label="Giveaways Hosted" delay={3} />
         <StatItem label="Verified Handmade" delay={4} />

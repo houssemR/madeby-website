@@ -70,7 +70,7 @@ export default function Hero() {
         {/* Badge */}
         <div className="hero-badge hero-animate">
           <span className="badge-dot" />
-          <span>The Maker's Community App</span>
+          <span>The Crafter's Community App</span>
         </div>
 
         {/* Headline */}
@@ -81,8 +81,8 @@ export default function Hero() {
 
         {/* Sub */}
         <p className="hero-sub hero-animate">
-          Document your handmade projects. Share with your community.<br className="hero-br" />
-          Earn honors. Leave a lasting legacy of craft.
+          Document your handmade projects, step by step and minute by minute.<br className="hero-br" />
+          Share, gift and certify them. Leave a lasting legacy of craft.
         </p>
 
         {/* CTAs */}
@@ -115,6 +115,22 @@ export default function Hero() {
             ))}
           </div>
           <span>Joined by <strong>coming soon+</strong> artisans worldwide</span>
+        </div>
+
+        {/* Craft category marquee */}
+        <div className="hero-marquee hero-animate" aria-hidden="true">
+          <div className="hero-marquee-track">
+            {[0, 1].map((dup) => (
+              <div key={dup} className="hero-marquee-group">
+                <span className="marquee-chip">🧶 Knitting & Crochet</span>
+                <span className="marquee-chip">🪡 Sewing & Textiles</span>
+                <span className="marquee-chip">🧵 Embroidery & Needlework</span>
+                <span className="marquee-chip">🏺 Clay & Ceramics</span>
+                <span className="marquee-chip">💍 Jewelry & Beading</span>
+                <span className="marquee-chip">✨ …and your own craft</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

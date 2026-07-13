@@ -222,3 +222,48 @@
   .verif-stamp-img { width: 120px; }
   .expert-panel-card { width: 100%; max-width: 320px; }
 }
+
+/* ---- Eligibility criteria chips ---- */
+.verif-criteria {
+  margin: var(--s3) 0;
+}
+.verif-criteria-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+.crit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.crit-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: var(--green-ghost);
+  border: 1px solid var(--green-dim);
+  padding: 8px 16px;
+  border-radius: var(--r-full);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+.crit-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.crit-chip-icon { font-size: 1rem; }
+
+.expert-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  transition: color 0.2s ease;
+}
+.expert-link:hover { color: var(--green-deep); }

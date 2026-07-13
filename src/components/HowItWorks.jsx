@@ -3,10 +3,10 @@ import { useReveal } from '../hooks';
 import './HowItWorks.css';
 
 const steps = [
-  { num: '01', icon: '🪡', title: 'Start or Add', body: 'Begin a step-by-step project to document your WIP, or instantly add a finished piece to your portfolio.' },
-  { num: '02', icon: '📸', title: 'Document Every Detail', body: 'Log materials, tools, hours spent, difficulty level, and the story behind each creation with photos.' },
-  { num: '03', icon: '🌿', title: 'Share on Your Terms', body: 'Choose your audience — public, connections only, within a private group, or completely private.' },
-  { num: '04', icon: '🏅', title: 'Earn Maker Honors', body: 'Build your Legacy Room and earn prestigious honors from Maker to Master Artisan.' },
+  { num: '01', icon: '🪡', title: 'Start or Add', body: 'Begin a step-by-step project — solo or joint with fellow crafters — or instantly add a finished piece to your portfolio.' },
+  { num: '02', icon: '⏱️', title: 'Document Every Detail', body: 'Log materials, tools, costs and photos — and record real invested time with the built-in per-step stopwatch.' },
+  { num: '03', icon: '🌿', title: 'Share on Your Terms', body: 'Choose your audience — public, connections only, within a private group, or completely private. Gift or give away any piece.' },
+  { num: '04', icon: '🏅', title: 'Earn Crafter Honors', body: 'Climb from Crafter to Inspiring Leader, get Certified Handmade — and unlock a seat on the Expert Panel.' },
 ];
 
 export default function HowItWorks() {

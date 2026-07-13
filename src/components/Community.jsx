@@ -14,10 +14,10 @@ const privacyScopes = [
 ];
 
 const honors = [
-  { icon: '🔨', label: 'Maker', desc: 'Starting out' },
+  { icon: '🔨', label: 'Crafter', desc: 'Starting out' },
   { icon: '✨', label: 'Artisan', desc: 'Growing craft' },
-  { icon: '🏆', label: 'Master Artisan', desc: 'Recognized excellence', highlight: true },
-  { icon: '🌟', label: 'Inspiring Leader', desc: 'Community icon' },
+  { icon: '🏆', label: 'Master Artisan', desc: 'Recognized excellence' },
+  { icon: '🌟', label: 'Inspiring Leader', desc: 'Expert Panel seat', highlight: true },
 ];
 
 export default function Community() {
@@ -33,33 +33,33 @@ export default function Community() {
           <h2 className="comm-main-title">Built for real makers,<br /><span className="gradient-text">not just collectors.</span></h2>
         </div>
 
-        {/* 1 — Collaborate */}
+        {/* 1 — Joint Projects */}
         <div className="comm-block">
           <div className="comm-img-col reveal reveal-delay-1">
             <div className="comm-img-wrap">
-              <img src={collabImg} alt="Two artisans collaborating in workshop" />
+              <img src={collabImg} alt="Two artisans crafting a joint project in a workshop" />
               <div className="comm-img-badge comm-img-badge--tl">
-                <span>🤝</span> Collaboration
+                <span>🤝</span> Joint Projects
               </div>
             </div>
           </div>
           <div className="comm-text-col reveal reveal-delay-2">
-            <span className="pill-tag">Collaboration</span>
-            <h3 className="comm-block-title">Create together, not just alongside.</h3>
-            <p className="comm-block-body">Invite fellow makers to co-author any project. Collaborative pieces appear in both portfolios, and every step added notifies the whole team.</p>
+            <span className="pill-tag">Joint Projects</span>
+            <h3 className="comm-block-title">One project, many hands.</h3>
+            <p className="comm-block-body">Start a joint project and invite fellow crafters. There's no boss — every crafter who joins gets equal control, and the piece lives in everyone's legacy.</p>
             <div className="comm-mini-cards">
               <div className="mini-card">
-                <span className="mini-card-icon">🤝</span>
+                <span className="mini-card-icon">👐</span>
                 <div>
-                  <strong>Co-Author Projects</strong>
-                  <p>Share ownership of the final piece across both portfolios simultaneously.</p>
+                  <strong>Equal Ownership</strong>
+                  <p>Every joined crafter can add steps, photos and time — no big avatar on top, just the Crafters roster.</p>
                 </div>
               </div>
               <div className="mini-card">
-                <span className="mini-card-icon">🔔</span>
+                <span className="mini-card-icon">🗳️</span>
                 <div>
-                  <strong>Live Activity Updates</strong>
-                  <p>Collaborators get instant notifications on new steps and photos.</p>
+                  <strong>Done Means Everyone</strong>
+                  <p>The project only completes when every crafter marks it done — and big decisions are voted, together.</p>
                 </div>
               </div>
             </div>
@@ -105,17 +105,17 @@ export default function Community() {
             <p className="comm-block-body">Host a giveaway for any project. Connections send a personal note explaining why they'd love it. You choose the recipient.</p>
             <div className="comm-mini-cards">
               <div className="mini-card">
-                <span className="mini-card-icon">🎁</span>
+                <span className="mini-card-icon">🎀</span>
                 <div>
-                  <strong>Request & Review</strong>
-                  <p>Receive heartfelt requests and personally select the most deserving recipient.</p>
+                  <strong>Wrap It Your Way</strong>
+                  <p>Pick the wrapping paper, bow, ribbon and confetti — the gift appears wrapped everywhere it's shown.</p>
                 </div>
               </div>
               <div className="mini-card">
                 <span className="mini-card-icon">💌</span>
                 <div>
-                  <strong>Occasion-Based Gifts</strong>
-                  <p>Tag giveaways with an occasion — birthday, anniversary, just because.</p>
+                  <strong>Requests or Direct Gifts</strong>
+                  <p>Review heartfelt requests and choose the recipient — or skip the queue and gift it directly to someone special.</p>
                 </div>
               </div>
             </div>
@@ -144,6 +144,13 @@ export default function Community() {
                   {h.highlight && <span className="honor-crown">★</span>}
                 </div>
               ))}
+            </div>
+            <div className="verified-card">
+              <span className="verified-badge-ring">🛡️</span>
+              <div>
+                <strong>Get Verified — show you're real</strong>
+                <p>Pass a quick on-device face & liveness check and wear the verified badge. Reviewers and gift-givers see a human, not a bot.</p>
+              </div>
             </div>
           </div>
         </div>
