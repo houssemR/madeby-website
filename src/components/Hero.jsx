@@ -75,7 +75,7 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="hero-title hero-animate">
-          Where makers leave<br />
+          Where crafters leave<br />
           <em className="hero-title-em">their mark.</em>
         </h1>
 

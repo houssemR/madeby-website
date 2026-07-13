@@ -38,8 +38,8 @@ export default function Verification() {
             <h2 className="verif-title">The Handmade Stamp.</h2>
             <p className="verif-body">
               Trust is at the core of our community. When you see the Craft MadeBy Handmade Stamp
-              on a project, a panel of proven makers has verified that it's a truly handcrafted
-              piece — and the stamp carries the maker's own name, like a wax seal.
+              on a project, a panel of proven crafters has verified that it's a truly handcrafted
+              piece — and the stamp carries the crafter's own name, like a wax seal.
             </p>
 
             <div className="verif-criteria">
@@ -71,7 +71,7 @@ export default function Verification() {
             <div className="verif-stamp-glow">
               <img src={stampImg} alt="Handmade Stamp" className="verif-stamp-img" />
             </div>
-            <p className="verif-stamp-caption">Sealed with the maker's name</p>
+            <p className="verif-stamp-caption">Sealed with the crafter's name</p>
 
             <div className="expert-panel-card">
               <div className="expert-panel-header">
@@ -80,7 +80,7 @@ export default function Verification() {
                 <span className="expert-badge">Expert Panel</span>
               </div>
               <p className="expert-desc">
-                <strong>Inspiring Leaders</strong> — makers who climbed the whole honor ladder —
+                <strong>Inspiring Leaders</strong> — crafters who climbed the whole honor ladder —
                 hold seats on the Expert Panel and keep the stamp honest, one review at a time.
               </p>
               <div className="expert-footer">

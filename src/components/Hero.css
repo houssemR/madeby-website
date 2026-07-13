@@ -92,6 +92,11 @@
   flex-direction: column;
   align-items: center;
   gap: var(--s3);
+  /* Never let long unbreakable children (the headline) size this flex item
+     wider than the screen — that pushed the title and CTAs off-screen on
+     phones and stopped the button row from wrapping. */
+  width: 100%;
+  min-width: 0;
 }
 
 /* Entrance animation */
@@ -197,6 +202,13 @@
   max-width: 800px;
   line-height: 1.1;
   margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .hero-title { font-size: clamp(2.2rem, 10.5vw, 3rem); }
+  /* Let the headline wrap naturally on narrow screens */
+  .hero-title br { display: none; }
+  .hero-ctas { width: 100%; }
 }
 
 .hero-title-em {

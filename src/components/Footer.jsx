@@ -9,7 +9,7 @@ export default function Footer() {
             <img src="/logo.svg" alt="Craft MadeBy" className="footer-logo" />
           </div>
           <span className="footer-brand-name">Craft MadeBy</span>
-          <p className="footer-brand-tagline">Where makers leave their mark.</p>
+          <p className="footer-brand-tagline">Where crafters leave their mark.</p>
           <div className="footer-store-links">
             <a href="#" className="footer-store-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -60,7 +60,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <span className="footer-copy">© 2026 Craft MadeBy. All rights reserved.</span>
-          <span className="footer-made">Made with ❤️ for makers</span>
+          <span className="footer-made">Made with ❤️ for crafters</span>
         </div>
       </div>
     </footer>

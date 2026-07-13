@@ -8,8 +8,8 @@ const sharingImg = '/images/craft_sharing.png';
 
 const privacyScopes = [
   { icon: '🌍', label: 'Public', desc: 'Anyone can discover your work', color: '#EDFFEC', accent: '#4D5235' },
-  { icon: '👥', label: 'Connections', desc: 'Only your maker network', color: '#FFF3CD', accent: '#7D6005' },
-  { icon: '🏠', label: 'Groups', desc: 'Specific maker circles', color: '#E8EFF5', accent: '#2C4A6E' },
+  { icon: '👥', label: 'Connections', desc: 'Only your crafter network', color: '#FFF3CD', accent: '#7D6005' },
+  { icon: '🏠', label: 'Groups', desc: 'Specific crafter circles', color: '#E8EFF5', accent: '#2C4A6E' },
   { icon: '🔒', label: 'Private', desc: 'Your personal log only', color: '#F5E9E9', accent: '#8B3636' },
 ];
 
@@ -30,7 +30,7 @@ export default function Community() {
         {/* Header */}
         <div className="comm-header reveal">
           <span className="section-eyebrow">✦ Community</span>
-          <h2 className="comm-main-title">Built for real makers,<br /><span className="gradient-text">not just collectors.</span></h2>
+          <h2 className="comm-main-title">Built for real crafters,<br /><span className="gradient-text">not just collectors.</span></h2>
         </div>
 
         {/* 1 — Joint Projects */}
@@ -70,13 +70,13 @@ export default function Community() {
         <div className="comm-block comm-block--reverse">
           <div className="comm-img-col reveal reveal-delay-1">
             <div className="comm-img-wrap">
-              <img src={groupsImg} alt="Maker group in a bright studio" />
+              <img src={groupsImg} alt="Crafter group in a bright studio" />
             </div>
           </div>
           <div className="comm-text-col reveal reveal-delay-2">
             <span className="pill-tag">Groups & Privacy</span>
             <h3 className="comm-block-title">Your audience, your rules.</h3>
-            <p className="comm-block-body">Create and join maker groups — from local craft circles to global communities. Every project has granular sharing controls.</p>
+            <p className="comm-block-body">Create and join crafter groups — from local craft circles to global communities. Every project has granular sharing controls.</p>
             <div className="privacy-grid">
               {privacyScopes.map((s, i) => (
                 <div key={i} className="privacy-card" style={{ '--card-bg': s.color, '--card-accent': s.accent }}>
