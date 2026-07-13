@@ -75,13 +75,13 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="hero-title hero-animate">
-          Where crafters leave<br />
+          Where crafters leave<br />{' '}
           <em className="hero-title-em">their mark.</em>
         </h1>
 
         {/* Sub */}
         <p className="hero-sub hero-animate">
-          Document your handmade projects, step by step and minute by minute.<br className="hero-br" />
+          Document your handmade projects, step by step and minute by minute.<br className="hero-br" />{' '}
           Share, gift and certify them. Leave a lasting legacy of craft.
         </p>
 
