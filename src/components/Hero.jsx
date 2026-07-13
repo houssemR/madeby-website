@@ -132,6 +132,19 @@ export default function Hero() {
             ))}
           </div>
         </div>
+
+        {/* App screenshot fan */}
+        <div className="hero-phones hero-animate">
+          <div className="hero-phone hero-phone-left">
+            <img src="/images/screens/22_step_a.png" alt="Documenting a project step in Craft MadeBy" loading="lazy" />
+          </div>
+          <div className="hero-phone hero-phone-center">
+            <img src="/images/screens/03_home.png" alt="Craft MadeBy home feed" />
+          </div>
+          <div className="hero-phone hero-phone-right">
+            <img src="/images/screens/05_details_top.png" alt="A Certified Handmade project in Craft MadeBy" loading="lazy" />
+          </div>
+        </div>
       </div>
 
       {/* Bottom fade */}

@@ -23,6 +23,7 @@ export default function Navbar() {
 
         <div className="nav-links">
           <a href="#howitworks">How it Works</a>
+          <a href="#app">The App</a>
           <a href="#projects">Projects</a>
           <a href="#community">Community</a>
           <a href="#verification">Verification</a>

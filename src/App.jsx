@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
 import HowItWorks from './components/HowItWorks'
+import AppShowcase from './components/AppShowcase'
 import Features from './components/Features'
 import Community from './components/Community'
 import Verification from './components/Verification'
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <Stats />
       <HowItWorks />
+      <AppShowcase />
       <Features />
       <Community />
       <Verification />
