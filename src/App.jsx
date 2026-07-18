@@ -8,6 +8,7 @@ import Community from './components/Community'
 import Verification from './components/Verification'
 import ExpertPanel from './components/ExpertPanel'
 import CTA from './components/CTA'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Verification />
       <ExpertPanel />
       <CTA />
+      <Contact />
       <Footer />
     </div>
   )

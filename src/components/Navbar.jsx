@@ -28,6 +28,7 @@ export default function Navbar() {
           <a href="#community">Community</a>
           <a href="#verification">Verification</a>
           <a href="#expertpanel">Expert Panel</a>
+          <a href="#contact">Contact</a>
         </div>
 
         <div className="nav-actions">
