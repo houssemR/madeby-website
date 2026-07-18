@@ -97,6 +97,21 @@
   background: var(--surface);
 }
 
+.contact-counter {
+  align-self: flex-end;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: var(--ink-muted) !important;
+}
+.contact-counter.at-limit {
+  color: #a33a2c !important;
+  font-weight: 700 !important;
+}
+
+.contact-limited-icon {
+  font-size: 1.3rem;
+}
+
 .contact-error {
   color: #a33a2c;
   background: #fbeeec;
