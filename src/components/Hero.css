@@ -351,6 +351,7 @@
 }
 
 .hero-phone {
+  position: relative;
   width: clamp(180px, 22vw, 250px);
   aspect-ratio: 412 / 915;
   border-radius: 36px;
@@ -360,10 +361,49 @@
   box-shadow: 0 30px 70px rgba(28, 24, 18, 0.28);
   transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
 }
-.hero-phone img {
+/* A status-bar "forehead" keeps chrome off the app content */
+.hero-phone--ios,
+.hero-phone--android {
+  background: var(--ink);
+}
+.hero-phone img,
+.hero-phone video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.hero-phone--ios img,
+.hero-phone--ios video,
+.hero-phone--android img,
+.hero-phone--android video {
+  margin-top: 24px;
+  height: calc(100% - 24px);
+  border-radius: 12px 12px 0 0;
+}
+/* Honest platform chrome: Dynamic Island vs punch-hole camera */
+.hero-phone::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.hero-phone--ios::before {
+  top: 7px;
+  width: 24%;
+  height: 10px;
+  border-radius: 999px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.hero-phone--android::before {
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .hero-phone-center {

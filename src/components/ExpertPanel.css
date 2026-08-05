@@ -313,3 +313,11 @@
   .panel-grid { grid-template-columns: 1fr; }
   .board-meta { display: none; }
 }
+
+/* ==== icon medal tints ==== */
+.board-medal { display: inline-flex; align-items: center; justify-content: center; }
+.board-medal--gold   { color: #C9A227; }
+.board-medal--silver { color: #9AA2AB; }
+.board-medal--bronze { color: #B07B4F; }
+.panel-card-title .icn { color: var(--gold); vertical-align: -0.22em; margin-right: 4px; }
+.panel-board-foot .icn { vertical-align: -0.22em; margin-right: 2px; }

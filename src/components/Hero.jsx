@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './Hero.css';
+import {
+  IconSparkle, IconYarn, IconNeedle, IconHoop, IconClay, IconGem,
+} from './Icons';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -49,7 +52,7 @@ export default function Hero() {
       <div className="container hero-content">
         {/* Launch Banner */}
         <div className="hero-launch-banner hero-animate">
-          <span className="launch-icon">🚀</span>
+          <IconSparkle size={20} />
           <span>Coming Soon</span>
         </div>
 
@@ -122,26 +125,34 @@ export default function Hero() {
           <div className="hero-marquee-track">
             {[0, 1].map((dup) => (
               <div key={dup} className="hero-marquee-group">
-                <span className="marquee-chip">🧶 Knitting & Crochet</span>
-                <span className="marquee-chip">🪡 Sewing & Textiles</span>
-                <span className="marquee-chip">🧵 Embroidery & Needlework</span>
-                <span className="marquee-chip">🏺 Clay & Ceramics</span>
-                <span className="marquee-chip">💍 Jewelry & Beading</span>
-                <span className="marquee-chip">✨ …and your own craft</span>
+                <span className="marquee-chip"><IconYarn size={16} /> Knitting & Crochet</span>
+                <span className="marquee-chip"><IconNeedle size={16} /> Sewing & Textiles</span>
+                <span className="marquee-chip"><IconHoop size={16} /> Embroidery & Needlework</span>
+                <span className="marquee-chip"><IconClay size={16} /> Clay & Ceramics</span>
+                <span className="marquee-chip"><IconGem size={16} /> Jewelry & Beading</span>
+                <span className="marquee-chip"><IconSparkle size={16} /> …and your own craft</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* App screenshot fan */}
+        {/* The app itself: live recording center, screens on the wings */}
         <div className="hero-phones hero-animate">
-          <div className="hero-phone hero-phone-left">
+          <div className="hero-phone hero-phone--android hero-phone-left">
             <img src="/images/screens/22_step_a.png" alt="Documenting a project step in Craft MadeBy" loading="lazy" />
           </div>
-          <div className="hero-phone hero-phone-center">
-            <img src="/images/screens/03_home.png" alt="Craft MadeBy home feed" />
+          <div className="hero-phone hero-phone--ios hero-phone-center">
+            <video
+              src="/videos/hero-app.mp4"
+              poster="/videos/hero-app-poster.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-label="A live browse through the Craft MadeBy app"
+            />
           </div>
-          <div className="hero-phone hero-phone-right">
+          <div className="hero-phone hero-phone--ios hero-phone-right">
             <img src="/images/screens/05_details_top.png" alt="A Certified Handmade project in Craft MadeBy" loading="lazy" />
           </div>
         </div>

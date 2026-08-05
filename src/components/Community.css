@@ -287,3 +287,157 @@
   color: var(--ink-muted);
   line-height: 1.5;
 }
+
+/* ==== APP VIGNETTES (replacing stock photography) ==== */
+.vig {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(120% 90% at 20% 10%, var(--green-ghost) 0%, transparent 55%),
+    radial-gradient(110% 90% at 85% 90%, rgba(201, 168, 106, 0.16) 0%, transparent 55%),
+    var(--cream-light);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-lg);
+  padding: var(--s5) var(--s4);
+  overflow: hidden;
+}
+.vig-card {
+  width: min(360px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--s3);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+.comm-img-col:hover .vig-card {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: var(--shadow-lg);
+}
+.vig-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--s2); }
+.vig-head strong { font-size: 1.15rem; letter-spacing: -0.01em; }
+.vig-chip {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green-mid);
+  background: var(--green-ghost);
+  border: 1px solid var(--green-pale);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+}
+.vig-avatars { display: flex; align-items: center; margin-bottom: var(--s2); }
+.vig-avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 2.5px solid var(--surface);
+  margin-left: -8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.vig-avatar:first-child { margin-left: 0; }
+.vig-avatars-note { margin-left: 10px; font-size: 0.8rem; color: var(--ink-muted); }
+.vig-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--s2); }
+.vig-rows li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.87rem;
+  color: var(--ink-soft);
+  background: var(--cream-light);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-sm);
+  padding: 9px 12px;
+}
+.vig-ok { color: var(--green-soft); }
+.vig-dot-pulse {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+.vig-foot { font-size: 0.75rem; color: var(--ink-muted); font-style: italic; }
+.vig-btn {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: var(--r-full);
+  background: var(--green-mid);
+  color: var(--green-ghost);
+  font-weight: 600;
+  font-size: 0.88rem;
+  pointer-events: none;
+}
+.vig-btn--gold { background: var(--gold-dark); color: #FFF8EA; }
+
+/* Gift vignette */
+.vig-gift { display: flex; flex-direction: column; align-items: center; gap: var(--s3); width: min(340px, 100%); }
+.vig-parcel {
+  position: relative;
+  width: 168px; height: 168px;
+  border-radius: 22px;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.5) 0 10px, transparent 10px 24px),
+    linear-gradient(150deg, var(--green-pale), var(--green-dim));
+  border: 1px solid var(--green-dim);
+  box-shadow: var(--shadow-md);
+  animation: parcelSway 5s ease-in-out infinite;
+}
+.vig-ribbon-v, .vig-ribbon-h {
+  position: absolute;
+  background: linear-gradient(90deg, var(--gold-bright), var(--gold));
+  opacity: 0.9;
+}
+.vig-ribbon-v { left: 50%; top: 0; bottom: 0; width: 18px; transform: translateX(-50%); }
+.vig-ribbon-h { top: 50%; left: 0; right: 0; height: 18px; transform: translateY(-50%); }
+.vig-bow {
+  position: absolute;
+  left: 50%; top: -16px;
+  transform: translateX(-50%);
+  color: var(--gold-dark);
+  background: var(--cream-light);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 7px;
+  width: 48px; height: 48px;
+  box-shadow: var(--shadow-sm);
+}
+@keyframes parcelSway {
+  0%, 100% { transform: rotate(-1.4deg); }
+  50%      { transform: rotate(1.4deg); }
+}
+.vig-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  padding: 12px 16px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.vig-note .icn { color: var(--gold-dark); margin-top: 2px; }
+
+/* Legacy device (real app video) */
+.comm-device-stage { display: flex; justify-content: center; }
+.comm-device { width: clamp(220px, 24vw, 290px); }
+
+@media (max-width: 900px) {
+  .vig { min-height: 340px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vig-parcel, .vig-dot-pulse { animation: none; }
+}

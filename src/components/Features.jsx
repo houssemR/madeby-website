@@ -1,28 +1,31 @@
 import { useReveal } from '../hooks';
 import './Features.css';
-
-const potteryImg = '/images/craft_pottery.png';
-const giveawayImg = '/images/craft_giveaway.png';
+import {
+  IconSteps, IconToolbox, IconReuse, IconStory,
+  IconStopwatch, IconBell, IconCheckCircle, IconCalendar,
+  IconBow, IconLetterHeart, IconGift, IconSparkle,
+  AppleLogo, AndroidLogo,
+} from './Icons';
 
 const bullets1 = [
-  { icon: '📋', text: 'Track work-in-progress step by step, each with its own title & photos' },
-  { icon: '🧰', text: 'Log materials AND tools with quantities & costs — totals auto-calculated' },
-  { icon: '♻️', text: 'Reuse a material on later steps without double-counting it' },
-  { icon: '📖', text: 'Write the story behind the craft' },
+  { icon: <IconSteps />, text: 'Track work-in-progress step by step, each with its own title & photos' },
+  { icon: <IconToolbox />, text: 'Log materials AND tools with quantities & costs — totals auto-calculated' },
+  { icon: <IconReuse />, text: 'Reuse a material on later steps without double-counting it' },
+  { icon: <IconStory />, text: 'Write the story behind the craft' },
 ];
 
 const bulletsTime = [
-  { icon: '⏱️', text: 'One independent stopwatch per step — run several at once' },
-  { icon: '🔔', text: 'Keeps counting in the background with a live notification' },
-  { icon: '✅', text: 'Register the time straight into the step when you stop' },
-  { icon: '📆', text: 'Honest totals in days, hours, minutes & seconds' },
+  { icon: <IconStopwatch />, text: 'One independent stopwatch per step — run several at once' },
+  { icon: <IconBell />, text: 'Keeps counting in the background with a live notification' },
+  { icon: <IconCheckCircle />, text: 'Register the time straight into the step when you stop' },
+  { icon: <IconCalendar />, text: 'Honest totals in days, hours, minutes & seconds' },
 ];
 
 const bullets2 = [
-  { icon: '🎀', text: 'Wrap it up: choose paper, bow, ribbon & confetti' },
-  { icon: '💌', text: 'Receive heartfelt requests from connections' },
-  { icon: '🎯', text: 'Or gift it directly to one special person' },
-  { icon: '🎉', text: 'Tag by occasion — birthdays, anniversaries' },
+  { icon: <IconBow />, text: 'Wrap it up: choose paper, bow, ribbon & confetti' },
+  { icon: <IconLetterHeart />, text: 'Receive heartfelt requests from connections' },
+  { icon: <IconGift />, text: 'Or gift it directly to one special person' },
+  { icon: <IconSparkle />, text: 'Tag by occasion — birthdays, anniversaries' },
 ];
 
 /* Animated CSS stopwatch — the visual for the Record Time row. */
@@ -36,27 +39,41 @@ function StopwatchVisual() {
           <span className="watch-live"><i />RECORDING</span>
         </div>
       </div>
-      <div className="watch-chip watch-chip--a">⏱️ Step 1 · 4h 12m</div>
-      <div className="watch-chip watch-chip--b">⏸️ Step 2 · paused</div>
-      <div className="watch-chip watch-chip--c">📆 10d 3h 30m total</div>
+      <div className="watch-chip watch-chip--a"><IconStopwatch size={15} /> Step 1 · 4h 12m</div>
+      <div className="watch-chip watch-chip--b"><IconBell size={15} /> Step 2 · paused</div>
+      <div className="watch-chip watch-chip--c"><IconCalendar size={15} /> 10d 3h 30m total</div>
     </div>
   );
 }
 
-function FeatureRow({ tag, title, body, bullets, img, alt, visual, reverse }) {
+/* A real phone running the real app — video or still, honest platform chrome. */
+function DeviceVisual({ video, poster, img, alt, platform }) {
+  return (
+    <div className="feat-device-stage">
+      <div className={`device device--${platform} feat-device`}>
+        <div className="device-screen">
+          {video ? (
+            <video src={video} poster={poster} autoPlay muted loop playsInline aria-label={alt} />
+          ) : (
+            <img src={img} alt={alt} loading="lazy" />
+          )}
+        </div>
+        <span className="device-tag">
+          {platform === 'ios' ? <AppleLogo size={12} /> : <AndroidLogo size={13} />}
+          {platform === 'ios' ? 'iPhone' : 'Android'}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function FeatureRow({ tag, title, body, bullets, visual, reverse }) {
   useReveal();
   return (
     <div className={`feat-row ${reverse ? 'feat-row--reverse' : ''}`}>
-      {/* Image / custom visual block */}
+      {/* Visual block */}
       <div className={`feat-img-block reveal ${reverse ? 'reveal-delay-2' : 'reveal-delay-1'}`}>
-        {visual ? (
-          visual
-        ) : (
-          <div className="feat-img-inner">
-            <img src={img} alt={alt} />
-            <div className="feat-img-overlay" />
-          </div>
-        )}
+        {visual}
         <div className="feat-img-float-badge">
           <span>{tag}</span>
         </div>
@@ -87,10 +104,16 @@ export default function Features() {
         <FeatureRow
           tag="Creative Journey"
           title="Start a project or add a finished piece."
-          body="Whether beginning a clay pot or adding a masterpiece, track every step — resources, hours, story — all in one beautiful place."
+          body="Whether beginning a clay pot or adding a masterpiece, track every step — resources, hours, story — all in one beautiful place. This is the real app, browsing a real maker's timeline."
           bullets={bullets1}
-          img={potteryImg}
-          alt="Artisan working on pottery"
+          visual={(
+            <DeviceVisual
+              video="/videos/journey.mp4"
+              poster="/videos/journey-poster.jpg"
+              alt="Browsing a maker's project timeline in the Craft MadeBy app"
+              platform="ios"
+            />
+          )}
           reverse={false}
         />
         <FeatureRow
@@ -106,8 +129,13 @@ export default function Features() {
           title="Give your craft. Receive gratitude."
           body="Host a giveaway for any project — wrapped in the paper, bow and confetti you pick. Connections request it with a personal note; you choose who unwraps it."
           bullets={bullets2}
-          img={giveawayImg}
-          alt="Handmade scarf packaged as a gift"
+          visual={(
+            <DeviceVisual
+              img="/images/screens/25_review_b.png"
+              alt="Wrapping a handmade gift in the Craft MadeBy app"
+              platform="android"
+            />
+          )}
           reverse={false}
         />
       </div>

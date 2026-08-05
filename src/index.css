@@ -88,10 +88,12 @@ h2 { font-weight: 700; }
 h3 { font-weight: 600; }
 
 /* ---- LAYOUT ---- */
+/* Wider canvas, slimmer gutters: the page breathes through its content,
+   not through empty side margins. */
 .container {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--s4);
+  padding: 0 clamp(1rem, 3vw, 1.75rem);
 }
 
 /* ---- BUTTONS ---- */
@@ -223,6 +225,83 @@ h3 { font-weight: 600; }
   pointer-events: none;
   border-radius: inherit;
   z-index: 0;
+}
+
+/* ---- ICONS ---- */
+.icn { flex-shrink: 0; display: inline-block; vertical-align: -0.18em; }
+
+/* ---- DEVICE FRAMES ----
+   Real app screens/videos live inside honest phone chrome. Two variants:
+   iOS (Dynamic Island pill) and Android (centered punch-hole camera). */
+.device {
+  position: relative;
+  border-radius: 38px;
+  background: var(--ink);
+  padding: 10px;
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.06) inset,
+    var(--shadow-lg);
+}
+.device-screen {
+  position: relative;
+  border-radius: 29px;
+  overflow: hidden;
+  background: var(--ink);
+  aspect-ratio: 443 / 960;
+}
+/* Reserve a status-bar "forehead" so the chrome never covers app content */
+.device-screen > img,
+.device-screen > video {
+  width: 100%;
+  height: calc(100% - 26px);
+  margin-top: 26px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px 14px 0 0;
+}
+.device::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.device--ios::after {
+  top: 20px;
+  width: 22%;
+  height: 3.2%;
+  border-radius: 999px;
+  background: var(--ink);
+}
+.device--android::after {
+  top: 19px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+/* Small platform tag hanging off the bottom edge of a device */
+.device-tag {
+  position: absolute;
+  z-index: 3;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-light);
+  background: rgba(28, 24, 18, 0.82);
+  backdrop-filter: blur(6px);
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
 }
 
 /* ---- APP CONTAINER ---- */

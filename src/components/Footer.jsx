@@ -60,7 +60,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <span className="footer-copy">© 2026 Craft MadeBy. All rights reserved.</span>
-          <span className="footer-made">Made with ❤️ for crafters</span>
+          <span className="footer-made">Made by hand, for people who make by hand.</span>
         </div>
       </div>
     </footer>

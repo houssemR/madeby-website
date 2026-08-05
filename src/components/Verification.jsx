@@ -1,27 +1,30 @@
 import { useReveal } from '../hooks';
 import './Verification.css';
+import {
+  IconFlag, IconSteps, IconCamera, IconCompass, IconScale, IconHourglass, IconStar,
+} from './Icons';
 
 const stampImg = '/images/completion_stamp.png';
 
 const criteria = [
-  { icon: '🏁', text: 'Completed project' },
-  { icon: '📚', text: 'At least 5 documented steps' },
-  { icon: '📸', text: 'At least one live camera photo' },
+  { icon: <IconFlag size={16} />, text: 'Completed project' },
+  { icon: <IconSteps size={16} />, text: 'At least 5 documented steps' },
+  { icon: <IconCamera size={16} />, text: 'At least one live camera photo' },
 ];
 
 const process = [
   {
-    icon: '🧭',
+    icon: <IconCompass size={22} />,
     title: 'Reviewed by real experts of your craft',
     body: 'Three Inspiring Leaders are assigned — each certified handmade in your project\'s own category. Knitting is judged by knitters.',
   },
   {
-    icon: '⚖️',
+    icon: <IconScale size={22} />,
     title: 'The majority decides',
     body: 'Reviewers walk through every step, photo, time log and material before voting. Two of three approvals earn the stamp.',
   },
   {
-    icon: '⏳',
+    icon: <IconHourglass size={22} />,
     title: 'Never stuck in a queue',
     body: 'Every reviewer has 7 days to decide. Declined? You can appeal once for a final review by the Craft MadeBy team.',
   },
@@ -75,7 +78,7 @@ export default function Verification() {
 
             <div className="expert-panel-card">
               <div className="expert-panel-header">
-                <span className="expert-icon">🌟</span>
+                <span className="expert-icon"><IconStar size={22} /></span>
                 <h4>Who reviews?</h4>
                 <span className="expert-badge">Expert Panel</span>
               </div>

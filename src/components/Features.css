@@ -21,6 +21,17 @@
   position: relative;
 }
 
+/* Phone-framed app video/screenshot in a feature row */
+.feat-device-stage {
+  display: flex;
+  justify-content: center;
+  padding: var(--s3) 0;
+}
+.feat-device {
+  width: clamp(220px, 26vw, 300px);
+}
+.feat-device .device-screen { background: var(--cream-light); }
+
 .feat-img-inner {
   border-radius: var(--r-xl);
   overflow: hidden;

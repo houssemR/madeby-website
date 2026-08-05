@@ -1,12 +1,16 @@
 import { useRef } from 'react';
 import { useReveal, useCounter } from '../hooks';
 import './ExpertPanel.css';
+import {
+  IconToolbox, IconSparkle, IconTrophy, IconStar,
+  IconLadder, IconTarget, IconMedal, IconMegaphone,
+} from './Icons';
 
 const ladder = [
-  { icon: '🔨', label: 'Crafter', rule: 'Everyone starts here' },
-  { icon: '✨', label: 'Artisan', rule: 'Complete 3 projects' },
-  { icon: '🏆', label: 'Master Artisan', rule: 'Earn 2 Certified Handmade' },
-  { icon: '🌟', label: 'Inspiring Leader', rule: 'Collect 10 reactions', highlight: true },
+  { icon: <IconToolbox size={20} />, label: 'Crafter', rule: 'Everyone starts here' },
+  { icon: <IconSparkle size={20} />, label: 'Artisan', rule: 'Complete 3 projects' },
+  { icon: <IconTrophy size={20} />, label: 'Master Artisan', rule: 'Earn 2 Certified Handmade' },
+  { icon: <IconStar size={20} />, label: 'Inspiring Leader', rule: 'Collect 10 reactions', highlight: true },
 ];
 
 const points = [
@@ -16,10 +20,10 @@ const points = [
 ];
 
 const board = [
-  { medal: '🥇', name: 'Ingrid K.', craft: 'Knitting & Crochet', decided: 48, avg: '11h', pts: 640 },
-  { medal: '🥈', name: 'Mateo R.', craft: 'Clay & Ceramics', decided: 41, avg: '1d 2h', pts: 552 },
-  { medal: '🥉', name: 'Amara D.', craft: 'Jewelry & Beading', decided: 37, avg: '19h', pts: 511 },
-  { medal: '#4', name: 'You?', craft: 'Your craft here', decided: null, avg: null, pts: null, you: true },
+  { rank: 'gold', name: 'Ingrid K.', craft: 'Knitting & Crochet', decided: 48, avg: '11h', pts: 640 },
+  { rank: 'silver', name: 'Mateo R.', craft: 'Clay & Ceramics', decided: 41, avg: '1d 2h', pts: 552 },
+  { rank: 'bronze', name: 'Amara D.', craft: 'Jewelry & Beading', decided: 37, avg: '19h', pts: 511 },
+  { rank: '#4', name: 'You?', craft: 'Your craft here', decided: null, avg: null, pts: null, you: true },
 ];
 
 function BoardRow({ row, delay }) {
@@ -27,7 +31,9 @@ function BoardRow({ row, delay }) {
   useCounter(ptsRef, row.pts ?? 0, 1600);
   return (
     <div className={`board-row reveal reveal-delay-${delay} ${row.you ? 'board-row--you' : ''}`}>
-      <span className="board-medal">{row.medal}</span>
+      <span className={`board-medal ${row.you ? '' : `board-medal--${row.rank}`}`}>
+        {row.you ? row.rank : <IconMedal size={22} />}
+      </span>
       <div className="board-avatar">{row.name.charAt(0)}</div>
       <div className="board-who">
         <strong>{row.name}</strong>
@@ -68,7 +74,7 @@ export default function ExpertPanel() {
           {/* Left: the honor ladder + duties */}
           <div className="panel-col reveal reveal-delay-1">
             <div className="panel-card">
-              <h3 className="panel-card-title">🪜 The honor ladder</h3>
+              <h3 className="panel-card-title"><IconLadder size={19} /> The honor ladder</h3>
               <div className="panel-ladder">
                 {ladder.map((h, i) => (
                   <div key={i} className={`ladder-rung ${h.highlight ? 'ladder-rung--top' : ''}`}>
@@ -77,14 +83,14 @@ export default function ExpertPanel() {
                       <strong>{h.label}</strong>
                       <p>{h.rule}</p>
                     </div>
-                    {h.highlight && <span className="ladder-seat">Panel seat 🎓</span>}
+                    {h.highlight && <span className="ladder-seat">Panel seat ✦</span>}
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="panel-card">
-              <h3 className="panel-card-title">🎯 The reviewer score</h3>
+              <h3 className="panel-card-title"><IconTarget size={19} /> The reviewer score</h3>
               <div className="panel-points">
                 {points.map((p, i) => (
                   <div key={i} className="point-row">
@@ -113,7 +119,7 @@ export default function ExpertPanel() {
                 ))}
               </div>
               <div className="panel-board-foot">
-                <span>📣 Proud of your rank? Share your reviewer stats straight to your feed and groups.</span>
+                <span><IconMegaphone size={16} /> Proud of your rank? Share your reviewer stats straight to your feed and groups.</span>
               </div>
             </div>
           </div>

@@ -108,3 +108,6 @@
   .steps-grid { grid-template-columns: 1fr; }
   .how-title { font-size: 1.8rem; }
 }
+
+/* stroke icons inherit the section's sage voice */
+.step-icon { display: inline-flex; color: var(--green-mid); }
