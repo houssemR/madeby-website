@@ -9,8 +9,8 @@ import {
 const ladder = [
   { icon: <IconToolbox size={20} />, label: 'Crafter', rule: 'Everyone starts here' },
   { icon: <IconSparkle size={20} />, label: 'Artisan', rule: 'Complete 3 projects' },
-  { icon: <IconTrophy size={20} />, label: 'Master Artisan', rule: 'Earn 2 Certified Handmade' },
-  { icon: <IconStar size={20} />, label: 'Inspiring Leader', rule: 'Collect 10 reactions', highlight: true },
+  { icon: <IconTrophy size={20} />, label: 'Master Artisan', rule: 'Earn 4 Certified Handmade' },
+  { icon: <IconStar size={20} />, label: 'Inspiring Leader', rule: '10 new reactions + 1 more certified', highlight: true },
 ];
 
 const points = [
