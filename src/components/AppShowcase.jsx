@@ -20,8 +20,8 @@ const screens = [
     img: '10_timeline.png',
     icon: <IconStory size={15} />,
     chip: 'Craft journal',
-    caption: 'Your year in making, on one timeline',
-    alt: 'The Craft MadeBy timeline of projects and milestones',
+    caption: 'Every step of the making, on one timeline',
+    alt: 'A project timeline with documented steps in Craft MadeBy',
     platform: 'android',
   },
   {

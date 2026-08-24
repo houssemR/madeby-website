@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Stats from './components/Stats'
 import HowItWorks from './components/HowItWorks'
+import Mascots from './components/Mascots'
 import AppShowcase from './components/AppShowcase'
 import Features from './components/Features'
 import Community from './components/Community'
@@ -16,8 +16,8 @@ function App() {
     <div className="app-container">
       <Navbar />
       <Hero />
-      <Stats />
       <HowItWorks />
+      <Mascots />
       <AppShowcase />
       <Features />
       <Community />

@@ -1,0 +1,156 @@
+/* ==========================================
+   MASCOTS — Your Craft Corner
+   A calm sage room: text left, the live Theme
+   tab right, the mascot family beneath.
+   ========================================== */
+
+.mascots-section {
+  position: relative;
+  padding: var(--s8) 0;
+  background: var(--green-ghost);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+
+.mascots-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+/* ---- Text column ---- */
+.mascots-title {
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  color: var(--ink);
+  margin-bottom: var(--s2);
+  text-wrap: balance;
+}
+
+.mascots-sub {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-bottom: var(--s4);
+}
+
+.mascots-points {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.mascots-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.mascots-point-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--green-pale);
+  color: var(--green-mid);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.mascots-points strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.mascots-points p {
+  color: var(--ink-muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+/* ---- Device column ---- */
+.mascots-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.mascots-device {
+  width: min(300px, 72vw);
+}
+
+/* ---- The family row ---- */
+.mascots-family {
+  grid-column: 1 / -1;
+  margin-top: var(--s5);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--green-pale);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2.5vw, 2rem);
+}
+
+.mascot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 128px;
+  text-align: center;
+}
+
+.mascot-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mascot-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.mascot-card:hover img {
+  transform: translateY(-6px) rotate(-2deg);
+}
+
+.mascot-card strong {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.mascot-card span {
+  color: var(--ink-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .mascots-grid {
+    grid-template-columns: 1fr;
+  }
+  .mascots-visual {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-card img,
+  .mascot-card:hover img {
+    transition: none;
+    transform: none;
+  }
+}

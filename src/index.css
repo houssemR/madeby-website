@@ -3,32 +3,33 @@
    ========================================== */
 
 :root {
-  /* Core Palette */
-  --cream:       #F1E9D8;
-  --cream-light: #FAF6EE;
-  --cream-dark:  #E8DCC8;
-  --ink:         #1C1812;
-  --ink-soft:    #3D3A34;
-  --ink-muted:   #6B6860;
+  /* Core Palette — the app's Atelier language: porcelain ground, charcoal
+     ink, pine greens. Calm by construction. */
+  --cream:       #FAF9F7;
+  --cream-light: #FFFFFF;
+  --cream-dark:  #F0EDE8;
+  --ink:         #26221C;
+  --ink-soft:    #45403A;
+  --ink-muted:   #7A7469;
 
-  /* Greens */
-  --green-deep:  #3A4228;
-  --green-mid:   #4D5235;
-  --green-soft:  #617964;
-  --green-pale:  #CFE9D0;
-  --green-ghost: #EDFFEC;
-  --green-dim:   #B4CDB5;
+  /* Greens — pine family from the app theme */
+  --green-deep:  #344C3D;
+  --green-mid:   #4D6450;
+  --green-soft:  #8EA58C;
+  --green-pale:  #DFE9DB;
+  --green-ghost: #F2F6F0;
+  --green-dim:   #BFCFBB;
 
-  /* Gold */
+  /* Gold — kept only for the seal/premium moments */
   --gold:        #C9A86A;
-  --gold-bright: #E6C988;
+  --gold-bright: #E0C68E;
   --gold-dark:   #A08040;
 
   /* Surfaces */
   --surface:     #FFFFFF;
-  --surface-2:   #F4ECE8;
-  --border:      #E2D9CC;
-  --border-soft: #EDE7DC;
+  --surface-2:   #F5F3EF;
+  --border:      #E7E3DC;
+  --border-soft: #EFECE6;
 
   /* Shadows */
   --shadow-sm:  0 2px 8px rgba(28, 24, 18, 0.06);
@@ -39,9 +40,9 @@
   /* Green shadows */
   --shadow-green: 0 20px 60px rgba(77, 82, 53, 0.15);
 
-  /* Typography */
-  --font-sans:   'Inter', -apple-system, sans-serif;
-  --font-serif:  'Playfair Display', Georgia, serif;
+  /* Typography — same faces as the app */
+  --font-sans:   'Hanken Grotesk', -apple-system, sans-serif;
+  --font-serif:  'Outfit', -apple-system, sans-serif;
 
   /* Spacing */
   --s1:  0.5rem;
@@ -82,8 +83,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ul { list-style: none; }
 
 /* ---- TYPOGRAPHY ---- */
-h1, h2, h3 { line-height: 1.15; letter-spacing: -0.03em; }
-h1 { font-family: var(--font-serif); font-weight: 800; }
+h1, h2, h3 { font-family: var(--font-serif); line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-weight: 700; }
 h2 { font-weight: 700; }
 h3 { font-weight: 600; }
 

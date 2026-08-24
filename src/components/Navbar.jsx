@@ -23,16 +23,15 @@ export default function Navbar() {
 
         <div className="nav-links">
           <a href="#howitworks">How it Works</a>
+          <a href="#mascots">Mascots</a>
           <a href="#app">The App</a>
-          <a href="#projects">Projects</a>
           <a href="#community">Community</a>
           <a href="#verification">Verification</a>
-          <a href="#expertpanel">Expert Panel</a>
           <a href="#contact">Contact</a>
         </div>
 
         <div className="nav-actions">
-          <a href="#" className="btn btn-primary btn-nav-sm">Download Free</a>
+          <a href="https://apps.apple.com/app/id6792596703" target="_blank" rel="noopener" className="btn btn-primary btn-nav-sm">Download Free</a>
         </div>
       </div>
     </nav>
