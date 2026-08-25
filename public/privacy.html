@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy · Craft MadeBy</title>
-  <meta name="description" content="How Craft MadeBy collects, uses, and protects your information." />
+  <meta name="description" content="How Craft MadeBy collects, uses and protects your information." />
   <style>
     :root{
       --bg:#FBF8F2; --card:#FFFFFF; --ink:#2B2620; --muted:#6F675B;
@@ -23,11 +23,14 @@
     .updated{color:var(--muted);font-size:14px;margin-bottom:28px}
     h2{font-size:20px;margin:34px 0 8px;font-weight:700}
     p{margin:0 0 14px}
+    ul{margin:0 0 14px;padding-left:22px}
+    li{margin:4px 0}
     a{color:var(--gold-dark);font-weight:600}
     .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 26px 10px;
       box-shadow:0 10px 30px rgba(201,168,106,.06)}
     .accent{height:4px;width:64px;background:linear-gradient(90deg,#E6C988,#C9A86A);border-radius:999px;margin:0 0 22px}
-    nav.docs{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
+    .version{color:var(--muted);font-size:13px;margin-top:34px}
+    nav.docs{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
     nav.docs a{font-size:14px}
     footer{color:var(--muted);font-size:13px;margin-top:26px}
   </style>
@@ -36,34 +39,62 @@
   <div class="wrap">
     <header><div class="logo-wrap"><img src="/logo.svg" alt="Craft MadeBy" class="logo-img" /></div><div class="brand">Craft MadeBy</div></header>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: June 2026</div>
+    <div class="updated">Version 2.0 · Last updated 25 August 2026</div>
     <div class="card">
       <div class="accent"></div>
-      <p>This Privacy Policy explains what information Craft MadeBy (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects, how we use it, and your choices. By using the app you agree to this policy.</p>
+      <p>This Privacy Policy explains what information Craft MadeBy (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects, how we use it, who we share it with, and the choices and rights you have.</p>
+      <p>Craft MadeBy is the data controller for the personal data described here. You can reach us at <a href="mailto:support@craftmadeby.com">support@craftmadeby.com</a>.</p>
 
       <h2>Information we collect</h2>
-      <p><strong>Account information you provide:</strong> email address, display name, and (optionally) a profile photo and bio. If you sign in with Google, we receive your basic Google profile (name, email, avatar).</p>
-      <p><strong>Content you create:</strong> projects, photos, steps, materials, techniques, comments, reactions, groups, and giveaway details.</p>
-      <p><strong>Technical data:</strong> a device push-notification token, app language, and basic diagnostics/crash reports (via Firebase Crashlytics) to keep the app stable.</p>
+      <p>Account information you provide:</p>
+      <ul><li>Email address and display name.</li><li>Optionally, a profile photo and a short bio.</li><li>If you sign in with Google or Apple, the basic profile they share with us (name, email address and, for Google, your avatar). Apple may give us a private relay address instead of your real email.</li></ul>
+      <p>Content you create:</p>
+      <ul><li>Projects: title, story, photos, steps and notes, techniques, materials, tools and their costs, recorded time, dates and visibility.</li><li>Reactions, connections, invite codes, groups, giveaways and gifts, Expert Panel reviews, and reports or blocks you submit.</li></ul>
+      <p>Profile verification (optional):</p>
+      <ul><li>If you choose to verify that you are a real person, a face and smile check runs entirely on your device (Google ML Kit). The selfie is never uploaded or stored; we record only that the check succeeded.</li></ul>
+      <p>Technical data:</p>
+      <ul><li>Your country, taken from your device's region setting, so the public feed can favour makers near you.</li><li>Your app language, app version and device model.</li><li>A push-notification token for your device, if you allow notifications.</li><li>App-usage analytics (Google Firebase Analytics), linked to your account id, so we can see which features are used.</li><li>Crash, error and performance reports (Sentry). They contain no screenshots and no personal identifiers beyond your account id.</li><li>Your subscription status (RevenueCat), when Premium is available. We never receive your card details.</li></ul>
 
       <h2>How we use it</h2>
-      <p>To provide the app: create your account, show your projects and feeds, deliver notifications, and run features like the Expert Panel and giveaways. To keep the community safe (moderation and handling reports). To improve reliability and fix crashes. <strong>We do not sell your personal data.</strong></p>
+      <p>We use the data listed above to run the app: to create your account, show your projects and feeds, deliver notifications, and run features such as connections, groups, giveaways, the Expert Panel and handmade certification.</p>
+      <p>We also use it to keep the community safe. Photos and text you upload are checked automatically for unsafe content (Google Cloud Vision and Natural Language APIs), and reports are reviewed by us.</p>
+      <p>Finally, we use it to keep the app reliable: to understand how features are used, to fix crashes, and to improve performance.</p>
+      <p>Under the GDPR our legal bases are: performing our contract with you (running the app), our legitimate interests (safety, reliability, understanding usage), your consent (push notifications, profile verification, promotion of your public work), and legal obligations.</p>
+      <p>We do not sell your personal data.</p>
+
+      <h2>Who can see your work</h2>
+      <p>You choose the visibility of every project when you create it, and you can change it at any time:</p>
+      <ul><li>Private: Only you.</li><li>Connections: The makers you are connected with.</li><li>Groups: The members of the groups you post it to.</li><li>Public: Everyone using the app, with your display name and profile photo.</li></ul>
+      <p>Projects you submit for handmade certification are shown to the Expert Panel reviewers who assess them. Your display name, profile photo, bio, honours and public projects form your public profile.</p>
+
+      <h2>Promotion of the app</h2>
+      <p>We may show the cover photo, title and maker name of Public projects, and tips you post in the Studio, in the app's own showcases and in our promotion of the app, for example on the app stores and social media. Your work is always credited to you, and never edited beyond cropping.</p>
+      <p>Private and Connections-only projects are never used. If you prefer that your public work is not featured, make the project non-public, delete the tip, or write to <a href="mailto:support@craftmadeby.com">support@craftmadeby.com</a> and we will exclude it.</p>
 
       <h2>Service providers</h2>
-      <p>We use trusted processors to run the app: Supabase (database, authentication, storage), Google Firebase (push notifications, crash reporting), Google Sign-In, and our email provider for account emails. Payments, when available, are processed by Apple/Google and RevenueCat — we never receive your card details.</p>
+      <p>We use trusted processors to run the app:</p>
+      <ul><li>Supabase (database, authentication, file storage and account emails), hosted in the EU (Ireland).</li><li>Sentry (error and performance monitoring), hosted in the EU (Germany).</li><li>Google Firebase (push notifications and app analytics).</li><li>Google Cloud Vision and Natural Language APIs (automatic content moderation).</li><li>Google Sign-In and Sign in with Apple (optional sign-in methods).</li><li>Apple, Google Play and RevenueCat (Premium payments and subscription status, when available). We never receive your card details.</li></ul>
+      <p>Providers based outside the EU process data under the EU–US Data Privacy Framework or the European Commission's standard contractual clauses. We share data with authorities only when the law requires it.</p>
 
       <h2>Data security &amp; retention</h2>
-      <p>Data is encrypted in transit. We keep your information while your account is active. You can delete your account at any time from <strong>Settings → Delete account</strong>, which permanently removes your profile and content.</p>
+      <p>Your data is encrypted in transit and at rest. Access to our systems is limited to what each part of the app needs, and photos in storage can only be changed by the maker who uploaded them.</p>
+      <p>How long we keep it:</p>
+      <ul><li>While your account is active, so your projects, connections and history are there when you return.</li><li>Unconfirmed sign-ups are deleted automatically after 7 days.</li><li>When you delete a project, it and its photos are removed. When you delete your account, your login, profile, projects, photos, connections, reactions, notifications and device tokens are removed. Copies in backups expire within 30 days.</li><li>Crash reports are kept for 90 days and analytics data for up to 14 months.</li></ul>
 
       <h2>Your choices</h2>
-      <p>You can edit your profile, turn push notifications off, request your data, or delete your account. To exercise any privacy right, contact us at <a href="mailto:support@craftmadeby.com">support@craftmadeby.com</a>.</p>
+      <p>In the app, without contacting us:</p>
+      <ul><li>Edit your profile, photo and bio.</li><li>Change the visibility of any project, or delete it.</li><li>Turn push notifications off in Settings or in your phone's settings.</li><li>Block or report makers and content.</li><li>Delete your account: Settings → Delete account.</li></ul>
+      <p>By email to <a href="mailto:support@craftmadeby.com">support@craftmadeby.com</a>:</p>
+      <ul><li>Ask for a copy of your data (access and portability).</li><li>Ask us to correct or restrict the use of your data, or object to it.</li><li>Withdraw a consent you have given.</li><li>Ask us not to feature your public work.</li></ul>
+      <p>We answer within one month. You can also complain to your local data protection authority, for example Datatilsynet in Denmark.</p>
 
       <h2>Children</h2>
-      <p>Craft MadeBy is not directed to children under 13 (or the minimum age in your country). We do not knowingly collect data from children.</p>
+      <p>Craft MadeBy is not directed to children under 13 (or the minimum age in your country). We do not knowingly collect data from children; if you believe a child has given us data, contact us and we will delete it.</p>
 
       <h2>Changes</h2>
-      <p>We may update this policy; significant changes will be reflected by the date above and, where appropriate, an in-app notice.</p>
+      <p>The version number and date at the top of this page tell you which policy applies. When we make significant changes we also show a notice in the app. Earlier versions are available on request.</p>
 
+      <div class="version">Privacy Policy — Version 2.0 · Last updated 25 August 2026</div>
       <nav class="docs">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
