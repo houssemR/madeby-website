@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "Y6T6RT8BDZ.com.craftmadeby.app",
+        "paths": ["/m/*"],
+        "components": [
+          { "/": "/m/*", "comment": "Maker profile links: craftmadeby.com/m/<INVITE-CODE>" }
+        ]
+      }
+    ]
+  }
+}

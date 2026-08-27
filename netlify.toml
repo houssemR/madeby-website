@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# Maker profile links (craftmadeby.com/m/<CODE>): a Netlify edge function
+# fetches the server-rendered page from the Supabase `profile-card` function
+# and re-serves it as text/html (a plain proxy rule would pass Supabase's
+# text/plain downgrade through). See netlify/edge-functions/profile-card.ts.
+[[edge_functions]]
+  path = "/m/*"
+  function = "profile-card"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.craftmadeby.app",
+      "sha256_cert_fingerprints": [
+        "A0:B7:0D:2C:63:6A:1D:C5:91:38:98:BE:A6:01:FC:D8:0C:F7:F1:6D:52:94:7D:3E:1F:23:EC:BD:2F:22:99:FB"
+      ]
+    }
+  }
+]

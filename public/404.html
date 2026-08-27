@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Craft MadeBy</title>
+  <meta name="robots" content="noindex">
+  <!--
+    GitHub Pages fallback for maker profile links (craftmadeby.com/m/<CODE>).
+
+    The real page is server-rendered by the Supabase edge function
+    `profile-card` (it carries the Open Graph tags that give the link a rich
+    preview). On a host that can proxy (Netlify: see netlify.toml) /m/* is
+    served from there directly. On GitHub Pages nothing dynamic can run, so
+    this 404 page fetches that HTML and shows it in place — visitors still
+    see the card, QR and "Open in app"; only the social preview stays generic.
+  -->
+  <style>
+    body{margin:0;background:#FFF8F5;color:#1E1B19;font-family:system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:24px}
+    a{color:#2F4A3C}
+  </style>
+</head>
+<body>
+  <div id="msg">Loading…</div>
+  <script>
+    (function () {
+      var m = location.pathname.match(/^\/m\/([A-Za-z0-9-]{3,32})\/?$/);
+      var msg = document.getElementById('msg');
+      if (!m) {
+        msg.innerHTML = '<h1>Page not found</h1><p><a href="/">Back to craftmadeby.com</a></p>';
+        return;
+      }
+      var code = m[1].toUpperCase();
+      var src = 'https://yudqqdnpyguyekqcjvhr.supabase.co/functions/v1/profile-card/' + encodeURIComponent(code);
+      fetch(src).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.text();
+      }).then(function (html) {
+        document.open();
+        document.write(html);
+        document.close();
+        history.replaceState(null, '', '/m/' + code);
+      }).catch(function () {
+        msg.innerHTML = '<h1>This invite link is no longer valid</h1><p><a href="/">Back to craftmadeby.com</a></p>';
+      });
+    })();
+  </script>
+</body>
+</html>
