@@ -20,13 +20,15 @@ const notFound = () =>
   );
 
 export default async (request: Request, context: Context) => {
-  const m = new URL(request.url).pathname.match(/^\/m\/([A-Za-z0-9-]{3,32})\/?$/);
+  // /m/<invite code> = maker profile, /p/<share code> = a piece.
+  const m = new URL(request.url).pathname.match(/^\/(m|p)\/([A-Za-z0-9-]{3,32})\/?$/);
   if (!m) return context.next();
-  const code = m[1].toUpperCase();
+  const code = m[2].toUpperCase();
+  const path = (m[1] === "p" ? "p/" : "") + encodeURIComponent(code);
 
   let upstream: Response;
   try {
-    upstream = await fetch(`${UPSTREAM}/${encodeURIComponent(code)}`, {
+    upstream = await fetch(`${UPSTREAM}/${path}`, {
       headers: { "user-agent": request.headers.get("user-agent") ?? "craftmadeby.com" },
     });
   } catch {

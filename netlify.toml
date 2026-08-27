@@ -10,6 +10,10 @@
   path = "/m/*"
   function = "profile-card"
 
+[[edge_functions]]
+  path = "/p/*"
+  function = "profile-card"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Craft MadeBy</title>
   <meta name="robots" content="noindex">
+  <!-- Link-preview tags for scrapers that land here (they don't run the
+       script below): a generic branded card. Per-maker previews need the
+       page served with a 200 from a host that can proxy /m/* (e.g. a
+       Cloudflare Worker in front of GitHub Pages). -->
+  <meta property="og:site_name" content="Craft MadeBy">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A maker on Craft MadeBy">
+  <meta property="og:description" content="See their handmade pieces and connect with them in the app. Handmade · Documented · Celebrated.">
+  <meta property="og:image" content="https://craftmadeby.com/images/screens/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A maker on Craft MadeBy">
+  <meta name="twitter:description" content="See their handmade pieces and connect with them in the app.">
+  <meta name="twitter:image" content="https://craftmadeby.com/images/screens/home.png">
   <!--
     GitHub Pages fallback for maker profile links (craftmadeby.com/m/<CODE>).
 
@@ -24,14 +39,15 @@
   <div id="msg">Loading…</div>
   <script>
     (function () {
-      var m = location.pathname.match(/^\/m\/([A-Za-z0-9-]{3,32})\/?$/);
+      // /m/<invite code> = maker profile, /p/<share code> = a piece.
+      var m = location.pathname.match(/^\/(m|p)\/([A-Za-z0-9-]{3,32})\/?$/);
       var msg = document.getElementById('msg');
       if (!m) {
         msg.innerHTML = '<h1>Page not found</h1><p><a href="/">Back to craftmadeby.com</a></p>';
         return;
       }
-      var code = m[1].toUpperCase();
-      var src = 'https://yudqqdnpyguyekqcjvhr.supabase.co/functions/v1/profile-card/' + encodeURIComponent(code);
+      var kind = m[1], code = m[2].toUpperCase();
+      var src = 'https://yudqqdnpyguyekqcjvhr.supabase.co/functions/v1/profile-card/' + (kind === 'p' ? 'p/' : '') + encodeURIComponent(code);
       fetch(src).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.text();
@@ -39,7 +55,7 @@
         document.open();
         document.write(html);
         document.close();
-        history.replaceState(null, '', '/m/' + code);
+        history.replaceState(null, '', '/' + kind + '/' + code);
       }).catch(function () {
         msg.innerHTML = '<h1>This invite link is no longer valid</h1><p><a href="/">Back to craftmadeby.com</a></p>';
       });
