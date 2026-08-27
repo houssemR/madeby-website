@@ -17,21 +17,11 @@
   gap: var(--s2);
 }
 
-.footer-logo-wrap {
+.footer-logo {
   width: 40px; height: 40px;
-  background: var(--green-mid);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.3s var(--ease-out);
 }
-.footer-logo-wrap:hover { transform: rotate(-8deg); }
-
-.footer-logo {
-  width: 24px; height: auto;
-  filter: brightness(0) invert(1);
-}
+.footer-logo:hover { transform: rotate(-8deg); }
 
 .footer-brand-name {
   font-weight: 700;
@@ -126,4 +116,10 @@
 @media (max-width: 600px) {
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom .container { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+/* The closing seam, between the link columns and the copyright bar. */
+.footer-seam {
+  margin: var(--s5) auto var(--s4);
+  width: min(100%, 38rem);
 }

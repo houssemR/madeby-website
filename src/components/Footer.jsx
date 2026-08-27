@@ -1,13 +1,14 @@
+import { useReveal } from '../hooks';
 import './Footer.css';
+import BrandSeam from './BrandSeam';
 
 export default function Footer() {
+  useReveal();
   return (
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand-col">
-          <div className="footer-logo-wrap">
-            <img src="/logo.svg" alt="Craft MadeBy" className="footer-logo" />
-          </div>
+          <img src="/logo.svg" alt="" className="brand-tile footer-logo" />
           <span className="footer-brand-name">Craft MadeBy</span>
           <p className="footer-brand-tagline">Where crafters leave their mark.</p>
           <div className="footer-store-links">
@@ -54,6 +55,10 @@ export default function Footer() {
             <li><a href="/delete-account.html">Delete Account Policy</a></li>
           </ul>
         </div>
+      </div>
+
+      <div className="container">
+        <BrandSeam tone="dark" className="reveal footer-seam" />
       </div>
 
       <div className="footer-bottom">

@@ -30,23 +30,13 @@
   gap: 0.625rem;
 }
 
-.nav-logo-wrap {
+.nav-logo {
   width: 36px; height: 36px;
-  background: var(--green-mid);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.3s var(--ease-out);
 }
 
-.nav-brand:hover .nav-logo-wrap {
+.nav-brand:hover .nav-logo {
   transform: rotate(-8deg) scale(1.05);
-}
-
-.nav-logo {
-  width: 22px; height: auto;
-  filter: brightness(0) invert(1);
 }
 
 .nav-name {

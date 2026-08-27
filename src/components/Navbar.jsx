@@ -15,9 +15,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
         <a href="#" className="nav-brand">
-          <div className="nav-logo-wrap">
-            <img src="/logo.svg" alt="Craft MadeBy" className="nav-logo" />
-          </div>
+          <img src="/logo.svg" alt="" className="brand-tile nav-logo" />
           <span className="nav-name">Craft MadeBy</span>
         </a>
 

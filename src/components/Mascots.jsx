@@ -4,11 +4,11 @@ import { AppleLogo } from './Icons';
 
 /* The five craft-theme mascots, in the app's own hand-drawn art. */
 const family = [
-  { img: 'purl.png',   name: 'Purl',   craft: 'Knitting & Crochet' },
-  { img: 'spool.png',  name: 'Spool',  craft: 'Sewing & Textiles' },
-  { img: 'hoopla.png', name: 'Hoopla', craft: 'Embroidery & Needlework' },
-  { img: 'pinch.png',  name: 'Pinch',  craft: 'Clay & Ceramics' },
-  { img: 'bijou.png',  name: 'Bijou',  craft: 'Jewelry & Beading' },
+  { img: 'purl.png',   name: 'Yarnia',  craft: 'Knitting & Crochet' },
+  { img: 'spool.png',  name: 'Spoolie', craft: 'Sewing & Textiles' },
+  { img: 'hoopla.png', name: 'Hoopla',  craft: 'Embroidery & Needlework' },
+  { img: 'pinch.png',  name: 'Potsy',   craft: 'Clay & Ceramics' },
+  { img: 'bijou.png',  name: 'Bijou',   craft: 'Jewelry & Beading' },
 ];
 
 export default function Mascots() {

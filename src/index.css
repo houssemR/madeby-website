@@ -20,6 +20,13 @@
   --green-ghost: #F2F6F0;
   --green-dim:   #BFCFBB;
 
+  /* The brand set the app actually ships: a porcelain monogram on a sage
+     tile (AppColors.sageFill / BrandLogo). The launcher icon, the in-app
+     mark and this site now paint the same two values. */
+  --brand:       #78907A;
+  --brand-soft:  #A9BCA9;
+  --porcelain:   #FFF8F5;
+
   /* Gold — kept only for the seal/premium moments */
   --gold:        #C9A86A;
   --gold-bright: #E0C68E;
@@ -51,8 +58,10 @@
   --s4:  2rem;
   --s5:  3rem;
   --s6:  4rem;
-  --s8:  6rem;
-  --s10: 9rem;
+  /* Section rhythm, fluid: two stacked sections used to put 288px of empty
+     ground between them at desktop width. */
+  --s8:  clamp(3.25rem, 6.5vw, 5.25rem);
+  --s10: clamp(4.25rem, 8.5vw, 7rem);
 
   /* Radius */
   --r-sm:   8px;
@@ -231,6 +240,36 @@ h3 { font-weight: 600; }
 /* ---- ICONS ---- */
 .icn { flex-shrink: 0; display: inline-block; vertical-align: -0.18em; }
 
+/* ---- BRAND MARK ----
+   One image, used everywhere. logo.svg already carries the sage tile and
+   the porcelain monogram, so placements only pick a size — no wrapper
+   colour, no invert filter, nothing that can drift from the app icon. */
+.brand-tile {
+  display: block;
+  border-radius: 22%;
+  flex-shrink: 0;
+}
+
+/* ---- SELECTION & FOCUS ---- */
+::selection {
+  background: var(--brand-soft);
+  color: var(--ink);
+}
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 /* ---- DEVICE FRAMES ----
    Real app screens/videos live inside honest phone chrome. Two variants:
    iOS (Dynamic Island pill) and Android (centered punch-hole camera). */
@@ -243,22 +282,26 @@ h3 { font-weight: 600; }
     0 2px 0 rgba(255,255,255,0.06) inset,
     var(--shadow-lg);
 }
+/* The screen is the capture's own 412x915 plus a proportional forehead for
+   the camera chrome — so a shot is never cropped to fit, and the app's
+   bottom navigation bar stays fully readable inside the frame. */
 .device-screen {
   position: relative;
   border-radius: 29px;
   overflow: hidden;
   background: var(--ink);
-  aspect-ratio: 443 / 960;
+  aspect-ratio: 412 / 941;
 }
-/* Reserve a status-bar "forehead" so the chrome never covers app content */
 .device-screen > img,
 .device-screen > video {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: calc(100% - 26px);
-  margin-top: 26px;
+  height: 97.24%; /* 915 / 941 — exactly the capture ratio */
   object-fit: cover;
   display: block;
-  border-radius: 14px 14px 0 0;
+  border-radius: 12px 12px 0 0;
 }
 .device::after {
   content: '';

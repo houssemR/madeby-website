@@ -1,0 +1,85 @@
+/* ==========================================
+   BRAND SEAM — the running-stitch tagline
+   ========================================== */
+
+.brand-seam {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 2.2vw, 1.6rem);
+  width: min(100%, 36rem);
+  margin: 0 auto;
+}
+
+/* A run of stitches: dash, gap, dash. Same rhythm as the dashed ring the
+   app draws behind its phone mockups. */
+.brand-seam-thread {
+  flex: 1 1 0;
+  height: 2px;
+  border-radius: 2px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--seam-thread) 0 9px,
+    transparent 9px 21px
+  );
+  /* Fade the thread out at the far ends, like it runs off the cloth. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 45%);
+  mask-image: linear-gradient(90deg, transparent, #000 45%);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 1.1s var(--ease-out) 0.3s;
+}
+.brand-seam-thread:last-child {
+  -webkit-mask-image: linear-gradient(270deg, transparent, #000 45%);
+  mask-image: linear-gradient(270deg, transparent, #000 45%);
+  transform-origin: left center;
+}
+
+/* The stitches sew themselves outward once the seam is on screen. */
+.brand-seam.hero-visible .brand-seam-thread,
+.brand-seam.visible .brand-seam-thread {
+  transform: scaleX(1);
+}
+
+.brand-seam-words {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: clamp(0.64rem, 1.3vw, 0.75rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--seam-ink);
+}
+
+.brand-seam-dot {
+  color: var(--seam-thread);
+  font-size: 1.1em;
+  line-height: 1;
+  transform: translateY(-0.05em);
+}
+
+/* Tones */
+.brand-seam--light {
+  --seam-thread: var(--brand-soft);
+  --seam-ink: var(--green-mid);
+}
+.brand-seam--dark {
+  --seam-thread: rgba(255, 248, 245, 0.4);
+  --seam-ink: rgba(255, 248, 245, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-seam-thread {
+    transform: scaleX(1);
+    transition: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-seam-words {
+    letter-spacing: 0.16em;
+    gap: 0.55em;
+  }
+}

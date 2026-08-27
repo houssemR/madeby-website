@@ -12,9 +12,7 @@ export default function CTA() {
           <div className="cta-orb cta-orb-2" />
 
           <div className="cta-content">
-            <div className="cta-logo-wrap">
-              <img src="/logo.svg" alt="Craft MadeBy" className="cta-logo" />
-            </div>
+            <img src="/logo.svg" alt="" className="brand-tile cta-logo" />
             <h2 className="cta-title">Your craft deserves<br />to be remembered.</h2>
             <p className="cta-sub">
               Document, share and celebrate your handmade work —<br className="cta-br" />

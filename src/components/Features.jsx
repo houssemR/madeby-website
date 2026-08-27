@@ -131,7 +131,7 @@ export default function Features() {
           bullets={bullets2}
           visual={(
             <DeviceVisual
-              img="/images/screens/25_review_b.png"
+              img="/images/screens/gift.png"
               alt="Wrapping a handmade gift in the Craft MadeBy app"
               platform="android"
             />

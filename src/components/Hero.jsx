@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './Hero.css';
+import BrandSeam from './BrandSeam';
 import {
   IconSparkle, IconYarn, IconNeedle, IconHoop, IconClay, IconGem,
 } from './Icons';
@@ -50,25 +51,13 @@ export default function Hero() {
       </div>
 
       <div className="container hero-content">
-        {/* Launch Banner */}
-        <div className="hero-launch-banner hero-animate">
-          <IconSparkle size={20} />
-          <span>Now on the App Store &amp; Google Play</span>
+        {/* The brand mark, exactly as it sits on a home screen */}
+        <div className="hero-app-logo hero-animate">
+          <img src="/logo.svg" alt="" className="brand-tile brand-tile--hero" />
         </div>
 
-        {/* App logo above badge */}
-        <div className="hero-app-logo hero-animate">
-          <div className="hero-logo-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" className="hero-logo-svg">
-              <path d="M70 115 V85 Q70 70 85 70 T100 85 V115 Q100 130 115 130 T130 115 Q130 100 115 100"
-                fill="none"
-                stroke="#EDFFEC"
-                strokeWidth="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"/>
-            </svg>
-          </div>
-        </div>
+        {/* The app's own three words, stitched across the page */}
+        <BrandSeam className="hero-animate" />
 
         {/* Badge */}
         <div className="hero-badge hero-animate">
@@ -113,8 +102,15 @@ export default function Hero() {
         {/* Honest facts instead of invented social proof */}
         <div className="hero-social-proof hero-animate">
           <div className="avatar-stack">
-            {['#4D6450','#8EA58C','#C9A86A','#344C3D','#BFCFBB'].map((c, i) => (
-              <div key={i} className="avatar-dot" style={{ background: c, zIndex: 5 - i }} />
+            {['purl', 'spool', 'hoopla', 'pinch', 'bijou'].map((m, i) => (
+              <img
+                key={m}
+                src={`/images/mascots/${m}.png`}
+                alt=""
+                className="avatar-mascot"
+                style={{ zIndex: 5 - i }}
+                loading="lazy"
+              />
             ))}
           </div>
           <span>Free · iPhone &amp; Android · <strong>12 languages</strong></span>
@@ -139,7 +135,7 @@ export default function Hero() {
         {/* The app itself: live recording center, screens on the wings */}
         <div className="hero-phones hero-animate">
           <div className="hero-phone hero-phone--android hero-phone-left">
-            <img src="/images/screens/22_step_a.png" alt="Documenting a project step in Craft MadeBy" loading="lazy" />
+            <img src="/images/screens/studio.png" alt="The Yarnia craft corner in Craft MadeBy" loading="lazy" />
           </div>
           <div className="hero-phone hero-phone--ios hero-phone-center">
             <video
@@ -153,7 +149,7 @@ export default function Hero() {
             />
           </div>
           <div className="hero-phone hero-phone--ios hero-phone-right">
-            <img src="/images/screens/05_details_top.png" alt="A Certified Handmade project in Craft MadeBy" loading="lazy" />
+            <img src="/images/screens/certified.png" alt="A Certified Handmade project in Craft MadeBy" loading="lazy" />
           </div>
         </div>
       </div>
