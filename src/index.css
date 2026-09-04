@@ -103,7 +103,10 @@ h3 { font-weight: 600; }
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 1.75rem);
+  /* Inline only. The shorthand would also set block padding to zero, and
+     since .container is combined with component classes of equal specificity
+     it would win on source order and cancel their vertical spacing. */
+  padding-inline: clamp(1rem, 3vw, 1.75rem);
 }
 
 /* ---- BUTTONS ---- */
