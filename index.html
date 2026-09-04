@@ -18,9 +18,16 @@
     <meta name="p:domain_verify" content="2168ca6357ce9d696cc42c2314c6c862" />
 
     <!-- ===== FAVICON ===== -->
+    <!-- Search engines want a square icon sized in multiples of 48, and Bing
+         still looks for /favicon.ico at the root. The 512px launcher icon
+         satisfied neither, so results showed the wrong mark or none at all.
+         Generated from assets/images/logo_sage.png by tool/webtest/make_favicons.js. -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <link rel="icon" type="image/png" href="/images/logo_app.png" />
-    <link rel="apple-touch-icon" href="/images/logo_app.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png" />
 
     <!-- ===== OPEN GRAPH (Facebook, WhatsApp, LinkedIn previews) ===== -->
     <meta property="og:type" content="website" />
