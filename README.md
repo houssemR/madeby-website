@@ -31,3 +31,15 @@ npm run dev
 
 The build command is: `npm run build`  
 The publish directory is: `dist`
+
+## Favicons
+
+Search engines want a square icon sized in multiples of 48, and Bing still
+looks for `/favicon.ico` at the root. Both are generated from
+`public/images/logo_app.png` — the sage brand tile:
+
+```
+node tools/make-favicons.mjs
+```
+
+No dependencies. Rerun it if the brand mark changes, and commit the output.
