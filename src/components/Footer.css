@@ -123,3 +123,39 @@
   margin: var(--s5) auto var(--s4);
   width: min(100%, 38rem);
 }
+
+/* Social links — same pill vocabulary as the store buttons, circular so the
+   brand marks read as marks rather than as labelled buttons. */
+.footer-social {
+  display: flex;
+  gap: 0.625rem;
+  list-style: none;
+  margin: var(--s2) 0 0;
+  padding: 0;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(241, 233, 216, 0.75);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-social-link { transition: background 0.2s ease, color 0.2s ease; }
+  .footer-social-link:hover,
+  .footer-social-link:focus-visible { transform: none; }
+}
