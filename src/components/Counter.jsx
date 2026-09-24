@@ -1,6 +1,5 @@
 import { useReveal } from '../hooks';
 import './Counter.css';
-import Seam from './Seam';
 
 const POINTS = [
   ['Count where the work is', 'The counter lives on the step you are actually knitting, so row 42 of the sleeve stays with the sleeve.'],
@@ -13,60 +12,59 @@ export default function Counter() {
   useReveal();
 
   return (
-    <section className="counter band band--sage" id="counter">
-      {/* The count itself, at the size it feels like at 11pm. */}
-      <span className="counter-ghost figure-xl" aria-hidden="true">42</span>
-
+    <section className="section" id="counter">
       <div className="container">
-        <div className="sec-head counter-head reveal">
-          <div className="sec-head-title">
-          <span className="badge">Row counter</span>
-          <h2 className="h-lg">
-            Never lose
-            <span className="em-line">your row.</span>
-          </h2>
-          </div>
-          <p className="lede">
-            Put the phone down mid-row, pick it up three days later, and the
-            count is still where you left it — on the step, with the timer and
-            the photos, not on a scrap of paper in the yarn basket.
-          </p>
-        </div>
-
-        <div className="counter-body">
-          <div className="counter-stage reveal">
-            <figure className="counter-phone">
-              <div className="device"><div className="device-screen">
-                <img
-                  src="/images/app/counting.webp"
-                  alt="Night mode in Craft MadeBy: a single large row count on a black screen"
-                  loading="lazy" width="640" height="1421"
-                />
-              </div></div>
-            </figure>
-            <figure className="counter-widget card--cut">
-              <figcaption className="counter-widget-cap">On your home screen</figcaption>
-              <img
-                src="/images/app/widget.webp"
-                alt="The Craft MadeBy home-screen widget showing a row count, a timer and plus and minus buttons"
-                loading="lazy" width="760" height="669"
-              />
-            </figure>
-            <span className="chip chip--celadon counter-chip">Night mode</span>
-          </div>
-
-          <dl className="counter-list">
-            {POINTS.map(([k, v], i) => (
-              <div key={k} className={`counter-item reveal reveal-delay-${i + 1}`}>
-                <dt>{k}</dt>
-                <dd>{v}</dd>
+        <div className="patch patch--dark counter-patch reveal">
+          <div className="counter-grid">
+            <div className="counter-copy">
+              <div className="counter-head head">
+                <span className="tag tag--honey">Row counter</span>
+                <h2 className="h-lg">
+                  Never lose
+                  <span className="em-line">your row.</span>
+                </h2>
+                <p className="lede">
+                  Put the phone down mid-row, pick it up three days later, and
+                  the count is still where you left it — on the step, with the
+                  timer and the photos, not on a scrap of paper in the yarn
+                  basket.
+                </p>
               </div>
-            ))}
-          </dl>
+
+              <dl className="counter-list">
+                {POINTS.map(([k, v], i) => (
+                  <div key={k} className={`counter-item reveal reveal-delay-${i + 1}`}>
+                    <dt>{k}</dt>
+                    <dd>{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="counter-stage">
+              <figure className="counter-phone">
+                <div className="device"><div className="device-screen">
+                  <img
+                    src="/images/app/counting.webp"
+                    alt="Night mode in Craft MadeBy: a single large row count on a black screen"
+                    loading="lazy" width="640" height="1421"
+                  />
+                </div></div>
+              </figure>
+              <figure className="counter-widget">
+                <figcaption>On your home screen</figcaption>
+                <img
+                  src="/images/app/widget.webp"
+                  alt="The Craft MadeBy home-screen widget showing a row count, a timer and plus and minus buttons"
+                  loading="lazy" width="760" height="669"
+                />
+              </figure>
+              <span className="chip chip--cloth counter-chip">Night mode</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <Seam to="var(--celadon)" dark />
+      <span className="thread" aria-hidden="true" />
     </section>
   );
 }

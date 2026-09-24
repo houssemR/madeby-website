@@ -1,13 +1,13 @@
 .contact-section {
-  padding: var(--band) 0;
+  padding: var(--gap) 0;
   background: var(--porcelain);
 }
 
 .contact-inner {
   max-width: 720px;
   margin: 0 auto;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--porcelain);
+  border: 1px solid var(--line);
   border-radius: var(--r-xl);
   padding: var(--s6) var(--s5);
   box-shadow: 0 20px 60px rgba(28, 24, 18, 0.06);
@@ -24,7 +24,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--sage-deep);
+  color: var(--honey-d);
   background: rgba(251,246,236,0.7);
   border: 1px solid var(--celadon);
   border-radius: 999px;
@@ -39,7 +39,7 @@
 }
 
 .contact-sub {
-  color: var(--ink-muted);
+  color: var(--ink-mute);
   margin: 0 auto;
   max-width: 480px;
   line-height: 1.6;
@@ -76,7 +76,7 @@
   font: inherit;
   color: var(--ink);
   background: var(--porcelain);
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: 12px;
   padding: 12px 14px;
   outline: none;
@@ -92,16 +92,16 @@
 .contact-field input:focus,
 .contact-field select:focus,
 .contact-field textarea:focus {
-  border-color: var(--sage-deep);
+  border-color: var(--honey-d);
   box-shadow: 0 0 0 3px rgba(97, 121, 100, 0.15);
-  background: var(--surface);
+  background: var(--porcelain);
 }
 
 .contact-counter {
   align-self: flex-end;
   font-size: 0.75rem !important;
   font-weight: 500 !important;
-  color: var(--ink-muted) !important;
+  color: var(--ink-mute) !important;
 }
 .contact-counter.at-limit {
   color: #a33a2c !important;
@@ -146,7 +146,7 @@
   border-radius: 50%;
   background: rgba(251,246,236,0.7);
   border: 1.5px solid var(--celadon);
-  color: var(--sage-deep);
+  color: var(--honey-d);
   font-size: 1.6rem;
   font-weight: 800;
   display: flex;
@@ -158,7 +158,7 @@
   margin: 0 0 6px;
 }
 .contact-success p {
-  color: var(--ink-muted);
+  color: var(--ink-mute);
   margin: 0;
 }
 

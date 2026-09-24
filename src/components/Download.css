@@ -1,40 +1,27 @@
-.download { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
-.download-card {
-  position: relative;
+/* The last patch is the darkest — pine, the ink of the whole page, finally
+   used as a surface. */
+.download-patch {
+  --pad: clamp(2.6rem, 6vw, 4.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: var(--s2);
-  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.4rem, 5vw, 4rem);
   background: var(--pine);
-  border-radius: var(--r-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--lift-4);
 }
-/* A single soft glow, off-centre, so the block is not a flat rectangle. */
-.download-card::before {
-  content: '';
-  position: absolute;
-  width: 46rem; height: 46rem;
-  top: -60%; right: -22%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(120, 144, 122, 0.5) 0%, transparent 62%);
-  pointer-events: none;
-}
-.download-card > * { position: relative; z-index: 1; }
-
-.download-logo { width: 62px; height: 62px; margin-bottom: 0.4rem; }
+.download-patch::before { border-color: rgba(251, 246, 236, .3); }
+.download-logo { width: 58px; height: 58px; margin-bottom: .3rem; }
 .download-title { color: var(--porcelain); }
-.download-title .em-line { color: var(--honey); }
-.download-sub { color: rgba(251, 246, 236, 0.76); max-width: 46ch; }
-.download-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 0.6rem; }
+.download-title .em-line { color: var(--honey-l); }
+.download-sub { color: rgba(251, 246, 236, .8); max-width: 44ch; }
+.download-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: .5rem; }
 .download-seam {
-  font-family: var(--font-label);
-  font-size: 0.72rem;
+  font-family: var(--tag);
+  font-size: .7rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(251, 246, 236, 0.45);
-  margin-top: 1rem;
+  color: rgba(251, 246, 236, .5);
+  margin-top: .9rem;
 }

@@ -1,68 +1,53 @@
-.counter { overflow: hidden; }
-
-/* The number sits behind everything, bled off the right edge — the section's
-   own subject used as its ornament. */
-.counter-ghost {
-  position: absolute;
-  z-index: 0;
-  top: clamp(1rem, 4vw, 3rem);
-  right: -0.09em;
-  color: rgba(251, 246, 236, 0.11);
-  pointer-events: none;
-  user-select: none;
-}
-
-.counter-head .em-line { color: var(--pine); }
-
-.counter-body {
+.counter-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
+.counter-copy { display: grid; gap: clamp(1.6rem, 3vw, 2.4rem); }
+.counter-head .em-line { color: var(--honey-l); }
 
-.counter-stage { position: relative; padding-bottom: clamp(2.5rem, 6vw, 4rem); padding-left: clamp(1rem, 5%, 3rem); }
-.counter-phone { margin: 0 0 0 auto; max-width: 290px; transform: rotate(3deg); }
+/* Four entries on a seam, not four boxes. */
+.counter-list { display: grid; gap: 1.1rem; }
+.counter-item { padding-left: 1.15rem; border-left: 2px dashed var(--stitch-pale); }
+.counter-item dt {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.08rem, 1.6vw, 1.25rem);
+  color: var(--porcelain);
+  letter-spacing: -.01em;
+  margin-bottom: .1rem;
+}
+.counter-item dd { color: var(--on-sage); font-size: .95rem; max-width: 46ch; }
+
+.counter-stage { position: relative; padding-bottom: clamp(2rem, 5vw, 3.2rem); }
+.counter-phone { margin: 0 0 0 auto; max-width: 270px; transform: rotate(3deg); }
 .counter-widget {
   position: absolute;
   z-index: 3;
   bottom: 0;
   left: 0;
-  width: min(58%, 250px);
+  width: min(60%, 232px);
   margin: 0;
-  padding: 0.5rem 0.5rem 0.6rem;
+  padding: .45rem .45rem .55rem;
+  background: var(--porcelain);
+  border-radius: var(--r-md);
+  box-shadow: var(--lift-3);
   transform: rotate(-5deg);
 }
-.counter-widget img { border-radius: 12px; }
-.counter-widget-cap {
-  display: block;
-  font-family: var(--font-label);
-  font-size: 0.64rem;
+.counter-widget img { border-radius: 11px; }
+.counter-widget figcaption {
+  font-family: var(--tag);
+  font-size: .62rem;
   font-weight: 700;
-  letter-spacing: 0.13em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--sage-deep);
-  padding: 0.2rem 0.3rem 0.45rem;
+  color: var(--honey-d);
+  padding: .15rem .3rem .4rem;
 }
-.counter-chip { position: absolute; z-index: 4; top: 4%; right: 0; transform: rotate(5deg); }
+.counter-chip { position: absolute; z-index: 4; top: 3%; right: -3%; transform: rotate(5deg); }
 
-/* Four entries on the stitch, not four boxes. */
-.counter-list { display: grid; gap: 1.25rem; }
-.counter-item { padding-left: 1.2rem; border-left: 2px solid rgba(251, 246, 236, 0.3); }
-.counter-item dt {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
-  color: var(--porcelain);
-  margin-bottom: 0.15rem;
-  letter-spacing: -0.01em;
-}
-.counter-item dd { color: var(--ink-on-sage); font-size: 0.96rem; max-width: 48ch; }
-
-@media (max-width: 980px) {
-  .counter-body { grid-template-columns: 1fr; }
-  .counter-stage { max-width: 440px; margin-inline: auto; width: 100%; padding-left: 0; }
-}
-@media (max-width: 560px) {
-  .counter-widget { width: 60%; }
+@media (max-width: 940px) {
+  .counter-grid { grid-template-columns: 1fr; }
+  .counter-stage { max-width: 420px; margin-inline: auto; width: 100%; }
 }

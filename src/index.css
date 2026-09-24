@@ -1,70 +1,65 @@
 /* ==========================================
-   CRAFT MADEBY — GLOBAL DESIGN SYSTEM
+   CRAFT MADEBY — DESIGN SYSTEM
 
-   The palette and the type are lifted from the app's own store pages
-   (promo/out/ios, promo/out/store), sampled pixel for pixel: a celadon
-   ground, a sage ground for the darker bands, pine ink, warm porcelain,
-   and honey as the single accent. The display face is Playfair Display,
-   set with an italic second line — exactly how every store page is set.
+   The subject is handmade textile, so the page is built the way a piece is:
+   porcelain paper with panels of cloth laid onto it and stitched down. Every
+   coloured block on the site is one construct — .patch — and the running
+   stitch that edges it is the same thread the app draws behind its own
+   artwork. Nothing else on the page is allowed to be decorative.
+
+   Palette and faces come from the app's own store pages (promo/out/ios),
+   sampled pixel for pixel.
    ========================================== */
 
 :root {
-  /* ---- The store-page palette, sampled from the exports ---- */
-  --celadon:     #CFDCC8;  /* pale ground — K1, K3, K5 */
-  --celadon-dim: #C2D2BA;
-  --sage:        #5C7359;  /* deep band ground — deepened for AA body text */
-  --sage-tile:   #78907A;  /* the app brand tile and chips, exactly as shipped */
-  --sage-deep:   #4A5F48;
-  --pine:        #1F3326;  /* display ink and badges */
+  /* ---- the material ---- */
+  --porcelain:   #FBF6EC;  /* the paper everything sits on */
+  --porcelain-d: #F4EEE0;  /* a second sheet, for insets */
+  --celadon:     #CFDCC8;  /* cut cloth */
+  --celadon-d:   #BFD0B7;
+  --sage:        #5C7359;  /* the one dark cloth; deepened for AA body text */
+  --sage-tile:   #78907A;  /* the app's brand tile, unchanged */
+  --pine:        #1F3326;  /* ink */
   --pine-soft:   #35492F;
-  --porcelain:   #FBF6EC;  /* type on sage, and the cream chip */
-  --honey:       #E3B964;  /* the one accent: points, premium, seals */
-  --honey-deep:  #C49A44;
-  --blush:       #EBC3B5;  /* secondary chip only */
-  --brick:       #9B3A2E;  /* the seal red; the only warm dark that passes on celadon */
+  --honey:       #E3B964;  /* thread and points */
+  --honey-l:     #EDC87C;  /* honey as TYPE on the dark cloth; --honey is 2.8:1 there */
+  --honey-d:     #7A5410;  /* the same thread, dark enough to read as type on cloth */
+  --brick:       #9B3A2E;  /* the seal. Twice on the page, no more. */
 
-  /* ---- Ink ---- */
+  /* ---- ink ---- */
   --ink:         #26221C;
   --ink-soft:    #4A4A40;
-  --ink-muted:   #6E7268;
-  --ink-on-sage: #F6F1E6;  /* 4.6:1 on --sage; a transparent white here read at 2.3:1 */
+  --ink-mute:    #6E7268;
+  --on-sage:     #F6F1E6;
 
-  /* ---- Surfaces ---- */
-  --surface:     #FFFFFF;
-  --surface-2:   #F5F3EF;
-  --cream:       #FAF9F7;
-  --border:      rgba(31, 51, 38, 0.14);
-  --border-soft: rgba(31, 51, 38, 0.08);
-  --border-sage: rgba(251, 246, 236, 0.22);
+  --line:        rgba(31, 51, 38, 0.14);
+  --stitch:      rgba(31, 51, 38, 0.30);
+  --stitch-pale: rgba(251, 246, 236, 0.44);
 
-  /* ---- Shadows ---- */
-  --shadow-sm:  0 2px 8px rgba(28, 34, 24, 0.06);
-  --shadow-md:  0 10px 28px rgba(28, 34, 24, 0.09);
-  --shadow-lg:  0 22px 60px rgba(28, 34, 24, 0.14);
-  --shadow-xl:  0 40px 90px rgba(28, 34, 24, 0.20);
+  /* ---- depth. Paper does not float; it rests. ---- */
+  --lift-1: 0 1px 2px rgba(40, 44, 34, 0.06);
+  --lift-2: 0 6px 18px rgba(40, 44, 34, 0.08);
+  --lift-3: 0 18px 44px rgba(40, 44, 34, 0.13);
+  --lift-4: 0 34px 80px rgba(40, 44, 34, 0.18);
 
-  /* ---- Typography ---- */
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-sans:    'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-label:   'Outfit', -apple-system, sans-serif;
+  /* ---- type ---- */
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body:    'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --tag:     'Outfit', -apple-system, sans-serif;
 
-  /* ---- Spacing ---- */
-  --s1: 0.5rem;  --s2: 1rem;  --s3: 1.5rem;  --s4: 2rem;  --s5: 3rem;  --s6: 4rem;
-  --band: clamp(4.5rem, 9vw, 8rem);      /* vertical rhythm of a section */
+  --s1: .5rem; --s2: 1rem; --s3: 1.5rem; --s4: 2rem; --s5: 3rem; --s6: 4rem;
+  --gap:  clamp(2.5rem, 5.5vw, 4.5rem);   /* between patches */
+  --pad:  clamp(1.6rem, 4.5vw, 3.75rem);  /* inside a patch */
 
-  /* ---- Radius ---- */
-  --r-sm: 10px;  --r-md: 18px;  --r-lg: 26px;  --r-xl: 34px;  --r-full: 9999px;
-
-  /* ---- Easing ---- */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --r-sm: 10px; --r-md: 18px; --r-lg: 26px; --r-xl: 34px; --r-full: 9999px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-sans);
-  background: var(--celadon);
+  font-family: var(--body);
+  background: var(--porcelain);
   color: var(--ink);
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
@@ -76,84 +71,101 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ul, ol { list-style: none; }
 
 /* ---- DISPLAY TYPE ----
-   Playfair carries the page. Every headline is two lines: the first upright,
-   the second italic — the store pages' own setting, and the thing that makes
-   a heading here unmistakably this brand's. */
+   Playfair, restrained: headlines only, and always two lines with the second
+   in italic. That setting is how the app's store pages read, and it is the
+   one thing that makes a heading here unmistakably this brand's. */
 h1, h2, h3 {
-  font-family: var(--font-display);
+  font-family: var(--display);
   font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.015em;
+  line-height: 1.03;
+  letter-spacing: -0.018em;
+  color: var(--pine);
   text-wrap: balance;
 }
-.em-line {
+.em-line { display: block; font-style: italic; font-weight: 500; }
+.h-xl { font-size: clamp(2.7rem, 7vw, 4.9rem); }
+.h-lg { font-size: clamp(2.1rem, 4.6vw, 3.3rem); }
+.h-md { font-size: clamp(1.25rem, 2vw, 1.55rem); }
+.lede { font-size: clamp(1.02rem, 1.45vw, 1.16rem); color: var(--ink-soft); max-width: 52ch; }
+
+.container { max-width: 1180px; margin-inline: auto; padding-inline: clamp(1.1rem, 4vw, 2rem); }
+.section { padding-block: 0; }
+main > .section:first-of-type { padding-top: var(--gap); }
+
+/* ==========================================
+   THE PATCH — the signature
+
+   A piece of cloth laid on the paper and sewn down. One construct: a coloured
+   panel, inset from the page, with a running stitch set in from its edge.
+   Every coloured block on this site is one of these, which is why the page
+   reads as pieced together rather than as stacked bands.
+   ========================================== */
+.patch {
+  position: relative;
+  border-radius: var(--r-xl);
+  padding: var(--pad);
+  box-shadow: var(--lift-2);
+}
+/* The stitch. Inset, so there is a margin of cloth outside it — exactly how a
+   seam sits on a real patch, and the detail that keeps this from reading as
+   a dashed border. */
+.patch::before {
+  content: '';
+  position: absolute;
+  inset: clamp(9px, 1.1vw, 15px);
+  border: 2px dashed var(--stitch);
+  border-radius: calc(var(--r-xl) - clamp(9px, 1.1vw, 15px));
+  pointer-events: none;
+}
+.patch--cloth { background: var(--celadon); }
+.patch--dark  { background: var(--sage); color: var(--on-sage); box-shadow: var(--lift-3); }
+.patch--dark::before { border-color: var(--stitch-pale); }
+.patch--dark h2, .patch--dark h3 { color: var(--porcelain); }
+.patch--dark .lede { color: var(--on-sage); }
+.patch--paper { background: var(--porcelain-d); }
+
+/* ---- THE THREAD ----
+   It runs between the patches, so the page is one continuous seam. */
+.thread {
   display: block;
-  font-style: italic;
-  font-weight: 500;
+  height: var(--gap);
+  width: 2px;
+  margin-inline: auto;
+  border-left: 2px dashed var(--stitch);
 }
-.h-xl { font-size: clamp(2.7rem, 7.2vw, 4.7rem); }
-.h-lg { font-size: clamp(2.2rem, 5.4vw, 3.7rem); }
-.h-md { font-size: clamp(1.55rem, 2.7vw, 2.1rem); }
 
-.lede {
-  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
-  color: var(--ink-soft);
-  max-width: 54ch;
-}
-.band--sage .lede { color: var(--ink-on-sage); }
-
-/* ---- LAYOUT ---- */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-inline: clamp(1.1rem, 4vw, 2rem);
-}
-.band { padding-block: var(--band); position: relative; }
-.band--sage    { color: var(--porcelain); }
-.band--sage h1, .band--sage h2, .band--sage h3 { color: var(--porcelain); }
-
-/* ---- BADGE ----
-   The dark pine pill with a dot that opens every store page. */
-.badge {
+/* ---- WOVEN TAG ----
+   The label sewn into a garment: the eyebrow on every section, and the step
+   markers. It is a tag, not a pill — square-ish, with two stitch holes. */
+.tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.6em;
-  font-family: var(--font-label);
-  font-size: clamp(0.7rem, 1.1vw, 0.79rem);
+  gap: 0.55em;
+  font-family: var(--tag);
+  font-size: clamp(0.68rem, 1vw, 0.76rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
   color: var(--porcelain);
   background: var(--pine);
-  padding: 0.55em 1.25em 0.6em;
-  border-radius: var(--r-full);
+  padding: 0.5em 1em 0.55em;
+  border-radius: 4px;
 }
-.badge::before {
+.tag::before {
   content: '';
-  width: 0.42em; height: 0.42em;
+  width: 0.4em; height: 0.4em;
   border-radius: 50%;
-  background: var(--porcelain);
+  background: var(--honey);
 }
-
-/* ---- CHIPS ----
-   The hand-placed labels scattered over the store pages. */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-  font-family: var(--font-label);
-  font-weight: 700;
-  font-size: 0.86rem;
+.tag--honey { background: var(--honey); color: var(--pine); }
+.tag--honey::before { background: var(--pine); }
+.tag--quiet {
+  background: transparent;
   color: var(--pine);
-  background: var(--porcelain);
-  padding: 0.42em 1em;
-  border-radius: var(--r-full);
-  box-shadow: var(--shadow-sm);
-  white-space: nowrap;
+  border: 1.5px dashed var(--stitch);
+  padding: 0.42em 0.9em 0.47em;
 }
-.chip--honey { background: var(--honey); }
-.chip--blush { background: var(--blush); }
-.chip--celadon { background: var(--celadon); }
+.tag--quiet::before { background: var(--honey-d); }
 
 /* ---- BUTTONS ---- */
 .btn {
@@ -161,108 +173,55 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  font-family: var(--font-label);
+  font-family: var(--tag);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.85rem 1.8rem;
+  padding: 0.88rem 1.7rem;
   border-radius: var(--r-full);
-  transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out),
-              box-shadow 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+  transition: transform .25s var(--ease), background .25s var(--ease),
+              box-shadow .25s var(--ease), border-color .25s var(--ease);
 }
-.btn:active { transform: scale(0.975); }
-
-.btn-primary {
-  background: var(--pine);
-  color: var(--porcelain);
-  box-shadow: 0 6px 18px rgba(31, 51, 38, 0.22);
-}
-.btn-primary:hover {
-  background: var(--pine-soft);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(31, 51, 38, 0.28);
-}
-.btn-outline {
-  background: transparent;
-  color: var(--pine);
-  border: 1.5px solid rgba(31, 51, 38, 0.28);
-}
+.btn:active { transform: scale(.975); }
+.btn-primary { background: var(--pine); color: var(--porcelain); box-shadow: var(--lift-2); }
+.btn-primary:hover { background: var(--pine-soft); transform: translateY(-2px); box-shadow: var(--lift-3); }
+.btn-outline { color: var(--pine); border: 1.5px solid rgba(31,51,38,.3); }
 .btn-outline:hover { border-color: var(--pine); transform: translateY(-2px); }
+.btn-cream { background: var(--porcelain); color: var(--pine); box-shadow: var(--lift-2); }
+.btn-cream:hover { transform: translateY(-2px); box-shadow: var(--lift-3); }
+.btn-ghost { color: var(--porcelain); border: 1.5px solid rgba(251,246,236,.32); }
+.btn-ghost:hover { background: rgba(251,246,236,.12); transform: translateY(-2px); }
 
-.btn-cream {
-  background: var(--porcelain);
+/* ---- CHIP: a scrap, pinned on ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--tag);
+  font-weight: 700;
+  font-size: .85rem;
   color: var(--pine);
-  box-shadow: 0 6px 18px rgba(20, 30, 20, 0.18);
-}
-.btn-cream:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(20, 30, 20, 0.24); }
-
-.btn-ghost {
-  background: rgba(251, 246, 236, 0.12);
-  color: var(--porcelain);
-  border: 1.5px solid var(--border-sage);
-}
-.btn-ghost:hover { background: rgba(251, 246, 236, 0.2); transform: translateY(-2px); }
-
-/* ---- THE THREAD ----
-   The running stitch that ties every store page together. Here it is the
-   page's spine: a dashed line between the bands, and the rule the step
-   markers hang from. */
-.thread-rule {
-  border: 0;
-  border-top: 2px dashed rgba(31, 51, 38, 0.22);
-  margin: 0;
-}
-.band--sage .thread-rule { border-top-color: rgba(251, 246, 236, 0.3); }
-
-.seam {
-  position: absolute;
-  left: 0; right: 0;
-  height: clamp(38px, 5vw, 64px);
-  pointer-events: none;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 2;
-}
-.seam svg { width: 100%; height: 100%; display: block; }
-.seam--top { top: -1px; }
-.seam--bottom { bottom: -1px; }
-
-/* ---- CARDS ---- */
-.card {
   background: var(--porcelain);
-  border-radius: var(--r-lg);
-  padding: clamp(1.3rem, 2.4vw, 1.9rem);
-  box-shadow: var(--shadow-md);
+  padding: .42em 1em;
+  border-radius: var(--r-full);
+  box-shadow: var(--lift-2);
+  white-space: nowrap;
 }
-/* The dashed cut-out card the store pages pull a detail into. */
-.card--cut {
-  background: var(--porcelain);
-  border: 2px dashed rgba(31, 51, 38, 0.3);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-lg);
-}
-.card--onsage {
-  background: rgba(251, 246, 236, 0.1);
-  border: 1px solid var(--border-sage);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--porcelain);
-  box-shadow: none;
-}
+.chip--honey { background: var(--honey); }
+.chip--cloth { background: var(--celadon); }
 
-/* ---- DEVICE FRAME ----
-   Real prod screens inside honest phone chrome. The capture is 1236x2745
-   including the app own top bar, so the screen keeps that exact ratio and
-   nothing is ever cropped. */
+/* ---- DEVICE ----
+   Real prod captures in honest phone chrome. The capture is 1236x2745
+   including the app's own top bar, so the screen keeps that exact ratio. */
 .device {
   position: relative;
-  border-radius: clamp(24px, 3.4vw, 40px);
+  border-radius: clamp(24px, 3.2vw, 38px);
   background: #141813;
-  padding: clamp(5px, 0.8vw, 10px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, var(--shadow-xl);
+  padding: clamp(5px, .75vw, 9px);
+  box-shadow: var(--lift-4);
 }
 .device-screen {
   position: relative;
-  border-radius: clamp(19px, 2.7vw, 31px);
+  border-radius: clamp(19px, 2.5vw, 30px);
   overflow: hidden;
   background: #141813;
   aspect-ratio: 1236 / 2745;
@@ -277,134 +236,47 @@ h1, h2, h3 {
   content: '';
   position: absolute;
   z-index: 2;
-  top: clamp(11px, 1.5vw, 19px);
+  top: clamp(11px, 1.4vw, 18px);
   left: 50%;
   transform: translateX(-50%);
   width: 24%;
-  height: clamp(9px, 1.2vw, 15px);
+  height: clamp(9px, 1.15vw, 14px);
   border-radius: 999px;
   background: #141813;
   pointer-events: none;
 }
 
-/* ---- SCROLL REVEAL ---- */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
-}
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.16s; }
-.reveal-delay-3 { transition-delay: 0.24s; }
-.reveal-delay-4 { transition-delay: 0.32s; }
+/* ---- SECTION HEAD ---- */
+.head { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s2); max-width: 52ch; }
+.head--wide { max-width: 60ch; }
 
-/* ---- ICONS ---- */
-.icn { flex-shrink: 0; display: inline-block; vertical-align: -0.18em; }
+/* ---- REVEAL ---- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .07s; }
+.reveal-delay-2 { transition-delay: .14s; }
+.reveal-delay-3 { transition-delay: .21s; }
+.reveal-delay-4 { transition-delay: .28s; }
+
+.icn { flex-shrink: 0; display: inline-block; vertical-align: -.18em; }
 .brand-tile { display: block; border-radius: 22%; flex-shrink: 0; }
 
-/* ---- SELECTION & FOCUS ---- */
 ::selection { background: var(--honey); color: var(--pine); }
 :where(a, button, input, textarea, select):focus-visible {
   outline: 2px solid var(--pine);
   outline-offset: 3px;
   border-radius: 4px;
 }
-.band--sage :where(a, button):focus-visible { outline-color: var(--porcelain); }
+.patch--dark :where(a, button):focus-visible { outline-color: var(--porcelain); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
-    animation-duration: 0.001ms !important;
+    animation-duration: .001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+    transition-duration: .001ms !important;
   }
   .reveal { opacity: 1; transform: none; }
 }
 
 .app-container { overflow-x: hidden; }
-
-/* ==========================================
-   v2 — surface, motion and scale
-
-   The first pass read as a poster set: flat fields of colour with small
-   phones floating in them, and not one handmade object anywhere. These are
-   the pieces that fix that.
-   ========================================== */
-
-/* ---- LINEN GROUND ----
-   A fill reads as a screen; a weave reads as a surface. Two hairline grids
-   painted straight onto the band's own background — an overlay pseudo-element
-   needed a z-index, and lifting the children to clear it silently outranked
-   every absolutely positioned child in the section. */
-.band--celadon {
-  background-color: var(--celadon);
-  background-image:
-    repeating-linear-gradient(90deg, rgba(31,51,38,0.035) 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(0deg,  rgba(31,51,38,0.035) 0 1px, transparent 1px 7px);
-}
-.band--sage {
-  background-color: var(--sage);
-  background-image:
-    repeating-linear-gradient(90deg, rgba(251,246,236,0.05) 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(0deg,  rgba(251,246,236,0.05) 0 1px, transparent 1px 7px);
-}
-
-
-/* ---- FULL BLEED ----
-   Escapes the container so a row of photographs can run edge to edge. */
-.bleed {
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
-}
-
-/* ---- PHOTOGRAPHS ----
-   Real pieces from a real portfolio. They carry the page's warmth, so they
-   get a proper mount rather than a bare <img>. */
-.plate {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--r-lg);
-  background: var(--celadon-dim);
-  box-shadow: var(--shadow-lg);
-}
-.plate img { width: 100%; height: 100%; object-fit: cover; }
-.plate--tall { aspect-ratio: 3 / 4; }
-.plate--square { aspect-ratio: 1; }
-
-/* A handwritten-feeling caption, the way a maker labels a finished piece. */
-.hand {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  color: var(--ink-soft);
-}
-
-.device-screen > video { background: #141813; }
-
-/* ---- SCALE ----
-   One enormous figure per section, so the eye has somewhere to land. */
-.figure-xl {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(5rem, 16vw, 12rem);
-  line-height: 0.8;
-  letter-spacing: -0.04em;
-  white-space: nowrap;
-}
-
-/* ---- SECTION HEAD ----
-   One column left the right half of every band empty. The headline and its
-   lede now share the width, which is also how the type wants to be read. */
-.sec-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(1.2rem, 4vw, 3.5rem);
-  align-items: end;
-  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
-}
-.sec-head-title { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s2); }
-.sec-head .lede { max-width: 48ch; padding-bottom: 0.3rem; }
-@media (max-width: 860px) {
-  .sec-head { grid-template-columns: 1fr; align-items: start; gap: 1.1rem; }
-}

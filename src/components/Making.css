@@ -1,70 +1,67 @@
-.making { padding-bottom: calc(var(--band) + 1rem); }
-.making-title { color: var(--pine); }
-.making-title .em-line { color: var(--pine-soft); }
+.making-patch { display: grid; gap: clamp(2rem, 4vw, 3.2rem); }
+.making-head { max-width: 62ch; }
 
-.making-body { display: grid; gap: clamp(2.2rem, 5vw, 3.5rem); }
-
-/* Four steps ACROSS, on one horizontal stitch. The vertical list read as a
-   feature bullet list; a run of stations reads as a process. */
+/* Four stations across one horizontal seam. Down the page they read as a
+   bullet list; across, they read as a process. */
 .making-steps {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 2.5vw, 2rem);
-  padding-top: 0.5rem;
+  gap: clamp(1rem, 2.2vw, 1.8rem);
 }
 .making-thread {
   position: absolute;
-  top: 26px;
+  top: 23px;
   left: 6%;
   right: 6%;
-  border-top: 2px dashed rgba(31, 51, 38, 0.26);
+  border-top: 2px dashed var(--stitch);
 }
-.making-step { position: relative; display: grid; gap: 0.7rem; }
+.making-step { position: relative; }
 .making-node {
   position: relative;
   z-index: 1;
-  width: 52px; height: 52px;
+  width: 46px; height: 46px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--porcelain);
   color: var(--pine);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--lift-1);
+  margin-bottom: .85rem;
 }
 .making-num {
   display: block;
-  font-family: var(--font-label);
-  font-size: 0.7rem;
+  font-family: var(--tag);
+  font-size: .68rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--sage-deep);
-  margin-bottom: 0.15rem;
+  letter-spacing: .18em;
+  color: var(--honey-d);
+  margin-bottom: .2rem;
 }
-.making-step-title { color: var(--pine); margin-bottom: 0.3rem; font-size: clamp(1.15rem, 1.9vw, 1.45rem); }
-.making-step-text p { color: var(--ink-soft); font-size: 0.95rem; }
+.making-step h3 { margin-bottom: .3rem; }
+.making-step p { color: var(--ink-soft); font-size: .94rem; }
 
-/* The evidence: a photograph of the piece beside the screens that recorded it. */
+/* The two screens, laid on the cloth at the foot of the patch. */
 .making-shots {
   position: relative;
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr 0.95fr;
-  gap: clamp(0.9rem, 2vw, 1.6rem);
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  justify-items: center;
+  max-width: 620px;
+  margin-inline: auto;
+  width: 100%;
 }
-.making-plate { margin: 0; aspect-ratio: 3 / 4; }
-.making-shot { margin: 0; }
-.making-shot--a { transform: rotate(-3deg); }
-.making-shot--b { transform: rotate(3deg) translateY(6%); }
-.making-chip { position: absolute; z-index: 4; top: 6%; right: 2%; transform: rotate(4deg); }
+.making-shot { margin: 0; width: 100%; max-width: 270px; }
+.making-shot--a { transform: rotate(-3.5deg); }
+.making-shot--b { transform: rotate(3.5deg) translateY(4%); }
+.making-chip { position: absolute; z-index: 4; top: -4%; left: 50%; transform: translateX(-50%) rotate(-3deg); }
 
 @media (max-width: 900px) {
   .making-steps { grid-template-columns: repeat(2, 1fr); gap: 1.6rem 1.2rem; }
   .making-thread { display: none; }
-  .making-shots { grid-template-columns: 1fr 1fr; }
-  .making-plate { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
-  .making-chip { right: 3%; top: 46%; }
 }
 @media (max-width: 520px) {
   .making-steps { grid-template-columns: 1fr; }
+  .making-shots { gap: .8rem; }
 }

@@ -6,9 +6,9 @@ export default function Download() {
   useReveal();
 
   return (
-    <section className="download band band--celadon" id="get">
+    <section className="section" id="get">
       <div className="container">
-        <div className="download-card reveal">
+        <div className="patch download-patch reveal">
           <img src="/logo.svg" alt="" className="brand-tile download-logo" />
 
           <h2 className="h-lg download-title">
@@ -22,18 +22,10 @@ export default function Download() {
           </p>
 
           <div className="download-btns">
-            <a
-              href="https://apps.apple.com/app/id6792596703"
-              target="_blank" rel="noopener"
-              className="btn btn-cream"
-            >
+            <a href="https://apps.apple.com/app/id6792596703" target="_blank" rel="noopener" className="btn btn-cream">
               <AppleLogo size={17} /> App Store
             </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.craftmadeby.app"
-              target="_blank" rel="noopener"
-              className="btn btn-ghost"
-            >
+            <a href="https://play.google.com/store/apps/details?id=com.craftmadeby.app" target="_blank" rel="noopener" className="btn btn-ghost">
               <PlayLogo size={17} /> Google Play
             </a>
           </div>

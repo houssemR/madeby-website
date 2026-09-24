@@ -32,6 +32,20 @@ npm run dev
 The build command is: `npm run build`  
 The publish directory is: `dist`
 
+## The design
+
+Porcelain paper with panels of cloth laid on it and stitched down. Every
+coloured block on the page is one construct — `.patch` in `src/index.css` — a
+panel with a running stitch set in from its edge, and the thread runs between
+them so the page reads as pieced together. Do not add a second border
+treatment; the patch is the whole idea.
+
+Palette and faces come from the app's own store pages. Two tokens exist only
+because of contrast: `--sage #5C7359` is deeper than the store pages' `#78907A`
+because these panels carry body text, and `--honey-l` is honey light enough to
+be *type* on that sage — plain `--honey` measures 2.8:1 there and is for
+backgrounds only.
+
 ## App screens, hats and the social card
 
 The screens on the page are real prod captures, taken for the store listings

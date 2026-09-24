@@ -1,113 +1,87 @@
-.corner { overflow: hidden; }
-.corner-title { color: var(--pine); }
-.corner-title .em-line { color: var(--pine-soft); }
+.corner { display: grid; }
+.corner .container { display: grid; gap: clamp(2.2rem, 4.5vw, 3.6rem); }
 
-.corner-body {
+.corner-top {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
+.corner-head { max-width: 56ch; }
+.corner-head .em-line { color: var(--pine-soft); }
 
-/* ---- the wardrobe, playing ---- */
-.corner-film { position: relative; max-width: 300px; margin-inline: auto; }
+.corner-film { position: relative; max-width: 252px; margin-inline: auto; }
 .corner-film .device { transform: rotate(-2.5deg); }
-.corner-chip {
-  position: absolute;
-  z-index: 3;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-2deg);
-}
+.corner-chip { position: absolute; z-index: 3; bottom: 4%; left: 50%; transform: translateX(-50%) rotate(-2deg); }
 
-/* ---- the facts ----
-   Cards in a column read as a form. These are three plain entries divided by
-   the running stitch, with the figure doing the work. */
-.corner-facts { display: grid; gap: 1.4rem; }
-.corner-fact {
+/* Three facts on paper, divided by seams. The figure does the work. */
+.corner-facts {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.3rem;
-  align-items: baseline;
-  padding-bottom: 1.4rem;
-  border-bottom: 2px dashed rgba(31, 51, 38, 0.2);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.4rem);
 }
-.corner-fact-num {
-  font-family: var(--font-display);
+.corner-fact { padding-top: 1.1rem; border-top: 2px dashed var(--stitch); }
+.corner-num {
+  display: block;
+  font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(2.6rem, 5vw, 3.6rem);
-  line-height: 0.8;
+  font-size: clamp(2.4rem, 4.4vw, 3.2rem);
+  line-height: .85;
   color: var(--brick);
-  min-width: 1.9ch;
-  text-align: right;
+  margin-bottom: .45rem;
 }
-.corner-fact h3 { color: var(--pine); margin-bottom: 0.25rem; }
-.corner-fact p { color: var(--ink-soft); font-size: 0.97rem; max-width: 46ch; }
+.corner-fact h3 { margin-bottom: .25rem; }
+.corner-fact p { color: var(--ink-soft); font-size: .94rem; }
 
-.corner-mascots { padding-top: 0.2rem; }
-.corner-mascots-label {
-  font-family: var(--font-label);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sage-deep);
-  margin-bottom: 0.9rem;
-}
-.corner-mascots ul { display: flex; flex-wrap: wrap; gap: clamp(0.8rem, 2vw, 1.6rem); }
-.corner-mascots li { display: grid; justify-items: center; gap: 0.25rem; }
-.corner-mascots img { width: clamp(46px, 7vw, 60px); height: auto; }
-.corner-mascots span {
-  font-family: var(--font-label);
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: var(--ink-soft);
-}
-
-/* ---- the hat shelf: all forty, actually drawn ---- */
-.corner-shelf { margin-top: clamp(3rem, 6vw, 5rem); }
-.corner-shelf-head { text-align: center; margin-bottom: 1.6rem; }
-.corner-shelf-head h3 { color: var(--pine); }
-.corner-shelf-head p { color: var(--ink-soft); font-size: 0.96rem; }
-
+/* ---- the drawer ---- */
+.corner-tray { --pad: clamp(1.4rem, 3vw, 2.4rem); }
+.corner-tray-head { text-align: center; margin-bottom: 1.3rem; }
+.corner-tray-head p { color: var(--ink-soft); font-size: .94rem; }
 .corner-hats {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 0.6rem;
-  padding: 1.2rem;
-  background: rgba(251, 246, 236, 0.6);
-  border: 2px dashed rgba(31, 51, 38, 0.2);
-  border-radius: var(--r-lg);
+  gap: .55rem;
 }
 .corner-hats li {
   min-width: 0;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  padding: 0.5rem;
+  padding: .45rem;
   background: var(--porcelain);
   border-radius: var(--r-sm);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s var(--ease-out);
+  box-shadow: var(--lift-1);
+  transition: transform .25s var(--ease);
 }
 .corner-hats li:hover { transform: translateY(-4px) rotate(-3deg); }
 .corner-hats img { width: 100%; height: 100%; object-fit: contain; }
+.corner-collections { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-top: 1.1rem; }
 
-.corner-collections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.1rem;
+.corner-mascots { text-align: center; }
+.corner-mascots-label {
+  font-family: var(--tag);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--honey-d);
+  margin-bottom: 1rem;
 }
+.corner-mascots ul { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1rem, 3vw, 2.2rem); }
+.corner-mascots li { display: grid; justify-items: center; gap: .3rem; }
+.corner-mascots img { width: clamp(50px, 7vw, 66px); }
+.corner-mascots span { font-family: var(--tag); font-size: .78rem; font-weight: 600; color: var(--ink-soft); }
 
-@media (max-width: 980px) {
-  .corner-body { grid-template-columns: 1fr; }
+@media (max-width: 940px) {
+  .corner-top { grid-template-columns: 1fr; }
+  .corner-film { order: -1; }
 }
 @media (max-width: 820px) {
   .corner-hats { grid-template-columns: repeat(8, 1fr); }
 }
+@media (max-width: 660px) {
+  .corner-facts { grid-template-columns: 1fr; gap: 1rem; }
+}
 @media (max-width: 560px) {
-  .corner-hats { grid-template-columns: repeat(5, 1fr); gap: 0.4rem; padding: 0.8rem; }
-  .corner-fact { grid-template-columns: auto 1fr; gap: 0.9rem; }
+  .corner-hats { grid-template-columns: repeat(5, 1fr); gap: .4rem; }
 }
