@@ -117,13 +117,16 @@ export default function Contact() {
   return (
     <section className="contact-section" id="contact">
       <div className="container">
-        <div className="contact-inner reveal">
+        <div className="patch patch--cloth contact-inner reveal">
           <div className="contact-head">
-            <span className="contact-eyebrow">Support</span>
-            <h2 className="contact-title">Contact us</h2>
+            <span className="tag tag--quiet">Support</span>
+            <h2 className="h-lg contact-title">
+              Something wrong,
+              <span className="em-line">or something to say?</span>
+            </h2>
             <p className="contact-sub">
-              A question, a problem, feedback or a review — we read everything.
-              Messages go straight to our support inbox.
+              A question, a bug, an idea or a review — we read all of it, and it goes
+              straight to the support inbox rather than into a queue.
             </p>
           </div>
 

@@ -37,10 +37,10 @@ export default function Making() {
           </div>
 
           <ol className="making-steps">
-            <span className="making-thread" aria-hidden="true" />
+            <span className="making-thread sew" aria-hidden="true" />
             {STEPS.map((s, i) => (
               <li key={s.n} className={`making-step reveal reveal-delay-${i + 1}`}>
-                <span className="making-node">{s.icon}</span>
+                <span className="making-node pop" style={{ transitionDelay: `${0.35 + i * 0.22}s` }}>{s.icon}</span>
                 <span className="making-num">{s.n}</span>
                 <h3 className="h-md">{s.title}</h3>
                 <p>{s.body}</p>
@@ -63,7 +63,7 @@ export default function Making() {
           </div>
         </div>
       </div>
-      <span className="thread" aria-hidden="true" />
+      <span className="thread sew sew--down" aria-hidden="true" />
     </section>
   );
 }

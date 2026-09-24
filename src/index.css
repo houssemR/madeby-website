@@ -134,8 +134,8 @@ main > .section:first-of-type { padding-top: var(--gap); }
   height: var(--gap);
   width: 2px;
   margin-inline: auto;
-  border-left: 2px dashed var(--stitch);
 }
+.thread.sew::after { border-left: 2px dashed var(--stitch); }
 
 /* ---- WOVEN TAG ----
    The label sewn into a garment: the eyebrow on every section, and the step
@@ -283,3 +283,58 @@ main > .section:first-of-type { padding-top: var(--gap); }
 }
 
 .app-container { overflow-x: hidden; }
+
+/* ==========================================
+   MOTION — the stitch being sewn
+
+   One behaviour, applied everywhere: a thread draws itself in when it reaches
+   the viewport, and whatever hangs off it lands as the needle passes. The
+   draw is a clip, not a scale, so the dashes keep their spacing instead of
+   stretching — it reads as stitches appearing one after another.
+   ========================================== */
+
+/* The clip goes on a pseudo-element, never on the observed node: a clip-path
+   also clips the element's intersection rect, so a thread that starts fully
+   clipped never reports as visible and never gets told to draw. The host
+   stays unclipped and paints nothing; its ::after carries the stitches. */
+.sew { position: relative; }
+.sew::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.15s cubic-bezier(.33, .02, .18, 1);
+}
+.sew--down::after { clip-path: inset(0 0 100% 0); }
+.sew.visible::after { clip-path: inset(0 0 0 0); }
+
+/* Something small that lands: hats on a shelf, a node on a thread. */
+.pop {
+  opacity: 0;
+  transform: scale(.82) translateY(6px);
+  transition: opacity .42s var(--ease), transform .42s cubic-bezier(.2, 1.3, .4, 1);
+}
+.pop.visible { opacity: 1; transform: none; }
+
+/* A step card arriving from the side of the thread it belongs to. */
+.reveal--left  { transform: translateX(-26px); }
+.reveal--right { transform: translateX(26px); }
+.reveal--left.visible,
+.reveal--right.visible { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sew::after, .sew--down::after { clip-path: none !important; transition: none !important; }
+  .pop { opacity: 1 !important; transform: none !important; }
+}
+
+/* The wax seal lands like a seal: it comes down slightly large and settles. */
+.press img {
+  opacity: 0;
+  transform: scale(1.28) rotate(-7deg);
+  transition: opacity .3s ease-out, transform .5s cubic-bezier(.2, 1.25, .35, 1);
+}
+.press.visible img { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .press img { opacity: 1 !important; transform: none !important; }
+}

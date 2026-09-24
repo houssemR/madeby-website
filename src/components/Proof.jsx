@@ -61,7 +61,7 @@ export default function Proof() {
               </figure>
 
               {/* The seal itself, pressed under the screens that earn it. */}
-              <figure className="proof-seal">
+              <figure className="proof-seal press">
                 <img src="/images/seal.png" alt="The Craft MadeBy wax seal, pressed on a certified piece" width="440" height="440" loading="lazy" />
                 <figcaption>
                   <strong>Certified Handmade</strong>
@@ -73,13 +73,13 @@ export default function Proof() {
 
           <div className="proof-ranks reveal">
             <p className="proof-ranks-label">Your standing grows with the work</p>
-            <ol className="proof-rank-list">
+            <ol className="proof-rank-list sew">
               {RANKS.map((r) => <li key={r}><span>{r}</span></li>)}
             </ol>
           </div>
         </div>
       </div>
-      <span className="thread" aria-hidden="true" />
+      <span className="thread sew sew--down" aria-hidden="true" />
     </section>
   );
 }

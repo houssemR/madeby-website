@@ -46,6 +46,31 @@ because these panels carry body text, and `--honey-l` is honey light enough to
 be *type* on that sage — plain `--honey` measures 2.8:1 there and is for
 backgrounds only.
 
+## Motion
+
+One behaviour, everywhere: the stitch being sewn. A thread draws itself in
+when it reaches the viewport, and whatever hangs off it lands as the needle
+passes. Four classes, one IntersectionObserver in `src/hooks.js`:
+
+| class | what it does |
+|---|---|
+| `reveal` | a block rises into place; `reveal--left` / `reveal--right` arrive from a side |
+| `sew` | a thread draws itself; `sew--down` for vertical |
+| `pop` | something small lands — a hat on the shelf, a knot on a thread |
+| `press` | the wax seal comes down slightly large and settles |
+
+**The clip must never sit on the observed element.** A `clip-path` also clips
+that element's intersection rect, so a thread that starts fully clipped never
+reports as visible and never gets told to draw. `.sew` is an unclipped host
+that paints nothing; its `::after` carries the stitches and the clip. Any new
+thread has to follow that shape.
+
+The row counter is the one number that counts up (`useCounter`), because that
+section is about a number going up.
+
+Everything is off under `prefers-reduced-motion`, and the page has to be
+complete with it off — the review check below asserts that.
+
 ## App screens, hats and the social card
 
 The screens on the page are real prod captures, taken for the store listings

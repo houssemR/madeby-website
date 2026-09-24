@@ -30,8 +30,9 @@
   bottom: 14px;
   left: 50%;
   transform: translateX(-1px);
-  border-left: 2px dashed var(--stitch);
+  width: 2px;
 }
+.give-thread.sew::after { border-left: 2px dashed var(--stitch); }
 
 .give-step { position: relative; }
 .give-step--left  { grid-column: 1; }

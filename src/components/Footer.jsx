@@ -10,6 +10,7 @@ export default function Footer() {
           <img src="/logo.svg" alt="" className="brand-tile footer-logo" />
           <span className="footer-brand-name">Craft MadeBy</span>
           <p className="footer-brand-tagline">Where crafters leave their mark.</p>
+          <p className="footer-cta-line">Free, in twelve languages. Premium free for fourteen days.</p>
           <div className="footer-store-links">
             <a href="https://apps.apple.com/app/id6792596703" target="_blank" rel="noopener" className="footer-store-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -73,7 +74,6 @@ export default function Footer() {
         <div className="footer-links-col">
           <h4>More</h4>
           <ul>
-            <li><a href="#get">Download</a></li>
             <li><a href="#contact">Contact support</a></li>
             <li><a href="https://www.youtube.com/@CraftMadeByApp" target="_blank" rel="noopener">YouTube</a></li>
           </ul>

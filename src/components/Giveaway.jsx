@@ -54,10 +54,10 @@ export default function Giveaway() {
           </div>
 
           <ol className="give-flow">
-            <span className="give-thread" aria-hidden="true" />
+            <span className="give-thread sew sew--down" aria-hidden="true" />
             {STEPS.map((s, i) => (
-              <li key={s.title} className={`give-step give-step--${i % 2 ? 'right' : 'left'} reveal reveal-delay-${(i % 4) + 1}`}>
-                <span className="give-node" aria-hidden="true" />
+              <li key={s.title} className={`give-step give-step--${i % 2 ? 'right' : 'left'} reveal reveal--${i % 2 ? 'right' : 'left'} reveal-delay-${(i % 4) + 1}`}>
+                <span className="give-node pop" aria-hidden="true" />
                 <div className="give-card">
                   <span className={`give-who give-who--${s.who.toLowerCase()}`}>{s.who}</span>
                   <h3 className="h-md">{s.title}</h3>
@@ -69,7 +69,7 @@ export default function Giveaway() {
             {/* The two sides meet here, so the last step sits on the thread
                 itself rather than on either side of it. */}
             <li className="give-step give-step--end reveal">
-              <span className="give-node give-node--end" aria-hidden="true" />
+              <span className="give-node give-node--end pop" aria-hidden="true" />
               <div className="give-card give-card--end">
                 <span className="give-who give-who--both">Both</span>
                 <h3 className="h-md">A private thread, until it arrives</h3>
@@ -89,7 +89,7 @@ export default function Giveaway() {
           </p>
         </div>
       </div>
-      <span className="thread" aria-hidden="true" />
+      <span className="thread sew sew--down" aria-hidden="true" />
     </section>
   );
 }

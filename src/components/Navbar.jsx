@@ -34,10 +34,14 @@ export default function Navbar() {
           {LINKS.map(([href, label]) => (
             <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
           ))}
-          <a href="#get" className="nav-cta-mobile" onClick={() => setOpen(false)}>Get the app</a>
+          <a href="https://apps.apple.com/app/id6792596703" target="_blank" rel="noopener" className="nav-cta-mobile" onClick={() => setOpen(false)}>Get the app — free</a>
         </div>
 
-        <a href="#get" className="btn btn-primary nav-cta">Get the app</a>
+        <a
+          href="https://apps.apple.com/app/id6792596703"
+          target="_blank" rel="noopener"
+          className="btn btn-primary nav-cta"
+        >Get the app</a>
 
         <button
           className="nav-burger"

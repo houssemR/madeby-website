@@ -67,8 +67,10 @@ export default function Corner() {
             <p>Every one of them earned with points from the daily round.</p>
           </div>
           <ul className="corner-hats">
-            {ALL_HATS.map((id) => (
-              <li key={id}><img src={`/images/hats/${id}.svg`} alt="" loading="lazy" /></li>
+            {ALL_HATS.map((id, i) => (
+              <li key={id} className="pop" style={{ transitionDelay: `${i * 0.022}s` }}>
+                <img src={`/images/hats/${id}.svg`} alt="" loading="lazy" />
+              </li>
             ))}
           </ul>
           <ul className="corner-collections">
@@ -92,7 +94,7 @@ export default function Corner() {
           </ul>
         </div>
       </div>
-      <span className="thread" aria-hidden="true" />
+      <span className="thread sew sew--down" aria-hidden="true" />
     </section>
   );
 }

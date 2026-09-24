@@ -1,4 +1,5 @@
-import { useReveal } from '../hooks';
+import { useRef } from 'react';
+import { useReveal, useCounter } from '../hooks';
 import './Counter.css';
 
 const POINTS = [
@@ -10,6 +11,8 @@ const POINTS = [
 
 export default function Counter() {
   useReveal();
+  const rows = useRef(null);
+  useCounter(rows, 42);
 
   return (
     <section className="section" id="counter">
@@ -30,6 +33,13 @@ export default function Counter() {
                   basket.
                 </p>
               </div>
+
+              {/* Row 42 of the sleeve — the number the copy refers to,
+                  climbing to it. */}
+              <p className="counter-tally">
+                <b ref={rows} aria-hidden="true">0</b>
+                <span>rows on this sleeve, still counted</span>
+              </p>
 
               <dl className="counter-list">
                 {POINTS.map(([k, v], i) => (
@@ -64,7 +74,7 @@ export default function Counter() {
           </div>
         </div>
       </div>
-      <span className="thread" aria-hidden="true" />
+      <span className="thread sew sew--down" aria-hidden="true" />
     </section>
   );
 }

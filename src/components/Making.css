@@ -14,8 +14,9 @@
   top: 23px;
   left: 6%;
   right: 6%;
-  border-top: 2px dashed var(--stitch);
+  height: 2px;
 }
+.making-thread.sew::after { border-top: 2px dashed var(--stitch); }
 .making-step { position: relative; }
 .making-node {
   position: relative;

@@ -5,12 +5,12 @@ import Counter from './components/Counter'
 import Corner from './components/Corner'
 import Proof from './components/Proof'
 import Giveaway from './components/Giveaway'
-import Download from './components/Download'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-/* Six sections, in the order a crafter meets the app: make a piece, count
-   the rows, decorate your corner, prove it is handmade, download. */
+/* The order a crafter meets the app: make a piece, count the rows, decorate
+   your corner, prove it is handmade, give it away. The download lives in the
+   header and in the footer rather than in a section of its own. */
 function App() {
   return (
     <div className="app-container">
@@ -22,7 +22,6 @@ function App() {
         <Corner />
         <Proof />
         <Giveaway />
-        <Download />
         <Contact />
       </main>
       <Footer />

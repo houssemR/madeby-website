@@ -79,3 +79,16 @@
   .hero-craft-list { padding-top: 1.1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-in { opacity: 1; transform: none; } }
+
+/* The page opens by sewing the first patch down. It is the only motion that
+   runs without being scrolled to, so it sets what the rest of the page does. */
+.hero-patch::before {
+  animation: sew-patch 1.5s .45s cubic-bezier(.33, .02, .18, 1) both;
+}
+@keyframes sew-patch {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-patch::before { animation: none; }
+}

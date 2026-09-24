@@ -51,3 +51,30 @@
   .counter-grid { grid-template-columns: 1fr; }
   .counter-stage { max-width: 420px; margin-inline: auto; width: 100%; }
 }
+
+/* The count itself, climbing. The section is about a number going up, so the
+   number goes up. */
+.counter-tally {
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+  padding-bottom: clamp(.5rem, 2vw, 1rem);
+}
+.counter-tally b {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3.4rem, 7vw, 5.4rem);
+  line-height: .82;
+  letter-spacing: -.03em;
+  color: var(--honey-l);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.3ch;
+}
+.counter-tally span {
+  font-family: var(--tag);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--on-sage);
+}

@@ -162,3 +162,31 @@
 
 /* Target size: the bare inline links were 18px tall. */
 .footer-links-col ul a { display: inline-block; padding-block: 4px; }
+
+/* The page no longer has a standing download block, so these are the close.
+   They read as real buttons now, not as afterthoughts in a link list. */
+.footer-cta-line {
+  font-family: var(--tag);
+  font-size: .88rem;
+  color: rgba(241, 233, 216, .62);
+  margin-top: -.2rem;
+}
+.footer-store-links { gap: .6rem; margin-top: .35rem; }
+.footer-store-btn {
+  font-family: var(--tag);
+  font-weight: 600;
+  font-size: .92rem;
+  padding: .72rem 1.35rem;
+  border-radius: var(--r-full);
+  background: var(--porcelain);
+  color: var(--ink);
+  border: none;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.footer-store-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.28); }
+.footer-store-btn + .footer-store-btn {
+  background: transparent;
+  color: var(--porcelain);
+  border: 1.5px solid rgba(251, 246, 236, .3);
+}
+.footer-store-btn + .footer-store-btn:hover { background: rgba(251,246,236,.1); }

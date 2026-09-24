@@ -46,10 +46,11 @@
   align-items: center;
   gap: clamp(.5rem, 2vw, 1.6rem);
 }
-.proof-rank-list::before {
-  content: '';
-  position: absolute;
-  left: 6%; right: 6%; top: 50%;
+.proof-rank-list.sew::after {
+  left: 6%; right: 6%;
+  top: 50%;
+  bottom: auto;
+  inset: auto 6% auto 6%;
   border-top: 2px dashed var(--stitch-pale);
 }
 .proof-rank-list li { position: relative; }
@@ -71,7 +72,7 @@
 }
 @media (max-width: 620px) {
   .proof-pillars { grid-template-columns: 1fr; }
-  .proof-rank-list::before { display: none; }
+  .proof-rank-list.sew::after { display: none; }
 }
 
 /* The seal sits under the two screens, spanning them — the thing the whole

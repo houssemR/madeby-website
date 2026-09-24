@@ -28,7 +28,7 @@ await page.evaluate(async () => {
     window.scrollTo(0, y);
     await new Promise((r) => setTimeout(r, 70));
   }
-  document.querySelectorAll('.reveal').forEach((e) => e.classList.add('visible'));
+  document.querySelectorAll('.reveal, .sew, .pop, .press').forEach((e) => e.classList.add('visible'));
   document.querySelectorAll('.hero-in').forEach((e) => e.classList.add('is-in'));
   window.scrollTo(0, 0);
   await new Promise((r) => setTimeout(r, 900));
