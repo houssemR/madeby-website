@@ -38,12 +38,14 @@ export default function Making() {
   return (
     <section className="making band band--celadon" id="making">
       <div className="container">
-        <div className="making-head reveal">
+        <div className="sec-head making-head reveal">
+          <div className="sec-head-title">
           <span className="badge">The making</span>
           <h2 className="h-lg making-title">
             A piece, remembered
             <span className="em-line">step by step.</span>
           </h2>
+          </div>
           <p className="lede">
             Most of what you make disappears into a camera roll. Here every
             project keeps its own thread — the photos, the yarn, the hours, the
@@ -67,8 +69,11 @@ export default function Making() {
             ))}
           </ol>
 
-          {/* Two real screens: the project page and the running stopwatch */}
+          {/* The piece, then the two screens that recorded it */}
           <div className="making-shots reveal reveal-delay-2">
+            <figure className="plate making-plate">
+              <img src="/images/craft/sweater.webp" alt="Blue Drops Big Merino yarn photographed for a project step" loading="lazy" />
+            </figure>
             <figure className="making-shot making-shot--a">
               <div className="device"><div className="device-screen">
                 <img src="/images/app/project.webp" alt="A project page in Craft MadeBy, with its steps and photos" loading="lazy" width="640" height="1421" />

@@ -21,6 +21,7 @@
   --honey:       #E3B964;  /* the one accent: points, premium, seals */
   --honey-deep:  #C49A44;
   --blush:       #EBC3B5;  /* secondary chip only */
+  --brick:       #9B3A2E;  /* the seal red; the only warm dark that passes on celadon */
 
   /* ---- Ink ---- */
   --ink:         #26221C;
@@ -90,7 +91,7 @@ h1, h2, h3 {
   font-style: italic;
   font-weight: 500;
 }
-.h-xl { font-size: clamp(2.9rem, 8.4vw, 5.4rem); }
+.h-xl { font-size: clamp(2.7rem, 7.2vw, 4.7rem); }
 .h-lg { font-size: clamp(2.2rem, 5.4vw, 3.7rem); }
 .h-md { font-size: clamp(1.55rem, 2.7vw, 2.1rem); }
 
@@ -108,8 +109,7 @@ h1, h2, h3 {
   padding-inline: clamp(1.1rem, 4vw, 2rem);
 }
 .band { padding-block: var(--band); position: relative; }
-.band--celadon { background: var(--celadon); }
-.band--sage    { background: var(--sage); color: var(--porcelain); }
+.band--sage    { color: var(--porcelain); }
 .band--sage h1, .band--sage h2, .band--sage h3 { color: var(--porcelain); }
 
 /* ---- BADGE ----
@@ -220,7 +220,7 @@ h1, h2, h3 {
   pointer-events: none;
   overflow: hidden;
   line-height: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .seam svg { width: 100%; height: 100%; display: block; }
 .seam--top { top: -1px; }
@@ -323,3 +323,88 @@ h1, h2, h3 {
 }
 
 .app-container { overflow-x: hidden; }
+
+/* ==========================================
+   v2 — surface, motion and scale
+
+   The first pass read as a poster set: flat fields of colour with small
+   phones floating in them, and not one handmade object anywhere. These are
+   the pieces that fix that.
+   ========================================== */
+
+/* ---- LINEN GROUND ----
+   A fill reads as a screen; a weave reads as a surface. Two hairline grids
+   painted straight onto the band's own background — an overlay pseudo-element
+   needed a z-index, and lifting the children to clear it silently outranked
+   every absolutely positioned child in the section. */
+.band--celadon {
+  background-color: var(--celadon);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(31,51,38,0.035) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(0deg,  rgba(31,51,38,0.035) 0 1px, transparent 1px 7px);
+}
+.band--sage {
+  background-color: var(--sage);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(251,246,236,0.05) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(0deg,  rgba(251,246,236,0.05) 0 1px, transparent 1px 7px);
+}
+
+
+/* ---- FULL BLEED ----
+   Escapes the container so a row of photographs can run edge to edge. */
+.bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+/* ---- PHOTOGRAPHS ----
+   Real pieces from a real portfolio. They carry the page's warmth, so they
+   get a proper mount rather than a bare <img>. */
+.plate {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--celadon-dim);
+  box-shadow: var(--shadow-lg);
+}
+.plate img { width: 100%; height: 100%; object-fit: cover; }
+.plate--tall { aspect-ratio: 3 / 4; }
+.plate--square { aspect-ratio: 1; }
+
+/* A handwritten-feeling caption, the way a maker labels a finished piece. */
+.hand {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.device-screen > video { background: #141813; }
+
+/* ---- SCALE ----
+   One enormous figure per section, so the eye has somewhere to land. */
+.figure-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(5rem, 16vw, 12rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+/* ---- SECTION HEAD ----
+   One column left the right half of every band empty. The headline and its
+   lede now share the width, which is also how the type wants to be read. */
+.sec-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1.2rem, 4vw, 3.5rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+.sec-head-title { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s2); }
+.sec-head .lede { max-width: 48ch; padding-bottom: 0.3rem; }
+@media (max-width: 860px) {
+  .sec-head { grid-template-columns: 1fr; align-items: start; gap: 1.1rem; }
+}

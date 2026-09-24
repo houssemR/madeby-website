@@ -34,12 +34,14 @@ export default function Proof() {
   return (
     <section className="proof band band--sage" id="proof">
       <div className="container">
-        <div className="proof-head reveal">
+        <div className="sec-head proof-head reveal">
+          <div className="sec-head-title">
           <span className="badge">Certified handmade</span>
           <h2 className="h-lg">
             Anyone can say handmade.
             <span className="em-line">You can prove it.</span>
           </h2>
+          </div>
           <p className="lede">
             Because the app watched the piece being made — the steps, the
             photos, the recorded hours — it can vouch for it afterwards. That is

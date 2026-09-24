@@ -1,40 +1,34 @@
 .counter { overflow: hidden; }
-.counter-grid {
+
+/* The number sits behind everything, bled off the right edge — the section's
+   own subject used as its ornament. */
+.counter-ghost {
+  position: absolute;
+  z-index: 0;
+  top: clamp(1rem, 4vw, 3rem);
+  right: -0.09em;
+  color: rgba(251, 246, 236, 0.11);
+  pointer-events: none;
+  user-select: none;
+}
+
+.counter-head .em-line { color: var(--pine); }
+
+.counter-body {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: clamp(2.5rem, 6vw, 5rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
-.counter-copy { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s2); }
-.counter-copy h2 { margin-block: 0.1em 0.1em; }
-.counter-copy .em-line { color: var(--pine); }
 
-.counter-list { display: grid; gap: 1.15rem; margin-top: var(--s3); }
-.counter-item { padding-left: 1.15rem; border-left: 2px solid rgba(251, 246, 236, 0.28); }
-.counter-item dt {
-  font-family: var(--font-label);
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--porcelain);
-  margin-bottom: 0.1rem;
-}
-.counter-item dd { color: var(--ink-on-sage); font-size: 0.96rem; max-width: 46ch; }
-
-/* ---- the stage ----
-   The night-mode screen is the subject; the widget is the aside. It was sized
-   at 74% of the column, which covered the phone it was meant to sit beside. */
-.counter-stage {
-  position: relative;
-  padding-block: clamp(1rem, 3vw, 2rem) clamp(2.5rem, 6vw, 4rem);
-  padding-left: clamp(1.5rem, 6%, 4rem);
-}
-.counter-phone { margin: 0 0 0 auto; max-width: 300px; transform: rotate(3deg); }
+.counter-stage { position: relative; padding-bottom: clamp(2.5rem, 6vw, 4rem); padding-left: clamp(1rem, 5%, 3rem); }
+.counter-phone { margin: 0 0 0 auto; max-width: 290px; transform: rotate(3deg); }
 .counter-widget {
   position: absolute;
   z-index: 3;
   bottom: 0;
   left: 0;
-  width: min(56%, 250px);
+  width: min(58%, 250px);
   margin: 0;
   padding: 0.5rem 0.5rem 0.6rem;
   transform: rotate(-5deg);
@@ -50,13 +44,25 @@
   color: var(--sage-deep);
   padding: 0.2rem 0.3rem 0.45rem;
 }
-.counter-chip { position: absolute; z-index: 4; top: 6%; right: 0; transform: rotate(5deg); }
+.counter-chip { position: absolute; z-index: 4; top: 4%; right: 0; transform: rotate(5deg); }
+
+/* Four entries on the stitch, not four boxes. */
+.counter-list { display: grid; gap: 1.25rem; }
+.counter-item { padding-left: 1.2rem; border-left: 2px solid rgba(251, 246, 236, 0.3); }
+.counter-item dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  color: var(--porcelain);
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.01em;
+}
+.counter-item dd { color: var(--ink-on-sage); font-size: 0.96rem; max-width: 48ch; }
 
 @media (max-width: 980px) {
-  .counter-grid { grid-template-columns: 1fr; }
-  .counter-stage { max-width: 480px; margin-inline: auto; width: 100%; }
+  .counter-body { grid-template-columns: 1fr; }
+  .counter-stage { max-width: 440px; margin-inline: auto; width: 100%; padding-left: 0; }
 }
 @media (max-width: 560px) {
-  .counter-stage { padding-left: 0; }
-  .counter-widget { width: 58%; }
+  .counter-widget { width: 60%; }
 }

@@ -54,6 +54,25 @@ node tools/crop-hats.mjs        # rewrites each viewBox to the drawing's bounds
 `src/components/hats.js` lists the eight collections in the app's own order
 (`lib/data/studio_rewards.dart`). If a hat is added there, add it here too.
 
+## The two screen recordings
+
+`public/videos/hats.mp4` and `feed.mp4` are real captures of the prod app, not
+mockups. The pipeline, run from the app repo:
+
+1. Serve the prod web build and sign in, saving the session:
+   `node tool/webtest/serve.js build/webprod 8091`, then `drive.js … --savestate`.
+2. Record with the harness: `drive.js --state <state.json> --video <dir>,412,915`
+   followed by the clicks to perform. Record at the viewport size — asking for a
+   larger video pads the frame instead of scaling it.
+3. The harness writes variable-framerate WebM, and seeking into VFR by frame
+   does not line up. So `promo/src/SiteClip.tsx` renders in two passes: a full
+   re-encode to constant 30fps (`SiteHatsFull`), then a trim of that
+   (`SiteHats`). Remotion carries its own encoder; there is no ffmpeg here.
+
+Re-shoot whenever the screens change. The old `theme.mp4` and `hero-app.mp4`
+were deleted because they predated the wardrobe and showed a Theme tab with no
+costume card.
+
 ## Reviewing a change
 
 ```

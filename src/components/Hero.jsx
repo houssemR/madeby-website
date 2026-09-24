@@ -2,21 +2,10 @@ import { useEffect } from 'react';
 import './Hero.css';
 import { AppleLogo, PlayLogo } from './Icons';
 
-/* The six craft categories the app actually ships, as the loose chips the
-   store pages scatter around the artwork. */
-const CRAFTS = [
-  ['Knitting & Crochet', ''],
-  ['Sewing & Textiles', ' chip--honey'],
-  ['Embroidery & Needlework', ''],
-  ['Clay & Ceramics', ' chip--blush'],
-  ['Jewelry & Beading', ''],
-  ['…or a craft of your own', ' chip--honey'],
-];
-
 export default function Hero() {
   useEffect(() => {
     const items = document.querySelectorAll('.hero-in');
-    items.forEach((el, i) => setTimeout(() => el.classList.add('is-in'), 120 + i * 110));
+    items.forEach((el, i) => setTimeout(() => el.classList.add('is-in'), 100 + i * 100));
   }, []);
 
   return (
@@ -26,14 +15,14 @@ export default function Hero() {
           <span className="badge hero-in">Knitting · Crochet · Every craft</span>
 
           <h1 className="h-xl hero-title hero-in">
-            Every piece<br />starts with
-            <span className="em-line">one photo.</span>
+            Somebody made this
+            <span className="em-line">by hand.</span>
           </h1>
 
           <p className="lede hero-in">
-            Craft MadeBy is the journal for everything you make by hand. Count
-            your rows, record the real hours, keep the photos in order — and
-            end up with a portfolio that proves the work was yours.
+            Craft MadeBy is where that gets written down. Count the rows, record
+            the hours, keep the photos in order — and the finished piece carries
+            proof of every one of them.
           </p>
 
           <div className="hero-ctas hero-in">
@@ -59,46 +48,31 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Three real prod screens, tilted the way the store pages tilt them */}
-        <div className="hero-stage hero-in" aria-hidden="false">
-          <figure className="hero-phone hero-phone--back-l">
-            <div className="device"><div className="device-screen">
-              <img src="/images/app/theme.webp" alt="" loading="eager" width="640" height="1421" />
-            </div></div>
+        {/* A real piece, with the app laid over it — the object first, the
+            software because of it. */}
+        <div className="hero-stage hero-in">
+          <figure className="plate hero-plate">
+            <img
+              src="/images/craft/jumpsuit.webp"
+              alt="A hand-knitted grey baby jumpsuit with wooden buttons, hanging on a wire hanger"
+              width="900" height="1200" loading="eager" fetchPriority="high"
+            />
           </figure>
 
-          <figure className="hero-phone hero-phone--front">
-            <div className="device"><div className="device-screen">
-              <img
-                src="/images/app/workshop.webp"
-                alt="The Craft MadeBy workshop, with finished pieces from other crafters"
-                loading="eager" width="640" height="1421"
+          <div className="device hero-device">
+            <div className="device-screen">
+              <video
+                src="/videos/feed.mp4"
+                poster="/videos/feed-poster.jpg"
+                autoPlay muted loop playsInline
+                aria-label="Browsing finished pieces in the Craft MadeBy app"
               />
-            </div></div>
-          </figure>
+            </div>
+          </div>
 
-          <figure className="hero-phone hero-phone--back-r">
-            <div className="device"><div className="device-screen">
-              <img src="/images/app/counting.webp" alt="" loading="eager" width="640" height="1421" />
-            </div></div>
-          </figure>
-
-          <span className="chip chip--honey hero-chip hero-chip--rows">8 rows counted</span>
-          <span className="chip hero-chip hero-chip--hours">124 hours honed</span>
-        </div>
-      </div>
-
-      {/* The craft chips, on their own thread */}
-      <div className="hero-crafts hero-in">
-        <div className="container">
-          <hr className="thread-rule" />
-          <ul className="hero-craft-list">
-            {CRAFTS.map(([name, tone]) => (
-              <li key={name}>
-                <span className={'chip' + tone}>{name}</span>
-              </li>
-            ))}
-          </ul>
+          <figcaption className="hero-cap hand">
+            Sparkedragt til nevø · 38 hours · 6 steps
+          </figcaption>
         </div>
       </div>
     </header>

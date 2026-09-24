@@ -1,12 +1,4 @@
 .proof { overflow: hidden; }
-.proof-head {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s2);
-  max-width: 62ch;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
-}
-.proof-head .badge { align-self: flex-start; }
 .proof-head .em-line { color: var(--pine); }
 
 .proof-body {
