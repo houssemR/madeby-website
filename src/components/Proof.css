@@ -22,7 +22,7 @@
 .proof-pillar h3 { color: var(--porcelain); margin-bottom: .25rem; font-size: clamp(1.05rem, 1.6vw, 1.22rem); }
 .proof-pillar p { color: var(--on-sage); font-size: .92rem; }
 
-.proof-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 6%; }
+.proof-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 6% 6%; }
 .proof-shot { margin: 0; }
 .proof-shot--a { transform: rotate(-4deg); z-index: 2; }
 .proof-shot--b { transform: rotate(4deg) translateY(8%); }
@@ -72,4 +72,35 @@
 @media (max-width: 620px) {
   .proof-pillars { grid-template-columns: 1fr; }
   .proof-rank-list::before { display: none; }
+}
+
+/* The seal sits under the two screens, spanning them — the thing the whole
+   section is about, shown at the end rather than described again. */
+.proof-seal {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-items: center;
+  gap: .7rem;
+  margin: 0;
+  padding-top: clamp(1.6rem, 4vw, 2.6rem);
+  text-align: center;
+}
+.proof-seal img {
+  width: clamp(112px, 15vw, 168px);
+  height: auto;
+  filter: drop-shadow(0 12px 22px rgba(20, 28, 18, .34));
+}
+.proof-seal strong {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  color: var(--porcelain);
+  letter-spacing: -.01em;
+}
+.proof-seal span {
+  display: block;
+  font-family: var(--tag);
+  font-size: .82rem;
+  color: var(--on-sage);
 }

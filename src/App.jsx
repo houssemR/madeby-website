@@ -4,6 +4,7 @@ import Making from './components/Making'
 import Counter from './components/Counter'
 import Corner from './components/Corner'
 import Proof from './components/Proof'
+import Giveaway from './components/Giveaway'
 import Download from './components/Download'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -20,6 +21,7 @@ function App() {
         <Counter />
         <Corner />
         <Proof />
+        <Giveaway />
         <Download />
         <Contact />
       </main>

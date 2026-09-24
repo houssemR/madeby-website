@@ -88,7 +88,10 @@ h1, h2, h3 {
 .h-md { font-size: clamp(1.25rem, 2vw, 1.55rem); }
 .lede { font-size: clamp(1.02rem, 1.45vw, 1.16rem); color: var(--ink-soft); max-width: 52ch; }
 
-.container { max-width: 1180px; margin-inline: auto; padding-inline: clamp(1.1rem, 4vw, 2rem); }
+.container {
+  width: min(100% - 2 * clamp(1.1rem, 3.5vw, 3rem), 1560px);
+  margin-inline: auto;
+}
 .section { padding-block: 0; }
 main > .section:first-of-type { padding-top: var(--gap); }
 

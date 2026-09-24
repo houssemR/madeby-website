@@ -8,6 +8,7 @@ const LINKS = [
   ['#counter', 'Row counter'],
   ['#corner', 'Your corner'],
   ['#proof', 'Certified'],
+  ['#giveaway', 'Giveaways'],
 ];
 
 export default function Navbar() {

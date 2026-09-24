@@ -9,8 +9,8 @@ const PILLARS = [
     body: 'Submit a finished piece with its steps and its hours. Pass, and it is sealed in wax with your name.' },
   { icon: <IconVote size={20} />, title: 'The Expert Panel',
     body: 'Certification is not decided by us. Crafters who have earned their standing review the work and vote.' },
-  { icon: <IconGift size={20} />, title: 'Giveaways and gifts',
-    body: 'Wrap a finished piece and give it away. Once it is accepted, a private thread opens between you.' },
+  { icon: <IconGift size={20} />, title: 'A project book',
+    body: 'Export a piece as a PDF — the story, every step with its photos, the materials and the insights. Premium.' },
   { icon: <IconPeople size={20} />, title: 'Joint projects',
     body: 'Make something with other people step by step, or keep a private group for a class or a guild.' },
 ];
@@ -58,6 +58,15 @@ export default function Proof() {
                 <div className="device"><div className="device-screen">
                   <img src="/images/app/giveaway.webp" alt="A wrapped giveaway in Craft MadeBy" loading="lazy" width="640" height="1421" />
                 </div></div>
+              </figure>
+
+              {/* The seal itself, pressed under the screens that earn it. */}
+              <figure className="proof-seal">
+                <img src="/images/seal.png" alt="The Craft MadeBy wax seal, pressed on a certified piece" width="440" height="440" loading="lazy" />
+                <figcaption>
+                  <strong>Certified Handmade</strong>
+                  <span>Sealed in wax, with your name and the date</span>
+                </figcaption>
               </figure>
             </div>
           </div>

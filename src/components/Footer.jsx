@@ -66,6 +66,7 @@ export default function Footer() {
             <li><a href="#counter">Row counter</a></li>
             <li><a href="#corner">Your corner</a></li>
             <li><a href="#proof">Certified Handmade</a></li>
+            <li><a href="#giveaway">Giveaways</a></li>
           </ul>
         </div>
 
