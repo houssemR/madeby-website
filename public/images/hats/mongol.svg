@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="134.8 70.6 251.4 215.5">
+  <defs><clipPath id="mongol_headM6"><circle cx="260.5" cy="308.2" r="119.1"></circle></clipPath></defs>
+  <path d="M 153.9 246.7 C 151.9 179.7, 234.5 138.7, 260.5 138.7 C 286.5 138.7, 369.1 179.7, 367.1 246.7 Q 260.5 290.6 153.9 246.7 Z" fill="#a8a29a"></path>
+  <path d="M 260.5 138.7 C 286.5 138.7, 369.1 179.7, 367.1 246.7 Q 273.5 284.6 260.5 268.6 Z" fill="#857f77" opacity="0.45"></path>
+  <g clip-path="url(#mongol_headM6)">
+  <path d="M 160.9 249.8 Q 260.5 306.6 360.1 249.8" fill="none" stroke="#2b2724" stroke-width="20" opacity="0.12" stroke-linecap="round"></path>
+  </g>
+  <path d="M 141.9 246.7 Q 260.5 290.6 379.1 246.7" fill="none" stroke="#8c6a4a" stroke-width="32" stroke-linecap="round"></path>
+  <path d="M 252 148 L 260.5 100 L 269 148 Z" fill="#b08f4e"></path>
+  <circle cx="260.5" cy="96" r="9" fill="#b08f4e"></circle>
+  <path d="M 262 90 C 286 74, 316 74, 336 88" fill="none" stroke="#5e4c3a" stroke-width="6" stroke-linecap="round"></path>
+  <path d="M 262 92 C 284 82, 312 86, 330 102" fill="none" stroke="#7a6550" stroke-width="5" stroke-linecap="round"></path>
+  <path d="M 262 94 C 282 90, 304 98, 318 116" fill="none" stroke="#5e4c3a" stroke-width="5" stroke-linecap="round"></path>
+  <path d="M 262 96 C 280 98, 294 110, 302 128" fill="none" stroke="#7a6550" stroke-width="4" stroke-linecap="round"></path>
+  <circle cx="160" cy="250" r="14" fill="#9c7854"></circle>
+  <circle cx="196" cy="258" r="15" fill="#9c7854"></circle>
+  <circle cx="234" cy="264" r="15" fill="#9c7854"></circle>
+  <circle cx="287" cy="264" r="15" fill="#9c7854"></circle>
+  <circle cx="325" cy="258" r="15" fill="#9c7854"></circle>
+  <circle cx="361" cy="250" r="14" fill="#9c7854"></circle>
+  <path d="M 248 186 C 253 202, 268 202, 273 186" fill="none" stroke="#857f77" stroke-width="4" opacity="0.7" stroke-linecap="round"></path>
+</svg>

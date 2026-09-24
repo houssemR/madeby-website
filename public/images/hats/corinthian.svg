@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="152.5 80.5 219.1 266.7">
+  <defs><clipPath id="corinthian_rimG5"><ellipse cx="260.5" cy="269.3" rx="82" ry="22"></ellipse></clipPath></defs>
+  <path d="M 232 164 C 228 128, 246 98, 260.5 88 C 278 100, 294 130, 290 164 Z" fill="#a8453c"></path>
+  <path d="M 260.5 88 C 278 100, 294 130, 290 164 L 272 164 C 274 130, 268 106, 260.5 88 Z" fill="#8c3730" opacity="0.5"></path>
+  <path d="M 160 258 C 164 192, 208 160, 262 160 C 316 160, 360 192, 364 258 C 332 278, 300 286, 262 286 C 212 286, 180 274, 160 258 Z" fill="#c8a24e"></path>
+  <path d="M 262 160 C 316 160, 360 192, 364 258 C 342 270, 318 280, 294 284 C 306 236, 292 190, 262 160 Z" fill="#a8833a" opacity="0.5"></path>
+  <path d="M 208 226 C 218 202, 304 202, 314 226 C 302 238, 220 238, 208 226 Z" fill="#6b5a2e" opacity="0.85"></path>
+  <rect x="254" y="200" rx="6" fill="#c8a24e"></rect>
+  <path d="M 172 262 C 164 294, 166 320, 176 338 C 188 343, 200 336, 202 322 C 194 300, 192 280, 197 262 Z" fill="#c8a24e"></path>
+  <path d="M 349 262 C 357 294, 355 320, 345 338 C 333 343, 321 336, 319 322 C 327 300, 329 280, 324 262 Z" fill="#c8a24e"></path>
+  <g clip-path="url(#corinthian_rimG5)">
+  <path d="M 186 266 Q 262 300 338 266" fill="none" stroke="#2b2724" stroke-width="22" opacity="0.14" stroke-linecap="round"></path>
+  </g>
+  <path d="M 166 258 Q 262 296 358 258" fill="none" stroke="#a8833a" stroke-width="18" stroke-linecap="round"></path>
+</svg>

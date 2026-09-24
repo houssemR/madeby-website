@@ -1,0 +1,40 @@
+.download { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.download-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--s2);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.4rem, 5vw, 4rem);
+  background: var(--pine);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+/* A single soft glow, off-centre, so the block is not a flat rectangle. */
+.download-card::before {
+  content: '';
+  position: absolute;
+  width: 46rem; height: 46rem;
+  top: -60%; right: -22%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(120, 144, 122, 0.5) 0%, transparent 62%);
+  pointer-events: none;
+}
+.download-card > * { position: relative; z-index: 1; }
+
+.download-logo { width: 62px; height: 62px; margin-bottom: 0.4rem; }
+.download-title { color: var(--porcelain); }
+.download-title .em-line { color: var(--honey); }
+.download-sub { color: rgba(251, 246, 236, 0.76); max-width: 46ch; }
+.download-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 0.6rem; }
+.download-seam {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(251, 246, 236, 0.45);
+  margin-top: 1rem;
+}

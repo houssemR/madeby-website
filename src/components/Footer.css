@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: var(--s6);
-  padding: var(--s8) var(--s4) var(--s6);
+  padding: var(--band) var(--s4) var(--s6);
 }
 
 /* Brand column */
@@ -159,3 +159,6 @@
   .footer-social-link:hover,
   .footer-social-link:focus-visible { transform: none; }
 }
+
+/* Target size: the bare inline links were 18px tall. */
+.footer-links-col ul a { display: inline-block; padding-block: 4px; }

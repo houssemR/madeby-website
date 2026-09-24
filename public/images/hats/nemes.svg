@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="136.3 113 248.5 214.1">
+  <defs>
+  <clipPath id="nemes_nemesC"><path d="M 172 222 C 176 166, 214 134, 262 134 C 310 134, 348 166, 352 222 C 326 240, 300 246, 262 246 C 218 246, 194 236, 172 222 Z"></path></clipPath>
+  <clipPath id="nemes_nemesL"><path d="M 158 214 C 144 248, 140 280, 146 306 L 192 306 C 188 278, 188 246, 194 218 Z"></path></clipPath>
+  <clipPath id="nemes_nemesR"><path d="M 363 214 C 377 248 381 280 375 306 L 329 306 C 333 278 333 246 327 218 Z"></path></clipPath>
+  </defs>
+  <path d="M 158 214 C 144 248, 140 280, 146 306 L 192 306 C 188 278, 188 246, 194 218 Z" fill="#d9b26a"></path>
+  <g clip-path="url(#nemes_nemesL)">
+  <rect x="152" y="206" fill="#3f5a7a" opacity="0.92"></rect>
+  <rect x="174" y="206" width="12" height="114" fill="#3f5a7a" opacity="0.92"></rect>
+  </g>
+  <path d="M 158 214 C 144 248, 140 280, 146 306 L 192 306 C 188 278, 188 246, 194 218 Z" fill="none" stroke="#b08f4e" stroke-width="4"></path>
+  <path d="M 363 214 C 377 248 381 280 375 306 L 329 306 C 333 278 333 246 327 218 Z" fill="#d9b26a"></path>
+  <g clip-path="url(#nemes_nemesR)">
+  <rect x="335" y="206" width="12" height="114" fill="#3f5a7a" opacity="0.92"></rect>
+  <rect x="357" y="206" width="12" height="114" fill="#3f5a7a" opacity="0.92"></rect>
+  </g>
+  <path d="M 363 214 C 377 248 381 280 375 306 L 329 306 C 333 278 333 246 327 218 Z" fill="none" stroke="#b08f4e" stroke-width="4"></path>
+  <path d="M 172 222 C 176 166, 214 134, 262 134 C 310 134, 348 166, 352 222 C 326 240, 300 246, 262 246 C 218 246, 194 236, 172 222 Z" fill="#d9b26a"></path>
+  <g clip-path="url(#nemes_nemesC)">
+  <rect x="182" y="120" width="18" height="140" fill="#3f5a7a" opacity="0.92"></rect>
+  <rect x="218" y="120" width="18" height="140" fill="#3f5a7a" opacity="0.92"></rect>
+  <rect x="254" y="120" width="18" height="140" fill="#3f5a7a" opacity="0.92"></rect>
+  <rect x="290" y="120" width="18" height="140" fill="#3f5a7a" opacity="0.92"></rect>
+  <rect x="326" y="120" width="18" height="140" fill="#3f5a7a" opacity="0.92"></rect>
+  </g>
+  <path d="M 172 222 C 176 166, 214 134, 262 134 C 310 134, 348 166, 352 222 C 326 240, 300 246, 262 246 C 218 246, 194 236, 172 222 Z" fill="none" stroke="#b08f4e" stroke-width="4"></path>
+  <path d="M 162 218 Q 260.5 258 360 218" fill="none" stroke="#b08f4e" stroke-width="19" stroke-linecap="round"></path>
+  <path d="M 162 218 Q 260.5 258 360 218" fill="none" stroke="#8c6f3a" stroke-width="5" opacity="0.45" stroke-linecap="round"></path>
+  <ellipse cx="260.5" cy="206" rx="19" ry="22" fill="#4f7a52"></ellipse>
+  <circle cx="260.5" cy="194" r="11" fill="#6b9a6e"></circle>
+  <circle cx="255" cy="192" r="3" fill="#2b2724"></circle>
+  <circle cx="266" cy="192" r="3" fill="#2b2724"></circle>
+</svg>

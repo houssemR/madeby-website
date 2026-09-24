@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="134.9 112.9 251.2 166.7">
+<clipPath id="cone_cone"><path d="M 194 244 L 250 130 Q 260.5 121 271 130 L 327 244 Q 260.5 254 194 244 Z"/></clipPath>
+<path d="M 142 248 Q 260.5 235 379 248 L 379 266 Q 260.5 279 142 266 Z" fill="#2b2724"/>
+<path d="M 194 244 L 250 130 Q 260.5 121 271 130 L 327 244 Q 260.5 254 194 244 Z" fill="#e8702e"/>
+<g clip-path="url(#cone_cone)">
+<rect x="180" y="166" fill="#f5f1ea"/>
+<rect x="180" y="202" width="160" height="20" fill="#f5f1ea"/>
+<path d="M 260.5 130 L 340 270 L 360 270 L 260.5 120 Z" fill="#c95a22" opacity="0.45"/>
+</g>
+</svg>

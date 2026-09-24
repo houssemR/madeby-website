@@ -69,30 +69,34 @@ const template = (p, version, sections) => `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${p.title} · Craft MadeBy</title>
   <meta name="description" content="${p.desc}" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#FBF8F2; --card:#FFFFFF; --ink:#2B2620; --muted:#6F675B;
-      --gold:#C9A86A; --gold-dark:#6B5836; --line:#ECE6DA; --olive:#2E5C4E;
+      --bg:#CFDCC8; --card:#FBF6EC; --ink:#26221C; --muted:#6E7268;
+      --pine:#1F3326; --sage:#78907A; --honey:#E3B964; --line:rgba(31,51,38,.12);
     }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--ink);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
       line-height:1.65;-webkit-font-smoothing:antialiased}
     .wrap{max-width:760px;margin:0 auto;padding:32px 22px 72px}
     header{display:flex;align-items:center;gap:12px;padding:8px 0 28px}
-    .logo-wrap{width:40px;height:40px;border-radius:12px;background:#4D5235;display:flex;align-items:center;justify-content:center}
-    .logo-img{width:26px;height:26px;filter:brightness(0) invert(1)}
-    .brand{font-weight:800;letter-spacing:.3px}
-    h1{font-size:34px;line-height:1.15;margin:8px 0 6px;font-weight:800}
+    .logo-wrap{width:40px;height:40px;display:flex}
+    .logo-img{width:40px;height:40px;border-radius:22%}
+    .brand{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--pine)}
+    h1{font-family:'Playfair Display',Georgia,serif;font-size:40px;line-height:1.05;margin:8px 0 6px;font-weight:700;letter-spacing:-.015em;color:var(--pine)}
     .updated{color:var(--muted);font-size:14px;margin-bottom:28px}
-    h2{font-size:20px;margin:34px 0 8px;font-weight:700}
+    h2{font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:34px 0 8px;font-weight:700;color:var(--pine)}
     p{margin:0 0 14px}
     ul{margin:0 0 14px;padding-left:22px}
     li{margin:4px 0}
-    a{color:var(--gold-dark);font-weight:600}
+    a{color:var(--pine);font-weight:600;text-decoration:underline;text-underline-offset:2px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 26px 10px;
-      box-shadow:0 10px 30px rgba(201,168,106,.06)}
-    .accent{height:4px;width:64px;background:linear-gradient(90deg,#E6C988,#C9A86A);border-radius:999px;margin:0 0 22px}
+      box-shadow:0 10px 30px rgba(28,34,24,.08)}
+    .accent{height:0;border-top:2px dashed rgba(31,51,38,.28);width:84px;margin:0 0 22px}
     .version{color:var(--muted);font-size:13px;margin-top:34px}
     nav.docs{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
     nav.docs a{font-size:14px}

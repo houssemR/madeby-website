@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 166 284.1 131.1">
+  <path d="M 192 258 C 176 232, 160 212, 146 196" fill="none" stroke="#8c5a3c" stroke-width="9" stroke-linecap="round"></path>
+  <path d="M 168 224 C 152 216, 140 212, 128 212" fill="none" stroke="#8c5a3c" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M 157 209 C 150 196, 146 186, 144 174" fill="none" stroke="#8c5a3c" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M 332 258 C 348 232, 364 212, 378 196" fill="none" stroke="#8c5a3c" stroke-width="9" stroke-linecap="round"></path>
+  <path d="M 356 224 C 372 216, 384 212, 396 212" fill="none" stroke="#8c5a3c" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M 367 209 C 374 196, 378 186, 380 174" fill="none" stroke="#8c5a3c" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M 163 280 A 109 109 0 0 1 361 280 L 342 289 A 88 88 0 0 0 182 289 Z" fill="#8c5a3c"></path>
+  <path d="M 163 280 A 109 109 0 0 1 361 280 L 342 289 A 88 88 0 0 0 182 289 Z" fill="none" stroke="#6f4429" stroke-width="2" opacity="0.7"></path>
+  <path d="M 240 232 C 226 224, 224 208, 236 204 C 246 201, 254 210, 254 220" fill="#4f6650"></path>
+  <path d="M 284 232 C 298 224, 300 208, 288 204 C 278 201, 270 210, 270 220" fill="#5e7a5c"></path>
+  <circle cx="252" cy="230" r="7" fill="#c0483f"></circle>
+  <circle cx="268" cy="234" r="6" fill="#a13a33"></circle>
+  <circle cx="262" cy="222" r="5" fill="#c0483f"></circle>
+</svg>

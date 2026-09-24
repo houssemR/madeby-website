@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="143.4 136.4 234.3 166.3">
+<clipPath id="propeller_dome"><path d="M 158 282 C 156 216, 205 192, 260.5 192 C 316 192, 365 216, 363 282 Z"/></clipPath>
+<g clip-path="url(#propeller_dome)">
+<rect x="150" y="185" fill="#d9573f"/>
+<rect x="216" y="185" width="45" height="110" fill="#e8b33c"/>
+<rect x="260.5" y="185" width="45" height="110" fill="#4a8fd0"/>
+<rect x="305" y="185" width="66" height="110" fill="#5aa65a"/>
+<path d="M 216 192 L 216 290 M 260.5 190 L 260.5 290 M 305 192 L 305 290" stroke="#ffffff" stroke-width="2" opacity="0.35"/>
+</g>
+<path d="M 150 276 Q 260.5 261 371 276 L 369 296 Q 260.5 281 152 296 Z" fill="#2f63b0"/>
+<rect x="257" y="174" width="7" height="20" fill="#9aa3a8"/>
+<ellipse cx="231" cy="171" rx="28" ry="6" fill="#4a8fd0"/>
+<ellipse cx="290" cy="171" rx="28" ry="6" fill="#e8b33c"/>
+<circle cx="260.5" cy="172" r="7" fill="#d9573f"/>
+<path d="M 214 156 Q 260.5 142 307 156" fill="none" stroke="#c9d6e3" stroke-width="3" stroke-linecap="round"/>
+<path d="M 226 148 Q 260.5 138 295 148" fill="none" stroke="#c9d6e3" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+</svg>

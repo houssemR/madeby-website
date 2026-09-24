@@ -1,30 +1,30 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import HowItWorks from './components/HowItWorks'
-import Mascots from './components/Mascots'
-import AppShowcase from './components/AppShowcase'
-import Features from './components/Features'
-import Community from './components/Community'
-import Verification from './components/Verification'
-import ExpertPanel from './components/ExpertPanel'
-import CTA from './components/CTA'
+import Making from './components/Making'
+import Counter from './components/Counter'
+import Corner from './components/Corner'
+import Proof from './components/Proof'
+import Download from './components/Download'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+/* Six sections, in the order a crafter meets the app:
+   make a piece → count the rows → decorate your corner → prove it is
+   handmade → download. Everything else the site used to say lives
+   inside one of those five. */
 function App() {
   return (
     <div className="app-container">
       <Navbar />
-      <Hero />
-      <HowItWorks />
-      <Mascots />
-      <AppShowcase />
-      <Features />
-      <Community />
-      <Verification />
-      <ExpertPanel />
-      <CTA />
-      <Contact />
+      <main>
+        <Hero />
+        <Making />
+        <Counter />
+        <Corner />
+        <Proof />
+        <Download />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

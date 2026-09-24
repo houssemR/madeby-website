@@ -32,6 +32,39 @@ npm run dev
 The build command is: `npm run build`  
 The publish directory is: `dist`
 
+## App screens, hats and the social card
+
+The screens on the page are real prod captures, taken for the store listings
+and kept in the app repo under `promo/public/shots`. Two scripts pull them
+across; both drive the Playwright that already lives in the app repo, because
+there is no sharp or ImageMagick on this machine.
+
+```
+node tools/resize-screens.mjs   # promo shots  -> public/images/app/*.webp
+node tools/make-og.mjs          # Play feature -> public/images/og-card.jpg
+```
+
+The forty hats in the Your-corner shelf are the app's own art, copied from
+`assets/images/hats` and retightened so each hat fills its tile:
+
+```
+node tools/crop-hats.mjs        # rewrites each viewBox to the drawing's bounds
+```
+
+`src/components/hats.js` lists the eight collections in the app's own order
+(`lib/data/studio_rewards.dart`). If a hat is added there, add it here too.
+
+## Reviewing a change
+
+```
+npm run build && npx vite preview --port 4173
+node tools/shoot.mjs desktop shot.png     # or: mobile
+node tools/slice.mjs shot.png ./slices 6  # tall page -> readable chunks
+```
+
+`shoot.mjs` forces lazy images eager and fires every scroll reveal before it
+captures, so a screenshot shows the finished page rather than a half-loaded one.
+
 ## Favicons
 
 Search engines want a square icon sized in multiples of 48, and Bing still

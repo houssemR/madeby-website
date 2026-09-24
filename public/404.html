@@ -13,13 +13,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="A maker on Craft MadeBy">
   <meta property="og:description" content="See their handmade pieces and connect with them in the app. Handmade · Documented · Celebrated.">
-  <meta property="og:image" content="https://craftmadeby.com/images/screens/home.png">
+  <meta property="og:image" content="https://craftmadeby.com/images/og-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A maker on Craft MadeBy">
   <meta name="twitter:description" content="See their handmade pieces and connect with them in the app.">
-  <meta name="twitter:image" content="https://craftmadeby.com/images/screens/home.png">
+  <meta name="twitter:image" content="https://craftmadeby.com/images/og-card.jpg">
   <!--
     GitHub Pages fallback for maker profile links (craftmadeby.com/m/<CODE>).
 
@@ -30,9 +30,13 @@
     this 404 page fetches that HTML and shows it in place — visitors still
     see the card, QR and "Open in app"; only the social preview stays generic.
   -->
-  <style>
-    body{margin:0;background:#FFF8F5;color:#1E1B19;font-family:system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:24px}
-    a{color:#2F4A3C}
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet"><style>
+    body{margin:0;background:#CFDCC8;color:#1E1B19;font-family:'Hanken Grotesk',system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:24px}
+    a{color:#1F3326;font-weight:600;text-underline-offset:3px}
+    .fallback{display:grid;justify-items:center;gap:14px}
+    .fallback img{width:56px;height:56px;border-radius:22%}
+    .fallback h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.05;letter-spacing:-.015em;color:#1F3326;margin:0}
+    .fallback p{margin:0;color:#4A4A40}
   </style>
 </head>
 <body>
@@ -42,8 +46,13 @@
       // /m/<invite code> = maker profile, /p/<share code> = a piece.
       var m = location.pathname.match(/^\/(m|p)\/([A-Za-z0-9-]{3,32})\/?$/);
       var msg = document.getElementById('msg');
+      function card(title, note) {
+        return '<div class="fallback"><img src="/logo.svg" alt="">' +
+               '<h1>' + title + '</h1><p>' + note + '</p>' +
+               '<p><a href="/">Back to craftmadeby.com</a></p></div>';
+      }
       if (!m) {
-        msg.innerHTML = '<h1>Page not found</h1><p><a href="/">Back to craftmadeby.com</a></p>';
+        msg.innerHTML = card('Page not found', 'That address does not exist here.');
         return;
       }
       var kind = m[1], code = m[2].toUpperCase();
@@ -57,7 +66,7 @@
         document.close();
         history.replaceState(null, '', '/' + kind + '/' + code);
       }).catch(function () {
-        msg.innerHTML = '<h1>This invite link is no longer valid</h1><p><a href="/">Back to craftmadeby.com</a></p>';
+        msg.innerHTML = card('This invite link is no longer valid', 'Ask the crafter for a fresh one.');
       });
     })();
   </script>

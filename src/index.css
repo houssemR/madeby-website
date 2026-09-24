@@ -1,78 +1,61 @@
 /* ==========================================
    CRAFT MADEBY — GLOBAL DESIGN SYSTEM
+
+   The palette and the type are lifted from the app's own store pages
+   (promo/out/ios, promo/out/store), sampled pixel for pixel: a celadon
+   ground, a sage ground for the darker bands, pine ink, warm porcelain,
+   and honey as the single accent. The display face is Playfair Display,
+   set with an italic second line — exactly how every store page is set.
    ========================================== */
 
 :root {
-  /* Core Palette — the app's Atelier language: porcelain ground, charcoal
-     ink, pine greens. Calm by construction. */
-  --cream:       #FAF9F7;
-  --cream-light: #FFFFFF;
-  --cream-dark:  #F0EDE8;
+  /* ---- The store-page palette, sampled from the exports ---- */
+  --celadon:     #CFDCC8;  /* pale ground — K1, K3, K5 */
+  --celadon-dim: #C2D2BA;
+  --sage:        #5C7359;  /* deep band ground — deepened for AA body text */
+  --sage-tile:   #78907A;  /* the app brand tile and chips, exactly as shipped */
+  --sage-deep:   #4A5F48;
+  --pine:        #1F3326;  /* display ink and badges */
+  --pine-soft:   #35492F;
+  --porcelain:   #FBF6EC;  /* type on sage, and the cream chip */
+  --honey:       #E3B964;  /* the one accent: points, premium, seals */
+  --honey-deep:  #C49A44;
+  --blush:       #EBC3B5;  /* secondary chip only */
+
+  /* ---- Ink ---- */
   --ink:         #26221C;
-  --ink-soft:    #45403A;
-  --ink-muted:   #7A7469;
+  --ink-soft:    #4A4A40;
+  --ink-muted:   #6E7268;
+  --ink-on-sage: #F6F1E6;  /* 4.6:1 on --sage; a transparent white here read at 2.3:1 */
 
-  /* Greens — pine family from the app theme */
-  --green-deep:  #344C3D;
-  --green-mid:   #4D6450;
-  --green-soft:  #8EA58C;
-  --green-pale:  #DFE9DB;
-  --green-ghost: #F2F6F0;
-  --green-dim:   #BFCFBB;
-
-  /* The brand set the app actually ships: a porcelain monogram on a sage
-     tile (AppColors.sageFill / BrandLogo). The launcher icon, the in-app
-     mark and this site now paint the same two values. */
-  --brand:       #78907A;
-  --brand-soft:  #A9BCA9;
-  --porcelain:   #FFF8F5;
-
-  /* Gold — kept only for the seal/premium moments */
-  --gold:        #C9A86A;
-  --gold-bright: #E0C68E;
-  --gold-dark:   #A08040;
-
-  /* Surfaces */
+  /* ---- Surfaces ---- */
   --surface:     #FFFFFF;
   --surface-2:   #F5F3EF;
-  --border:      #E7E3DC;
-  --border-soft: #EFECE6;
+  --cream:       #FAF9F7;
+  --border:      rgba(31, 51, 38, 0.14);
+  --border-soft: rgba(31, 51, 38, 0.08);
+  --border-sage: rgba(251, 246, 236, 0.22);
 
-  /* Shadows */
-  --shadow-sm:  0 2px 8px rgba(28, 24, 18, 0.06);
-  --shadow-md:  0 8px 24px rgba(28, 24, 18, 0.08);
-  --shadow-lg:  0 20px 60px rgba(28, 24, 18, 0.12);
-  --shadow-xl:  0 40px 100px rgba(28, 24, 18, 0.15);
+  /* ---- Shadows ---- */
+  --shadow-sm:  0 2px 8px rgba(28, 34, 24, 0.06);
+  --shadow-md:  0 10px 28px rgba(28, 34, 24, 0.09);
+  --shadow-lg:  0 22px 60px rgba(28, 34, 24, 0.14);
+  --shadow-xl:  0 40px 90px rgba(28, 34, 24, 0.20);
 
-  /* Green shadows */
-  --shadow-green: 0 20px 60px rgba(77, 82, 53, 0.15);
+  /* ---- Typography ---- */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-label:   'Outfit', -apple-system, sans-serif;
 
-  /* Typography — same faces as the app */
-  --font-sans:   'Hanken Grotesk', -apple-system, sans-serif;
-  --font-serif:  'Outfit', -apple-system, sans-serif;
+  /* ---- Spacing ---- */
+  --s1: 0.5rem;  --s2: 1rem;  --s3: 1.5rem;  --s4: 2rem;  --s5: 3rem;  --s6: 4rem;
+  --band: clamp(4.5rem, 9vw, 8rem);      /* vertical rhythm of a section */
 
-  /* Spacing */
-  --s1:  0.5rem;
-  --s2:  1rem;
-  --s3:  1.5rem;
-  --s4:  2rem;
-  --s5:  3rem;
-  --s6:  4rem;
-  /* Section rhythm, fluid: two stacked sections used to put 288px of empty
-     ground between them at desktop width. */
-  --s8:  clamp(3.25rem, 6.5vw, 5.25rem);
-  --s10: clamp(4.25rem, 8.5vw, 7rem);
+  /* ---- Radius ---- */
+  --r-sm: 10px;  --r-md: 18px;  --r-lg: 26px;  --r-xl: 34px;  --r-full: 9999px;
 
-  /* Radius */
-  --r-sm:   8px;
-  --r-md:   16px;
-  --r-lg:   24px;
-  --r-xl:   32px;
-  --r-full: 9999px;
-
-  /* Transitions */
+  /* ---- Easing ---- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 /* ---- RESET ---- */
@@ -80,189 +63,254 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
-  background-color: var(--cream);
+  background: var(--celadon);
   color: var(--ink);
-  line-height: 1.6;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-img { display: block; max-width: 100%; }
+img, svg { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
-ul { list-style: none; }
+ul, ol { list-style: none; }
 
-/* ---- TYPOGRAPHY ---- */
-h1, h2, h3 { font-family: var(--font-serif); line-height: 1.15; letter-spacing: -0.02em; }
-h1 { font-weight: 700; }
-h2 { font-weight: 700; }
-h3 { font-weight: 600; }
+/* ---- DISPLAY TYPE ----
+   Playfair carries the page. Every headline is two lines: the first upright,
+   the second italic — the store pages' own setting, and the thing that makes
+   a heading here unmistakably this brand's. */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.em-line {
+  display: block;
+  font-style: italic;
+  font-weight: 500;
+}
+.h-xl { font-size: clamp(2.9rem, 8.4vw, 5.4rem); }
+.h-lg { font-size: clamp(2.2rem, 5.4vw, 3.7rem); }
+.h-md { font-size: clamp(1.55rem, 2.7vw, 2.1rem); }
+
+.lede {
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  color: var(--ink-soft);
+  max-width: 54ch;
+}
+.band--sage .lede { color: var(--ink-on-sage); }
 
 /* ---- LAYOUT ---- */
-/* Wider canvas, slimmer gutters: the page breathes through its content,
-   not through empty side margins. */
 .container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  /* Inline only. The shorthand would also set block padding to zero, and
-     since .container is combined with component classes of equal specificity
-     it would win on source order and cancel their vertical spacing. */
-  padding-inline: clamp(1rem, 3vw, 1.75rem);
+  padding-inline: clamp(1.1rem, 4vw, 2rem);
 }
+.band { padding-block: var(--band); position: relative; }
+.band--celadon { background: var(--celadon); }
+.band--sage    { background: var(--sage); color: var(--porcelain); }
+.band--sage h1, .band--sage h2, .band--sage h3 { color: var(--porcelain); }
+
+/* ---- BADGE ----
+   The dark pine pill with a dot that opens every store page. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-label);
+  font-size: clamp(0.7rem, 1.1vw, 0.79rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--porcelain);
+  background: var(--pine);
+  padding: 0.55em 1.25em 0.6em;
+  border-radius: var(--r-full);
+}
+.badge::before {
+  content: '';
+  width: 0.42em; height: 0.42em;
+  border-radius: 50%;
+  background: var(--porcelain);
+}
+
+/* ---- CHIPS ----
+   The hand-placed labels scattered over the store pages. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--pine);
+  background: var(--porcelain);
+  padding: 0.42em 1em;
+  border-radius: var(--r-full);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.chip--honey { background: var(--honey); }
+.chip--blush { background: var(--blush); }
+.chip--celadon { background: var(--celadon); }
 
 /* ---- BUTTONS ---- */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-label);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.85rem 2rem;
+  padding: 0.85rem 1.8rem;
   border-radius: var(--r-full);
-  transition: all 0.3s var(--ease-out);
-  cursor: pointer;
-  letter-spacing: -0.01em;
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out),
+              box-shadow 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
 }
-.btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: white;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  border-radius: inherit;
-}
-.btn:hover::after { opacity: 0.08; }
-.btn:active { transform: scale(0.97); }
+.btn:active { transform: scale(0.975); }
 
 .btn-primary {
-  background: var(--green-mid);
-  color: var(--green-ghost);
-  box-shadow: 0 4px 16px rgba(77, 82, 53, 0.25);
+  background: var(--pine);
+  color: var(--porcelain);
+  box-shadow: 0 6px 18px rgba(31, 51, 38, 0.22);
 }
 .btn-primary:hover {
-  background: var(--green-deep);
+  background: var(--pine-soft);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(77, 82, 53, 0.35);
+  box-shadow: 0 12px 28px rgba(31, 51, 38, 0.28);
 }
-
 .btn-outline {
   background: transparent;
-  color: var(--ink);
-  border: 1.5px solid var(--border);
+  color: var(--pine);
+  border: 1.5px solid rgba(31, 51, 38, 0.28);
 }
-.btn-outline:hover {
-  border-color: var(--green-mid);
-  color: var(--green-mid);
-  transform: translateY(-2px);
+.btn-outline:hover { border-color: var(--pine); transform: translateY(-2px); }
+
+.btn-cream {
+  background: var(--porcelain);
+  color: var(--pine);
+  box-shadow: 0 6px 18px rgba(20, 30, 20, 0.18);
 }
+.btn-cream:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(20, 30, 20, 0.24); }
 
 .btn-ghost {
-  background: rgba(255,255,255,0.15);
-  color: var(--green-ghost);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
+  background: rgba(251, 246, 236, 0.12);
+  color: var(--porcelain);
+  border: 1.5px solid var(--border-sage);
 }
-.btn-ghost:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
+.btn-ghost:hover { background: rgba(251, 246, 236, 0.2); transform: translateY(-2px); }
+
+/* ---- THE THREAD ----
+   The running stitch that ties every store page together. Here it is the
+   page's spine: a dashed line between the bands, and the rule the step
+   markers hang from. */
+.thread-rule {
+  border: 0;
+  border-top: 2px dashed rgba(31, 51, 38, 0.22);
+  margin: 0;
+}
+.band--sage .thread-rule { border-top-color: rgba(251, 246, 236, 0.3); }
+
+.seam {
+  position: absolute;
+  left: 0; right: 0;
+  height: clamp(38px, 5vw, 64px);
+  pointer-events: none;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+.seam svg { width: 100%; height: 100%; display: block; }
+.seam--top { top: -1px; }
+.seam--bottom { bottom: -1px; }
+
+/* ---- CARDS ---- */
+.card {
+  background: var(--porcelain);
+  border-radius: var(--r-lg);
+  padding: clamp(1.3rem, 2.4vw, 1.9rem);
+  box-shadow: var(--shadow-md);
+}
+/* The dashed cut-out card the store pages pull a detail into. */
+.card--cut {
+  background: var(--porcelain);
+  border: 2px dashed rgba(31, 51, 38, 0.3);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+}
+.card--onsage {
+  background: rgba(251, 246, 236, 0.1);
+  border: 1px solid var(--border-sage);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--porcelain);
+  box-shadow: none;
 }
 
-/* ---- PILL TAG ---- */
-.pill-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--green-mid);
-  background: var(--green-pale);
-  padding: 5px 14px;
-  border-radius: var(--r-full);
-  margin-bottom: var(--s3);
+/* ---- DEVICE FRAME ----
+   Real prod screens inside honest phone chrome. The capture is 1236x2745
+   including the app own top bar, so the screen keeps that exact ratio and
+   nothing is ever cropped. */
+.device {
+  position: relative;
+  border-radius: clamp(24px, 3.4vw, 40px);
+  background: #141813;
+  padding: clamp(5px, 0.8vw, 10px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, var(--shadow-xl);
 }
-
-/* ---- SECTION TAG (dark) ---- */
-.section-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--green-soft);
-  margin-bottom: var(--s2);
+.device-screen {
+  position: relative;
+  border-radius: clamp(19px, 2.7vw, 31px);
+  overflow: hidden;
+  background: #141813;
+  aspect-ratio: 1236 / 2745;
+}
+.device-screen > img,
+.device-screen > video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.device::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: clamp(11px, 1.5vw, 19px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24%;
+  height: clamp(9px, 1.2vw, 15px);
+  border-radius: 999px;
+  background: #141813;
+  pointer-events: none;
 }
 
 /* ---- SCROLL REVEAL ---- */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  transform: translateY(22px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ---- GRADIENT TEXT ---- */
-.gradient-text {
-  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-soft) 60%, var(--gold) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ---- GLASSMORPHISM ---- */
-.glass {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-}
-
-/* ---- NOISE TEXTURE OVERLAY ---- */
-.noise::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  border-radius: inherit;
-  z-index: 0;
-}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
 
 /* ---- ICONS ---- */
 .icn { flex-shrink: 0; display: inline-block; vertical-align: -0.18em; }
-
-/* ---- BRAND MARK ----
-   One image, used everywhere. logo.svg already carries the sage tile and
-   the porcelain monogram, so placements only pick a size — no wrapper
-   colour, no invert filter, nothing that can drift from the app icon. */
-.brand-tile {
-  display: block;
-  border-radius: 22%;
-  flex-shrink: 0;
-}
+.brand-tile { display: block; border-radius: 22%; flex-shrink: 0; }
 
 /* ---- SELECTION & FOCUS ---- */
-::selection {
-  background: var(--brand-soft);
-  color: var(--ink);
-}
+::selection { background: var(--honey); color: var(--pine); }
 :where(a, button, input, textarea, select):focus-visible {
-  outline: 2px solid var(--brand);
+  outline: 2px solid var(--pine);
   outline-offset: 3px;
   border-radius: 4px;
 }
+.band--sage :where(a, button):focus-visible { outline-color: var(--porcelain); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -271,85 +319,7 @@ h3 { font-weight: 600; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+  .reveal { opacity: 1; transform: none; }
 }
 
-/* ---- DEVICE FRAMES ----
-   Real app screens/videos live inside honest phone chrome. Two variants:
-   iOS (Dynamic Island pill) and Android (centered punch-hole camera). */
-.device {
-  position: relative;
-  border-radius: 38px;
-  background: var(--ink);
-  padding: 10px;
-  box-shadow:
-    0 2px 0 rgba(255,255,255,0.06) inset,
-    var(--shadow-lg);
-}
-/* The screen is the capture's own 412x915 plus a proportional forehead for
-   the camera chrome — so a shot is never cropped to fit, and the app's
-   bottom navigation bar stays fully readable inside the frame. */
-.device-screen {
-  position: relative;
-  border-radius: 29px;
-  overflow: hidden;
-  background: var(--ink);
-  aspect-ratio: 412 / 941;
-}
-.device-screen > img,
-.device-screen > video {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 97.24%; /* 915 / 941 — exactly the capture ratio */
-  object-fit: cover;
-  display: block;
-  border-radius: 12px 12px 0 0;
-}
-.device::after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-.device--ios::after {
-  top: 20px;
-  width: 22%;
-  height: 3.2%;
-  border-radius: 999px;
-  background: var(--ink);
-}
-.device--android::after {
-  top: 19px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--ink);
-}
-/* Small platform tag hanging off the bottom edge of a device */
-.device-tag {
-  position: absolute;
-  z-index: 3;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--cream-light);
-  background: rgba(28, 24, 18, 0.82);
-  backdrop-filter: blur(6px);
-  padding: 5px 12px;
-  border-radius: var(--r-full);
-  white-space: nowrap;
-}
-
-/* ---- APP CONTAINER ---- */
 .app-container { overflow-x: hidden; }

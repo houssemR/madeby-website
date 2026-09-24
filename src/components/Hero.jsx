@@ -1,161 +1,106 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import './Hero.css';
-import BrandSeam from './BrandSeam';
-import {
-  IconSparkle, IconYarn, IconNeedle, IconHoop, IconClay, IconGem,
-} from './Icons';
+import { AppleLogo, PlayLogo } from './Icons';
+
+/* The six craft categories the app actually ships, as the loose chips the
+   store pages scatter around the artwork. */
+const CRAFTS = [
+  ['Knitting & Crochet', ''],
+  ['Sewing & Textiles', ' chip--honey'],
+  ['Embroidery & Needlework', ''],
+  ['Clay & Ceramics', ' chip--blush'],
+  ['Jewelry & Beading', ''],
+  ['…or a craft of your own', ' chip--honey'],
+];
 
 export default function Hero() {
-  const heroRef = useRef(null);
-  const floatRef = useRef(null);
-
-  // Subtle parallax on mouse move
   useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-    const onMove = (e) => {
-      const { clientX, clientY, currentTarget } = e;
-      const { width, height } = currentTarget.getBoundingClientRect();
-      const x = (clientX / width - 0.5) * 20;
-      const y = (clientY / height - 0.5) * 20;
-      if (floatRef.current) {
-        floatRef.current.style.transform = `translate(${x}px, ${y}px)`;
-      }
-    };
-    hero.addEventListener('mousemove', onMove);
-    return () => hero.removeEventListener('mousemove', onMove);
-  }, []);
-
-  // Staggered entrance
-  useEffect(() => {
-    const items = document.querySelectorAll('.hero-animate');
-    items.forEach((el, i) => {
-      setTimeout(() => el.classList.add('hero-visible'), 150 + i * 120);
-    });
+    const items = document.querySelectorAll('.hero-in');
+    items.forEach((el, i) => setTimeout(() => el.classList.add('is-in'), 120 + i * 110));
   }, []);
 
   return (
-    <section className="hero" ref={heroRef}>
-      {/* Background noise + gradient */}
-      <div className="hero-bg">
-        <div className="hero-blob blob-1" />
-        <div className="hero-blob blob-2" />
-        <div className="hero-blob blob-3" />
-      </div>
+    <header className="hero band band--celadon" id="top">
+      <div className="container hero-grid">
+        <div className="hero-copy">
+          <span className="badge hero-in">Knitting · Crochet · Every craft</span>
 
-      {/* Floating decorative orbs - parallax target */}
-      <div className="hero-orbs" ref={floatRef}>
-        <div className="orb orb-1" />
-        <div className="orb orb-2" />
-        <div className="orb orb-3" />
-      </div>
+          <h1 className="h-xl hero-title hero-in">
+            Every piece<br />starts with
+            <span className="em-line">one photo.</span>
+          </h1>
 
-      <div className="container hero-content">
-        {/* The brand mark, exactly as it sits on a home screen */}
-        <div className="hero-app-logo hero-animate">
-          <img src="/logo.svg" alt="" className="brand-tile brand-tile--hero" />
+          <p className="lede hero-in">
+            Craft MadeBy is the journal for everything you make by hand. Count
+            your rows, record the real hours, keep the photos in order — and
+            end up with a portfolio that proves the work was yours.
+          </p>
+
+          <div className="hero-ctas hero-in">
+            <a
+              href="https://apps.apple.com/app/id6792596703"
+              target="_blank" rel="noopener"
+              className="btn btn-primary"
+            >
+              <AppleLogo size={17} /> App Store
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.craftmadeby.app"
+              target="_blank" rel="noopener"
+              className="btn btn-outline"
+            >
+              <PlayLogo size={17} /> Google Play
+            </a>
+          </div>
+
+          <p className="hero-note hero-in">
+            Free · iPhone, iPad &amp; Android · <strong>12 languages</strong> ·
+            Premium free for 14 days
+          </p>
         </div>
 
-        {/* The app's own three words, stitched across the page */}
-        <BrandSeam className="hero-animate" />
+        {/* Three real prod screens, tilted the way the store pages tilt them */}
+        <div className="hero-stage hero-in" aria-hidden="false">
+          <figure className="hero-phone hero-phone--back-l">
+            <div className="device"><div className="device-screen">
+              <img src="/images/app/theme.webp" alt="" loading="eager" width="640" height="1421" />
+            </div></div>
+          </figure>
 
-        {/* Badge */}
-        <div className="hero-badge hero-animate">
-          <span className="badge-dot" />
-          <span>The Crafter's Community App</span>
-        </div>
-
-        {/* Headline */}
-        <h1 className="hero-title hero-animate">
-          Where crafters leave<br />{' '}
-          <em className="hero-title-em">their mark.</em>
-        </h1>
-
-        {/* Sub */}
-        <p className="hero-sub hero-animate">
-          Document your handmade projects, step by step and minute by minute.<br className="hero-br" />{' '}
-          Share, gift and certify them. Leave a lasting legacy of craft.
-        </p>
-
-        {/* CTAs */}
-        <div className="hero-ctas hero-animate">
-          <a href="https://apps.apple.com/app/id6792596703" target="_blank" rel="noopener" className="btn btn-primary hero-btn-main">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.34.07 2.27.74 3.06.8 1.15-.21 2.26-.89 3.52-.84 1.51.07 2.65.62 3.4 1.57-3.14 1.87-2.39 5.98.6 7.13-.57 1.5-1.33 2.99-2.58 4.22zM12 7.34c-.12-2.49 2.02-4.58 4.38-4.74.36 2.85-2.55 5.04-4.38 4.74z" fill="currentColor"/>
-            </svg>
-            App Store
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.craftmadeby.app" target="_blank" rel="noopener" className="btn btn-outline hero-btn-alt">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M3 20.5v-17a.5.5 0 0 1 .78-.41l15 8.5a.5.5 0 0 1 0 .82l-15 8.5A.5.5 0 0 1 3 20.5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-            </svg>
-            Google Play
-          </a>
-          <a href="#howitworks" className="hero-scroll-link hero-animate">
-            <span>Explore features</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </div>
-
-        {/* Honest facts instead of invented social proof */}
-        <div className="hero-social-proof hero-animate">
-          <div className="avatar-stack">
-            {['purl', 'spool', 'hoopla', 'pinch', 'bijou'].map((m, i) => (
+          <figure className="hero-phone hero-phone--front">
+            <div className="device"><div className="device-screen">
               <img
-                key={m}
-                src={`/images/mascots/${m}.png`}
-                alt=""
-                className="avatar-mascot"
-                style={{ zIndex: 5 - i }}
-                loading="lazy"
+                src="/images/app/workshop.webp"
+                alt="The Craft MadeBy workshop, with finished pieces from other crafters"
+                loading="eager" width="640" height="1421"
               />
-            ))}
-          </div>
-          <span>Free · iPhone &amp; Android · <strong>12 languages</strong></span>
-        </div>
+            </div></div>
+          </figure>
 
-        {/* Craft category marquee */}
-        <div className="hero-marquee hero-animate" aria-hidden="true">
-          <div className="hero-marquee-track">
-            {[0, 1].map((dup) => (
-              <div key={dup} className="hero-marquee-group">
-                <span className="marquee-chip"><IconYarn size={16} /> Knitting & Crochet</span>
-                <span className="marquee-chip"><IconNeedle size={16} /> Sewing & Textiles</span>
-                <span className="marquee-chip"><IconHoop size={16} /> Embroidery & Needlework</span>
-                <span className="marquee-chip"><IconClay size={16} /> Clay & Ceramics</span>
-                <span className="marquee-chip"><IconGem size={16} /> Jewelry & Beading</span>
-                <span className="marquee-chip"><IconSparkle size={16} /> …and your own craft</span>
-              </div>
-            ))}
-          </div>
-        </div>
+          <figure className="hero-phone hero-phone--back-r">
+            <div className="device"><div className="device-screen">
+              <img src="/images/app/counting.webp" alt="" loading="eager" width="640" height="1421" />
+            </div></div>
+          </figure>
 
-        {/* The app itself: live recording center, screens on the wings */}
-        <div className="hero-phones hero-animate">
-          <div className="hero-phone hero-phone--android hero-phone-left">
-            <img src="/images/screens/studio.png" alt="The Yarnia craft corner in Craft MadeBy" loading="lazy" />
-          </div>
-          <div className="hero-phone hero-phone--ios hero-phone-center">
-            <video
-              src="/videos/hero-app.mp4"
-              poster="/videos/hero-app-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-label="A live browse through the Craft MadeBy app"
-            />
-          </div>
-          <div className="hero-phone hero-phone--ios hero-phone-right">
-            <img src="/images/screens/certified.png" alt="A Certified Handmade project in Craft MadeBy" loading="lazy" />
-          </div>
+          <span className="chip chip--honey hero-chip hero-chip--rows">8 rows counted</span>
+          <span className="chip hero-chip hero-chip--hours">124 hours honed</span>
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="hero-fade-bottom" />
-    </section>
+      {/* The craft chips, on their own thread */}
+      <div className="hero-crafts hero-in">
+        <div className="container">
+          <hr className="thread-rule" />
+          <ul className="hero-craft-list">
+            {CRAFTS.map(([name, tone]) => (
+              <li key={name}>
+                <span className={'chip' + tone}>{name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </header>
   );
 }

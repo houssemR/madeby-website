@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="186.8 109.8 150.4 184.4">
+  <defs><clipPath id="ziggurat_rimS6"><ellipse cx="260.5" cy="269.3" rx="82" ry="22"></ellipse></clipPath></defs>
+  <path d="M 192 264 C 196 200, 218 150, 262 126 C 306 150, 328 200, 332 264 C 308 280, 288 286, 262 286 C 230 286, 208 276, 192 264 Z" fill="#e7dcc8"></path>
+  <path d="M 262 126 C 306 150, 328 200, 332 264 C 316 274, 300 281, 282 284 C 288 224, 280 168, 262 126 Z" fill="#cdbda6" opacity="0.5"></path>
+  <path d="M 214 182 C 236 190, 288 190, 310 182" fill="none" stroke="#d9b26a" stroke-width="10" stroke-linecap="round"></path>
+  <path d="M 202 222 C 230 232, 294 232, 322 222" fill="none" stroke="#d9b26a" stroke-width="11" stroke-linecap="round"></path>
+  <path d="M 240 148 C 250 152, 274 152, 284 148" fill="none" stroke="#d9b26a" stroke-width="8" stroke-linecap="round"></path>
+  <circle cx="262" cy="124" r="9" fill="#d9b26a"></circle>
+  <g clip-path="url(#ziggurat_rimS6)">
+  <path d="M 200 266 Q 262 300 324 266" fill="none" stroke="#2b2724" stroke-width="22" opacity="0.14" stroke-linecap="round"></path>
+  </g>
+  <path d="M 194 262 Q 262 298 330 262" fill="none" stroke="#b08f4e" stroke-width="20" stroke-linecap="round"></path>
+  <circle cx="262" cy="278" r="11" fill="#e7dcc8"></circle>
+  <circle cx="262" cy="278" r="5" fill="#b08f4e"></circle>
+</svg>

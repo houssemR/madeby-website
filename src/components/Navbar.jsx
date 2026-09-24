@@ -1,36 +1,51 @@
 import { useEffect, useState } from 'react';
-import { useReveal } from '../hooks';
 import './Navbar.css';
+
+/* Four links. The old bar carried six and a seventh in the actions slot,
+   which read as a site map rather than a way around one page. */
+const LINKS = [
+  ['#making', 'Document'],
+  ['#counter', 'Row counter'],
+  ['#corner', 'Your corner'],
+  ['#proof', 'Certified'],
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 32);
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container navbar-inner">
-        <a href="#" className="nav-brand">
+    <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <div className="container nav-inner">
+        <a href="#top" className="nav-brand" onClick={() => setOpen(false)}>
           <img src="/logo.svg" alt="" className="brand-tile nav-logo" />
           <span className="nav-name">Craft MadeBy</span>
         </a>
 
-        <div className="nav-links">
-          <a href="#howitworks">How it Works</a>
-          <a href="#mascots">Mascots</a>
-          <a href="#app">The App</a>
-          <a href="#community">Community</a>
-          <a href="#verification">Verification</a>
-          <a href="#contact">Contact</a>
+        <div className={`nav-links ${open ? 'is-open' : ''}`}>
+          {LINKS.map(([href, label]) => (
+            <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+          ))}
+          <a href="#get" className="nav-cta-mobile" onClick={() => setOpen(false)}>Get the app</a>
         </div>
 
-        <div className="nav-actions">
-          <a href="https://apps.apple.com/app/id6792596703" target="_blank" rel="noopener" className="btn btn-primary btn-nav-sm">Download Free</a>
-        </div>
+        <a href="#get" className="btn btn-primary nav-cta">Get the app</a>
+
+        <button
+          className="nav-burger"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span /><span /><span />
+        </button>
       </div>
     </nav>
   );

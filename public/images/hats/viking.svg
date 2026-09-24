@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="90.4 160.4 340.3 177.3">
+  <defs><clipPath id="viking_headV5"><circle cx="260.5" cy="315.6" r="107.4"></circle></clipPath></defs>
+  <path d="M 162.1 263.3 C 160.1 214.9, 200.5 185.3, 260.5 185.3 C 320.5 185.3, 360.9 214.9, 358.9 263.3 Q 260.5 303.3 162.1 263.3 Z" fill="#9aa3a8"></path>
+  <path d="M 260.5 185.3 C 320.5 185.3, 360.9 214.9, 358.9 263.3 Q 290.5 297.3 260.5 283.3 Z" fill="#78828a" opacity="0.45"></path>
+  <g clip-path="url(#viking_headV5)">
+  <path d="M 168.1 267.3 Q 260.5 319.3 352.9 267.3" fill="none" stroke="#2b2724" stroke-width="20" opacity="0.12" stroke-linecap="round"></path>
+  </g>
+  <path d="M 156.1 263.3 Q 260.5 303.3 364.9 263.3" fill="none" stroke="#b08f4e" stroke-width="22" stroke-linecap="round"></path>
+  <path d="M 180 282 C 140 272, 108 228, 100 170 C 118 192, 140 234, 178 260 Z" fill="#e7dcc8"></path>
+  <path d="M 180 282 C 152 274, 126 248, 112 214 C 134 238, 156 254, 178 262 Z" fill="#cbbfa6" opacity="0.55"></path>
+  <path d="M 341 282 C 381 272 413 228 421 170 C 403 192 381 234 343 260 Z" fill="#e7dcc8"></path>
+  <path d="M 341 282 C 369 274 395 248 409 214 C 387 238 365 254 343 262 Z" fill="#cbbfa6" opacity="0.4"></path>
+  <path d="M 249 276 L 272 276 L 270 324 Q 260.5 332 251 324 Z" fill="#9aa3a8"></path>
+  <path d="M 249 276 L 272 276 L 270 324 Q 260.5 332 251 324 Z" fill="none" stroke="#78828a" stroke-width="3"></path>
+  <circle cx="192" cy="272" r="4.5" fill="#8f7238"></circle>
+  <circle cx="260.5" cy="286" r="4.5" fill="#8f7238"></circle>
+  <circle cx="329" cy="272" r="4.5" fill="#8f7238"></circle>
+</svg>

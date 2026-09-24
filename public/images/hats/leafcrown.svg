@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="140.1 181.2 239.8 85.1">
+  <path d="M 156 256 C 190 214, 330 214, 364 256" fill="none" stroke="#8c6a3c" stroke-width="6" stroke-linecap="round"></path>
+  <g transform="rotate(-42 178 252)">
+  <path d="M 178 252 C 163 243, 163 226, 178 218 C 193 226, 193 243, 178 252 Z" fill="#c4703a"></path>
+  <path d="M 178 248 L 178 223" stroke="#8c4a24" stroke-width="2" opacity="0.6" stroke-linecap="round"></path>
+  </g>
+  <g transform="rotate(-22 214 232)">
+  <path d="M 214 232 C 199 223, 199 206, 214 198 C 229 206, 229 223, 214 232 Z" fill="#d99a4e"></path>
+  <path d="M 214 228 L 214 203" stroke="#a8703a" stroke-width="2" opacity="0.6" stroke-linecap="round"></path>
+  </g>
+  <g transform="rotate(0 260 222)">
+  <path d="M 260 222 C 245 213, 245 196, 260 188 C 275 196, 275 213, 260 222 Z" fill="#a8552f"></path>
+  <path d="M 260 218 L 260 193" stroke="#7d3c20" stroke-width="2" opacity="0.6" stroke-linecap="round"></path>
+  </g>
+  <g transform="rotate(22 306 232)">
+  <path d="M 306 232 C 291 223, 291 206, 306 198 C 321 206, 321 223, 306 232 Z" fill="#d9a85e"></path>
+  <path d="M 306 228 L 306 203" stroke="#a8703a" stroke-width="2" opacity="0.6" stroke-linecap="round"></path>
+  </g>
+  <g transform="rotate(42 342 252)">
+  <path d="M 342 252 C 327 243, 327 226, 342 218 C 357 226, 357 243, 342 252 Z" fill="#b9622f"></path>
+  <path d="M 342 248 L 342 223" stroke="#8c4a24" stroke-width="2" opacity="0.6" stroke-linecap="round"></path>
+  </g>
+  <circle cx="236" cy="244" r="6" fill="#a8552f"></circle>
+  <circle cx="248" cy="250" r="5" fill="#c4703a"></circle>
+  <circle cx="284" cy="244" r="6" fill="#a8552f"></circle>
+  <circle cx="272" cy="250" r="5" fill="#c4703a"></circle>
+</svg>

@@ -1,6 +1,6 @@
 .contact-section {
-  padding: var(--s8) 0;
-  background: var(--cream-light);
+  padding: var(--band) 0;
+  background: var(--porcelain);
 }
 
 .contact-inner {
@@ -24,9 +24,9 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--green-soft);
-  background: var(--green-ghost);
-  border: 1px solid var(--green-pale);
+  color: var(--sage-deep);
+  background: rgba(251,246,236,0.7);
+  border: 1px solid var(--celadon);
   border-radius: 999px;
   padding: 6px 14px;
   margin-bottom: var(--s2);
@@ -75,7 +75,7 @@
 .contact-field textarea {
   font: inherit;
   color: var(--ink);
-  background: var(--cream-light);
+  background: var(--porcelain);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 12px 14px;
@@ -92,7 +92,7 @@
 .contact-field input:focus,
 .contact-field select:focus,
 .contact-field textarea:focus {
-  border-color: var(--green-soft);
+  border-color: var(--sage-deep);
   box-shadow: 0 0 0 3px rgba(97, 121, 100, 0.15);
   background: var(--surface);
 }
@@ -144,9 +144,9 @@
   height: 56px;
   margin: 0 auto var(--s2);
   border-radius: 50%;
-  background: var(--green-ghost);
-  border: 1.5px solid var(--green-pale);
-  color: var(--green-soft);
+  background: rgba(251,246,236,0.7);
+  border: 1.5px solid var(--celadon);
+  color: var(--sage-deep);
   font-size: 1.6rem;
   font-weight: 800;
   display: flex;

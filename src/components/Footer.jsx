@@ -1,6 +1,5 @@
 import { useReveal } from '../hooks';
 import './Footer.css';
-import BrandSeam from './BrandSeam';
 
 export default function Footer() {
   useReveal();
@@ -61,21 +60,21 @@ export default function Footer() {
 
 
         <div className="footer-links-col">
-          <h4>Product</h4>
+          <h4>The app</h4>
           <ul>
-            <li><a href="#howitworks">How it Works</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#community">Community</a></li>
-            <li><a href="#verification">Verification</a></li>
+            <li><a href="#making">Document a piece</a></li>
+            <li><a href="#counter">Row counter</a></li>
+            <li><a href="#corner">Your corner</a></li>
+            <li><a href="#proof">Certified Handmade</a></li>
           </ul>
         </div>
 
         <div className="footer-links-col">
-          <h4>Company</h4>
+          <h4>More</h4>
           <ul>
-            <li><a href="#mascots">Mascots</a></li>
-            <li><a href="#expertpanel">Expert Panel</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#get">Download</a></li>
+            <li><a href="#contact">Contact support</a></li>
+            <li><a href="https://www.youtube.com/@CraftMadeByApp" target="_blank" rel="noopener">YouTube</a></li>
           </ul>
         </div>
 
@@ -90,9 +89,6 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container">
-        <BrandSeam tone="dark" className="reveal footer-seam" />
-      </div>
 
       <div className="footer-bottom">
         <div className="container">
