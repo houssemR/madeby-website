@@ -19,6 +19,20 @@
   </url>
 
   <url>
+    <loc>https://craftmadeby.com/julestrikk/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://craftmadeby.com/julstickning/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://craftmadeby.com/presse/</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
