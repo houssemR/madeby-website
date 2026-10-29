@@ -24,6 +24,18 @@ export default function Navbar() {
 
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      {/* Christmas 2026 only: the Instagram bio links to this page, and links
+          there can only be changed in the phone app. Take it down after 24 Dec. */}
+      <div className="nav-ribbon">
+        <div className="container nav-ribbon-inner">
+          <span>Christmas knit-along<span className="nav-ribbon-more"> · 1–24 December, in groups of five</span></span>
+          <span className="nav-ribbon-links">
+            <a href="/jul/" hrefLang="da">Dansk</a>
+            <a href="/julestrikk/" hrefLang="nb">Norsk</a>
+            <a href="/julstickning/" hrefLang="sv">Svenska</a>
+          </span>
+        </div>
+      </div>
       <div className="container nav-inner">
         <a href="#top" className="nav-brand" onClick={() => setOpen(false)}>
           <img src="/logo.svg" alt="" className="brand-tile nav-logo" />

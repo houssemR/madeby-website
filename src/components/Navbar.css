@@ -37,6 +37,31 @@
   transition: opacity 0.2s;
 }
 .nav-links a:hover { opacity: 1; }
+.nav-ribbon {
+  background: var(--sage);
+  color: var(--on-sage);
+  font-family: var(--tag);
+  font-size: 0.84rem;
+}
+.nav-ribbon-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+  padding-block: 0.42rem;
+  text-align: center;
+}
+.nav-ribbon-links { display: inline-flex; gap: 0.9rem; }
+.nav-ribbon-links a {
+  color: var(--honey-l);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 520px) {
+  .nav-ribbon-more { display: none; }
+}
 .nav-cta { padding: 0.62rem 1.35rem; font-size: 0.9rem; }
 .nav-cta-mobile, .nav-burger { display: none; }
 

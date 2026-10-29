@@ -1,5 +1,6 @@
 .hero {
-  padding-top: clamp(7rem, 11vw, 9.5rem);
+  /* + 2.1rem for the Christmas ribbon in the navbar; drop it with the ribbon. */
+  padding-top: calc(clamp(7rem, 11vw, 9.5rem) + 2.1rem);
   padding-bottom: clamp(2rem, 4vw, 3rem);
   overflow: hidden;
 }
