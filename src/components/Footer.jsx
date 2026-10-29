@@ -75,6 +75,8 @@ export default function Footer() {
           <h4>More</h4>
           <ul>
             <li><a href="#contact">Contact support</a></li>
+            <li><a href="/jul/">Christmas knit-along 2026</a></li>
+            <li><a href="/presse/">Press</a></li>
             <li><a href="https://www.youtube.com/@CraftMadeByApp" target="_blank" rel="noopener">YouTube</a></li>
           </ul>
         </div>
