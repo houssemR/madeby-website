@@ -6,7 +6,12 @@
   var param = new URLSearchParams(location.search).get('ct') || '';
   var ct = /^[a-z0-9-]{1,40}$/.test(param) ? param : (document.body.dataset.ct || 'web');
   var ios = 'https://apps.apple.com/app/apple-store/id6792596703?pt=129184776&ct=' + ct + '&mt=8';
-  var play = 'https://play.google.com/store/apps/details?id=com.craftmadeby.app&referrer=' +
+  // A page can send Play users to a custom store listing (Play Console →
+  // Store listings → custom, "URL" audience); unknown or unpublished ones fall
+  // back to the default listing.
+  var listing = document.body.dataset.playListing;
+  var play = 'https://play.google.com/store/apps/details?id=com.craftmadeby.app' +
+    (listing ? '&listing=' + listing : '') + '&referrer=' +
     encodeURIComponent('utm_source=' + ct + '&utm_medium=web&utm_campaign=' + (document.body.dataset.campaign || 'site'));
   document.querySelectorAll('a[data-store="ios"]').forEach(function (a) { a.href = ios; });
   document.querySelectorAll('a[data-store="play"]').forEach(function (a) { a.href = play; });
