@@ -15,4 +15,9 @@
     encodeURIComponent('utm_source=' + ct + '&utm_medium=web&utm_campaign=' + (document.body.dataset.campaign || 'site'));
   document.querySelectorAll('a[data-store="ios"]').forEach(function (a) { a.href = ios; });
   document.querySelectorAll('a[data-store="play"]').forEach(function (a) { a.href = play; });
+  // Lines that only apply on iPhone/iPad (e.g. a feature still waiting for App
+  // Store review) are marked data-only="ios" and start hidden.
+  var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) document.querySelectorAll('[data-only="ios"]').forEach(function (el) { el.hidden = false; });
 })();
