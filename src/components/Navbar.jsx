@@ -28,8 +28,9 @@ export default function Navbar() {
           there can only be changed in the phone app. Take it down after 24 Dec. */}
       <div className="nav-ribbon">
         <div className="container nav-ribbon-inner">
-          <span>Christmas knit-along<span className="nav-ribbon-more"> · 1–24 December, in groups of five</span></span>
+          <span>Christmas<span className="nav-ribbon-more"> knit-along · 1–24 December, in groups of five</span><span className="nav-ribbon-short">:</span></span>
           <span className="nav-ribbon-links">
+            <a href="/christmas/" hrefLang="en">English</a>
             <a href="/jul/" hrefLang="da">Dansk</a>
             <a href="/julestrikk/" hrefLang="nb">Norsk</a>
             <a href="/julstickning/" hrefLang="sv">Svenska</a>

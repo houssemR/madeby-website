@@ -59,8 +59,11 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.nav-ribbon-short { display: none; }
 @media (max-width: 520px) {
   .nav-ribbon-more { display: none; }
+  .nav-ribbon-short { display: inline; }
+  .nav-ribbon-links { gap: 0.7rem; }
 }
 .nav-cta { padding: 0.62rem 1.35rem; font-size: 0.9rem; }
 .nav-cta-mobile, .nav-burger { display: none; }
