@@ -2,13 +2,11 @@ import { useReveal } from '../hooks';
 import './Proof.css';
 import { IconSeal, IconVote, IconGift, IconPeople } from './Icons';
 
-const RANKS = ['Crafter', 'Artisan', 'Master', 'Inspiring Leader'];
-
 const PILLARS = [
   { icon: <IconSeal size={20} />, title: 'Certified Handmade',
     body: 'Submit a finished piece with its steps and its hours. Pass, and it is sealed in wax with your name.' },
   { icon: <IconVote size={20} />, title: 'The Expert Panel',
-    body: 'Certification is not decided by us. Crafters who have earned their standing review the work and vote.' },
+    body: 'Certification is not decided by us. Three crafters who have earned their standing review the work and vote.' },
   { icon: <IconGift size={20} />, title: 'A project book',
     body: 'Export a piece as a PDF — the story, every step with its photos, the materials and the insights. Premium.' },
   { icon: <IconPeople size={20} />, title: 'Joint projects',
@@ -71,12 +69,6 @@ export default function Proof() {
             </div>
           </div>
 
-          <div className="proof-ranks reveal">
-            <p className="proof-ranks-label">Your standing grows with the work</p>
-            <ol className="proof-rank-list sew">
-              {RANKS.map((r) => <li key={r}><span>{r}</span></li>)}
-            </ol>
-          </div>
         </div>
       </div>
       <span className="thread sew sew--down" aria-hidden="true" />

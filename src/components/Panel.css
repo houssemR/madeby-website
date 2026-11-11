@@ -1,0 +1,131 @@
+/* THE EXPERT PANEL — how a crafter becomes an Inspiring Leader.
+
+   It sits between Proof (dark sage) and Giveaway (celadon), so it takes the
+   third patch, paper. The ladder is drawn as four rungs on one running seam,
+   the same thread the rest of the page is sewn with; the last rung is the
+   only thing on this panel wearing honey, because it is the one the section
+   is about. */
+
+.panel-patch { display: grid; gap: clamp(2.2rem, 4.5vw, 3.4rem); }
+.panel-head .em-line { color: var(--honey-d); }
+
+/* ---- the climb ----
+   On its own cut of cloth. The paper patch alone sat too close to the page
+   behind it, so the section had no anchor; this gives it one and keeps the
+   patch alternation (dark, paper, cloth) intact. */
+.panel-climb {
+  background: var(--celadon);
+  border-radius: var(--r-lg);
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  box-shadow: var(--lift-1);
+}
+.panel-climb-label {
+  font-family: var(--tag);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+.panel-ladder {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 2rem);
+}
+/* One seam running behind all four rungs, pinned to the step markers. */
+.panel-ladder::before {
+  content: '';
+  position: absolute;
+  left: 12%; right: 12%;
+  top: 17px;
+  border-top: 2px dashed var(--sage);
+  opacity: .45;
+}
+.panel-rung { position: relative; display: grid; gap: .45rem; align-content: start; }
+.panel-step {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--celadon);
+  border: 2px solid var(--sage);
+  color: var(--sage);
+  font-family: var(--tag);
+  font-size: .82rem;
+  font-weight: 700;
+  margin-bottom: .35rem;
+}
+.panel-rung h3 { font-size: clamp(1.02rem, 1.6vw, 1.2rem); }
+.panel-rung p { font-size: .92rem; color: var(--pine-soft); }
+
+/* The top rung. Honey here and nowhere else in this section. */
+.panel-rung--last .panel-step {
+  background: var(--honey);
+  border-color: var(--honey);
+  color: var(--pine);
+}
+.panel-rung--last h3 { font-style: italic; }
+.panel-unlock {
+  justify-self: start;
+  margin-top: .3rem;
+  padding: .24em .7em;
+  border-radius: var(--r-full);
+  background: var(--honey);
+  color: var(--pine);
+  font-family: var(--tag);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+/* ---- what the seat involves ---- */
+.panel-rules {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(1.6rem, 4vw, 3rem);
+  padding-top: clamp(1.6rem, 3vw, 2.2rem);
+  border-top: 2px dashed var(--stitch);
+}
+.panel-rules-head { max-width: 34ch; }
+.panel-rules-head h3 { margin-bottom: .5rem; }
+.panel-rules-head p { color: var(--ink-soft); font-size: .95rem; }
+
+.panel-rule-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem 1.8rem; }
+.panel-rule { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .8rem; }
+.panel-rule-icon {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--celadon);
+  color: var(--sage);
+}
+.panel-rule h4 {
+  font-family: var(--body);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .15rem;
+}
+.panel-rule p { font-size: .88rem; color: var(--ink-soft); }
+
+/* ---- the close ---- */
+.panel-close {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: var(--ink-soft);
+}
+.panel-close strong { color: var(--ink); }
+
+@media (max-width: 940px) {
+  .panel-ladder { grid-template-columns: 1fr 1fr; row-gap: 1.8rem; }
+  .panel-ladder::before { display: none; }
+  .panel-rules { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .panel-ladder { grid-template-columns: 1fr; }
+  .panel-rule-list { grid-template-columns: 1fr; }
+}
