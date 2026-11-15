@@ -20,11 +20,12 @@ const notFound = () =>
   );
 
 export default async (request: Request, context: Context) => {
-  // /m/<invite code> = maker profile, /p/<share code> = a piece.
-  const m = new URL(request.url).pathname.match(/^\/(m|p)\/([A-Za-z0-9-]{3,32})\/?$/);
+  // /m/<invite code> = a crafter's card. Piece links (/p/) were removed in
+  // 1.0.27 and are no longer proxied: they fall through to the site.
+  const m = new URL(request.url).pathname.match(/^\/m\/([A-Za-z0-9-]{3,32})\/?$/);
   if (!m) return context.next();
-  const code = m[2].toUpperCase();
-  const path = (m[1] === "p" ? "p/" : "") + encodeURIComponent(code);
+  const code = m[1].toUpperCase();
+  const path = encodeURIComponent(code);
 
   let upstream: Response;
   try {

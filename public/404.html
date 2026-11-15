@@ -43,8 +43,9 @@
   <div id="msg">Loading…</div>
   <script>
     (function () {
-      // /m/<invite code> = maker profile, /p/<share code> = a piece.
-      var m = location.pathname.match(/^\/(m|p)\/([A-Za-z0-9-]{3,32})\/?$/);
+      // /m/<invite code> = a crafter's card. Piece links (/p/) were
+      // removed in 1.0.27.
+      var m = location.pathname.match(/^\/(m)\/([A-Za-z0-9-]{3,32})\/?$/);
       var msg = document.getElementById('msg');
       function card(title, note) {
         return '<div class="fallback"><img src="/logo.svg" alt="">' +
