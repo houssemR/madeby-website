@@ -34,6 +34,7 @@
   font-weight: 500;
   color: var(--pine);
   opacity: 0.78;
+  white-space: nowrap;
   transition: opacity 0.2s;
 }
 .nav-links a:hover { opacity: 1; }
@@ -68,7 +69,9 @@
 .nav-cta { padding: 0.62rem 1.35rem; font-size: 0.9rem; }
 .nav-cta-mobile, .nav-burger { display: none; }
 
-@media (max-width: 860px) {
+/* Seven links need about 1040px on one line; below that the burger takes
+   over, rather than letting "Row counter" break onto two lines. */
+@media (max-width: 1060px) {
   .nav-cta { display: none; }
   .nav-burger {
     display: grid;
@@ -93,7 +96,7 @@
     overflow: hidden;
     transition: max-height 0.32s var(--ease);
   }
-  .nav-links.is-open { max-height: 380px; }
+  .nav-links.is-open { max-height: 520px; }
   .nav-links a {
     padding: 0.95rem clamp(1.1rem, 4vw, 2rem);
     border-top: 1px solid var(--line);

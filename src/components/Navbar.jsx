@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './Navbar.css';
 
-/* Six links. The old bar carried six and a seventh in the actions slot,
-   which read as a site map rather than a way around one page; these all point
-   at sections of this one page. */
+/* Seven links, all pointing at sections of this one page. The old bar also
+   carried one in the actions slot, which read as a site map rather than a way
+   around one page. */
 const LINKS = [
   ['#making', 'Document'],
+  ['#pattern', 'Patterns'],
   ['#counter', 'Row counter'],
   ['#corner', 'Your corner'],
   ['#proof', 'Certified'],

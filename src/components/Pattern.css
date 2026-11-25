@@ -1,0 +1,231 @@
+/* DESIGN A PATTERN — the chart editor, and its two companions.
+
+   It sits between Making (celadon) and the Row counter (dark sage), so it
+   takes the paper patch, and like the Panel it lays one cut of cloth on that
+   paper for the part that shows the result. The screens sit on the left here
+   — the Row counter right below puts its phone on the right — so the two
+   read as a zigzag down the page instead of two copies of one layout. */
+
+.pattern-patch { display: grid; gap: clamp(2.2rem, 4.5vw, 3.4rem); }
+
+/* ---- the top: screens, head, points ---- */
+.pattern-top {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  grid-template-areas:
+    'stage head'
+    'stage list';
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(2rem, 5vw, 4.5rem);
+  row-gap: clamp(1.6rem, 3vw, 2.4rem);
+}
+.pattern-head { grid-area: head; align-self: end; max-width: 58ch; }
+.pattern-head .em-line { color: var(--honey-d); }
+
+.pattern-stage {
+  grid-area: stage;
+  align-self: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  padding-block: clamp(1rem, 2.5vw, 2rem) clamp(2rem, 4vw, 3rem);
+}
+.pattern-phone { margin: 0; }
+/* These two are Android captures with the status bar cut off, a touch
+   shorter than the other app shots; the screen keeps their own ratio so
+   nothing is cropped off the chart. */
+.pattern-phone .device-screen { aspect-ratio: 640 / 1351; }
+.pattern-phone--a { transform: rotate(-3.5deg); z-index: 2; }
+.pattern-phone--b { transform: rotate(3.5deg) translateY(8%); }
+.pattern-chip { position: absolute; z-index: 4; top: 0; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+
+/* Three entries on a seam, as on the Row counter, in paper colours. */
+.pattern-list { grid-area: list; align-self: start; display: grid; gap: 1.1rem; }
+.pattern-item { padding-left: 1.15rem; border-left: 2px dashed var(--stitch); }
+.pattern-item dt {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.08rem, 1.6vw, 1.25rem);
+  color: var(--pine);
+  letter-spacing: -.01em;
+  margin-bottom: .1rem;
+}
+.pattern-item dd { color: var(--ink-soft); font-size: .95rem; max-width: 50ch; }
+
+/* ---- from chart to cloth ---- */
+.pattern-made {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4vw, 3.4rem);
+  background: var(--celadon);
+  border-radius: var(--r-lg);
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  box-shadow: var(--lift-1);
+}
+.pattern-half { display: grid; grid-template-rows: auto auto 1fr; gap: .35rem; }
+.pattern-half > p { color: var(--pine-soft); font-size: .95rem; max-width: 44ch; }
+
+/* The swatch, on a porcelain mat like the widget on the Row counter. */
+.pattern-swatch {
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  max-width: 540px;
+  margin: clamp(1rem, 2.4vw, 1.6rem) 0 0;
+  padding: .5rem .5rem .6rem;
+  background: var(--porcelain);
+  border-radius: var(--r-md);
+  box-shadow: var(--lift-3);
+  transform: rotate(-1.5deg);
+}
+.pattern-swatch img { width: 100%; border-radius: 9px; }
+.pattern-swatch figcaption,
+.pattern-card-label {
+  font-family: var(--tag);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--honey-d);
+}
+.pattern-swatch figcaption { padding: .55rem .3rem 0; }
+
+/* The pattern the app wrote for this chart. */
+.pattern-card {
+  margin-top: clamp(1rem, 2.4vw, 1.6rem);
+  padding: clamp(1.1rem, 2.4vw, 1.6rem);
+  background: var(--porcelain);
+  border-radius: var(--r-md);
+  box-shadow: var(--lift-2);
+}
+.pattern-card-label { margin-bottom: .55rem; }
+.pattern-setup { display: grid; gap: .2rem; margin-bottom: .4rem; }
+.pattern-setup li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: .95rem;
+  color: var(--ink);
+}
+.pattern-setup li::before {
+  content: '';
+  position: absolute;
+  left: .15rem; top: .62em;
+  width: .34rem; height: .34rem;
+  border-radius: 50%;
+  background: var(--sage-tile);
+}
+
+.pattern-rows { display: grid; margin-bottom: 1.2rem; }
+.pattern-row { padding-block: .8rem; border-bottom: 1px dashed var(--stitch); }
+.pattern-row > p:first-child { display: flex; flex-wrap: wrap; gap: .4rem; }
+.pattern-row-n,
+.pattern-row-side {
+  font-family: var(--tag);
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .16em .7em .2em;
+  border-radius: var(--r-full);
+}
+.pattern-row-n { background: var(--celadon); color: var(--pine); }
+.pattern-row-side { border: 1px solid var(--line); color: var(--ink-soft); font-weight: 600; }
+.pattern-row-text { margin: .4rem 0 .55rem; font-size: .98rem; color: var(--ink); }
+
+/* The row in stitches. Each one lands in the order it is knitted —
+   right-side rows from the right, wrong-side rows from the left — once the
+   card comes into view. */
+.pattern-strip {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  height: clamp(11px, 1.1vw, 14px);
+  background: rgba(31, 51, 38, .26);
+  border-radius: 2px;
+}
+.pattern-strip i {
+  display: block;
+  opacity: 0;
+  transition: opacity .18s ease-out;
+  transition-delay: calc(.3s + var(--k) * 16ms);
+}
+.pattern-card.visible .pattern-strip i { opacity: 1; }
+
+.pattern-need { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.pattern-need tr + tr { border-top: 1px dashed var(--line); }
+.pattern-need th,
+.pattern-need td { padding: .32rem 0; }
+.pattern-need th { width: 100%; text-align: left; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.pattern-need th i {
+  display: inline-block;
+  width: .8rem; height: .8rem;
+  margin-right: .5rem;
+  vertical-align: -.08em;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(31, 51, 38, .22);
+}
+.pattern-need td { text-align: right; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pattern-need td + td { padding-left: .9rem; font-weight: 400; font-size: .84rem; color: var(--ink-mute); }
+
+/* ---- the companions ---- */
+.pattern-kit {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(1.6rem, 4vw, 3rem);
+  padding-top: clamp(1.6rem, 3vw, 2.2rem);
+  border-top: 2px dashed var(--stitch);
+}
+.pattern-kit-head { max-width: 36ch; }
+.pattern-kit-head h3 { margin-bottom: .5rem; }
+.pattern-kit-head p { color: var(--ink-soft); font-size: .95rem; }
+
+.pattern-kit-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem 1.8rem; }
+.pattern-kit-item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .85rem; }
+.pattern-kit-icon {
+  display: grid;
+  place-items: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--celadon);
+  color: var(--pine);
+}
+.pattern-kit-item h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+  color: var(--pine);
+  letter-spacing: -.01em;
+  margin-bottom: .15rem;
+}
+.pattern-kit-item p { font-size: .92rem; color: var(--ink-soft); }
+
+/* Head over the two items once three columns would squeeze them. */
+@media (max-width: 1100px) {
+  .pattern-kit { grid-template-columns: 1fr; }
+  .pattern-kit-head { max-width: 60ch; }
+}
+@media (max-width: 940px) {
+  .pattern-top {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'head' 'stage' 'list';
+    grid-template-rows: auto;
+  }
+  .pattern-stage { max-width: 420px; }
+  .pattern-made { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .pattern-kit-list { grid-template-columns: 1fr; }
+}
+/* Three layers of padding (patch, cloth, card) leave too little card at
+   phone width for the yarn table, so the inner two give some back. */
+@media (max-width: 520px) {
+  .pattern-made { padding: 1.1rem; }
+  .pattern-card { padding: 1rem; }
+  .pattern-need td + td { padding-left: .6rem; font-size: .78rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pattern-strip i { opacity: 1 !important; transition: none !important; }
+}

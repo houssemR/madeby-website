@@ -64,6 +64,7 @@ export default function Footer() {
           <h4>The app</h4>
           <ul>
             <li><a href="#making">Document a piece</a></li>
+            <li><a href="#pattern">Design a pattern</a></li>
             <li><a href="#counter">Row counter</a></li>
             <li><a href="#corner">Your corner</a></li>
             <li><a href="#proof">Certified Handmade</a></li>
